@@ -10,7 +10,7 @@ NC='\033[0m'
 echo -e "${GREEN}Starting Laravel deployment...${NC}"
 
 # Set deployment path (change if needed)
-DEPLOY_PATH="/home/mahefcuw/ielts"
+DEPLOY_PATH="/home/mahefcuw/ielts-site"
 cd $DEPLOY_PATH
 
 # Enter maintenance mode
