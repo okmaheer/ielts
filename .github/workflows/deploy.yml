@@ -24,7 +24,7 @@ jobs:
       run: composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
     
     - name: Deploy to Namecheap via SSH
-      uses: appleboy/ssh-action@v1.0.0
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
