@@ -32,4 +32,4 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ${{ secrets.DEPLOY_PATH }}
-          bash ~/deploy.sh
+          bash ./deploy.sh
