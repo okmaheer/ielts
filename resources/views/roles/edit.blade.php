@@ -17,6 +17,7 @@
                         <!--begin::Input-->
                         <input class="form-control form-control-solid" value="{{$role->name}}" placeholder="Enter a role name" name="name" autocomplete="off" />
                         <!--end::Input-->
+                        
                     </div>
                     <!--end::Input group-->
                     <!--begin::Permissions-->
