@@ -184,6 +184,7 @@
     @yield('script')
     @include('layouts.partials.custom')
     @include('layouts.partials.errors')
+    
 </body>
 
 </html>

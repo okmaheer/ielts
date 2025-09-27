@@ -124,13 +124,13 @@
     @endif
     @yield('content')
     <!--end::Root-->
+  @include('cookie-consent::index')
     @if (!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test'))
     @include('layouts.partials.frontend-footer')
      @endif
     @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')
-   
     <script>
         var queryParams = new URLSearchParams(window.location.search);
         const param = queryParams.get('success');
@@ -164,6 +164,7 @@
           ]
         }
      </script>
+
 </body>
 
 </html>
