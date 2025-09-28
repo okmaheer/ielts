@@ -295,78 +295,68 @@
 
 
 /*** Testimonial ***/
-.testimonial-carousel::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
+.testimonial-carousel {
+    position: relative;
 }
 
+/* Remove the gradient overlays since we're showing full width */
+.testimonial-carousel::before,
 .testimonial-carousel::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
+    display: none;
 }
 
-@media (min-width: 768px) {
-    .testimonial-carousel::before,
-    .testimonial-carousel::after {
-        width: 200px;
-    }
-}
-
-@media (min-width: 992px) {
-    .testimonial-carousel::before,
-    .testimonial-carousel::after {
-        width: 300px;
-    }
-}
-
-.testimonial-carousel .owl-item .testimonial-text,
-.testimonial-carousel .owl-item.center .testimonial-text * {
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-text {
-    background: var(--primary) !important;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-text * {
-    color: #FFFFFF !important;
-}
-
+/* Update dots styling */
 .testimonial-carousel .owl-dots {
-    margin-top: 24px;
+    margin-top: 30px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
 .testimonial-carousel .owl-dot {
     position: relative;
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 8px;
     width: 15px;
     height: 15px;
-    border: 1px solid #CCCCCC;
-    transition: .5s;
+    border: 2px solid #CCCCCC;
+    border-radius: 50%;
+    transition: .3s;
+    cursor: pointer;
 }
 
 .testimonial-carousel .owl-dot.active {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: #17a2b8;
+    border-color: #17a2b8;
 }
 
+.testimonial-carousel .owl-dot:hover {
+    border-color: #17a2b8;
+}
 
+/* Ensure full width for testimonial items */
+.testimonial-carousel .owl-item {
+    width: 100% !important;
+}
+
+/* Remove any center-specific styling */
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    background: none !important;
+    color: inherit !important;
+    transition: none;
+}
+
+/* Add smooth transitions for the carousel */
+.testimonial-carousel .owl-stage-outer {
+    overflow: hidden;
+}
+
+.testimonial-carousel .owl-stage {
+    display: flex;
+    align-items: stretch;
+}
 /*** Footer ***/
 .footer .btn.btn-social {
     margin-right: 5px;

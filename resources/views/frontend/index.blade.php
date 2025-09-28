@@ -335,108 +335,92 @@
         </div>
 
         <div class="row g-4 justify-content-center" id="ielts-mock-test">
-
             <div class="container p-5">
                 <div class="row">
-                    <h4 class="mb-4"> IELTS Mock Test </h4>
-                    <p class="mb-4">Practice Cambridge IELTS Listening & Reading Tests for FREE. Through our interface,
-                        you can learn all
-                        the features of Computer-Based IELTS Test. </p>
+                    <h4 class="mb-4">IELTS Computer Based Practice Test</h4>
+                    <p class="mb-4">Practice FREE Cambridge IELTS Listening & Reading Tests online. Experience real
+                        Computer-Based IELTS simulation with instant results, band score predictions, and detailed
+                        evaluations. Full-length IELTS Academic & General Training Mock Tests available for Listening and
+                        Reading — with IELTS Writing Mock Tests coming soon.</p>
 
                     <div class="col-lg-6 col-md-12 mb-4">
-                        <div class="card  shadow-lg">
+                        <div class="card shadow-lg">
                             <div class="card-body">
                                 <div class="text-center p-3">
                                     <h4 class="card-title">Free Access</h4>
-
+                                    <br>
+                                    <span class="h4">$0</span>
+                                    <br><br>
                                 </div>
-
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                <li class="list-group-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                     </svg>Access for Unlimited Time
                                 </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                <li class="list-group-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>8 Listening and Reading Mock Tests </li>
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    </svg>8 Listening and Reading Mock Tests
+                                </li>
+                                <li class="list-group-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                     </svg>Expert Feedback for both Modules
                                 </li>
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Free of cost
-
-                                </li>
-
                             </ul>
                             <div class="card-body text-center">
                                 <button style="border-radius:30px" type="button" data-bs-toggle="modal"
                                     data-bs-target="#test-type" class="btn btn-outline-primary btn-lg">
-                                    <span class="indicator-label">Start Practicing</span>
-
+                                    <span class="indicator-label">START PRACTICING</span>
                                 </button>
-
                             </div>
                         </div>
                     </div>
 
-
                     <div class="col-lg-6 col-md-12 mb-4">
-                        <div class="card  shadow-lg">
+                        <div class="card shadow-lg">
                             <div class="card-body">
                                 <div class="text-center p-3">
                                     <h4 class="card-title">Paid Access</h4>
-
+                                    <br>
+                                    <span class="h4">$5</span>
+                                    <br><br>
                                 </div>
-
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                <li class="list-group-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Access for 2 Months </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    </svg>Access for 2 Months
+                                </li>
+                                <li class="list-group-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                     </svg>28 Listening and Reading Mock Test
                                 </li>
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                <li class="list-group-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                     </svg>Expert Feedback for both Modules
                                 </li>
-
-
-
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> <span class="h4"> $5 USD</span>
-
-
-                                </li>
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg" href="{{ route('show.loginForm') }}"
-                                    style="border-radius:30px">Buy Now</a>
+                                    style="border-radius:30px">BUY NOW</a>
                             </div>
                         </div>
                     </div>
@@ -445,110 +429,185 @@
         </div>
 
 
-        <!-- Testimonial Start -->
         <div class="container-xxl py-5 wow fadeInUp" id="prepration-testimonial" data-wow-delay="0.1s">
             <div class="container">
-                <div class="text-center">
-                    <h5 class="section-title bg-white text-center text-primary px-3">Testimonial</h5>
-
-                </div>
                 @php
                     $testimonials = [
                         (object) [
                             'id' => 1,
-                            'name' => 'Saba',
-                            'score' => '7.0 bands',
-                            'image' => 't1.jpg',
-                            'country' => 'Pakistan',
-                            'alt' => 'Image of IELTS TRF of a student who got 8 in IELTS Listening',
+                            'name' => 'Ziana',
+                            'country' => 'Malaysia',
+                            'avatar' => 'ziana.jpg',
+                            'certificate' => 'ziana-report-card.jpeg',
+                            'quote' =>
+                                'With IPP\'s IELTS preparation course I managed to get 6.5 bands overall and enabled me to start my graduate studies in Malaysia.',
+                            'alt' => 'IELTS TRF showing 6.5 overall score',
                         ],
-                        // (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
+                        (object) [
+                            'id' => 2,
+                            'name' => 'Raheem',
+                            'country' => 'Pakistan',
+                            'avatar' => 'raheem.jpg',
+                            'certificate' => 'raheem-report.jpeg',
+                            'quote' =>
+                                'IPP helped me to get 7.5 Bands in IELTS. I would recommend other students to take IELTS Preparation classes from this platform as well.',
+                            'alt' => 'IELTS TRF showing 7.5 bands score',
+                        ],
                         (object) [
                             'id' => 3,
-                            'name' => 'Mudassir',
-                            'score' => '6.5 bands',
-                            'image' => 't3.jpg',
-                            'country' => 'Pakistan',
-                            'alt' => 'Image of IELTS TRF of a student who got 6.5 overall',
-                        ],
-                        // (object) ['id' => 4, 'name' => 'Majd Faris', 'score' => '6.5 bands', 'image' => 't4.jpg', 'country' => 'Jordan'],
-                        // (object) ['id' => 5, 'name' => 'Abdullah', 'score' => '6.5 bands', 'image' => 't5.jpg', 'country' => 'Bahrain'],
-                        // (object) ['id' => 6, 'name' => 'Hafsa', 'score' => '7.0 bands', 'image' => 't6.jpg', 'country' => 'Pakistan'],
-                        (object) [
-                            'id' => 7,
-                            'name' => 'Shahbaz',
-                            'score' => '7.0 bands',
-                            'image' => 't7.jpg',
-                            'country' => 'Pakistan',
-                            'alt' => 'Image of IELTS TRF of a student who got 6.5 overall',
-                        ],
-                        (object) [
-                            'id' => 8,
-                            'name' => 'Lamisa',
-                            'score' => '7.5 bands',
-                            'image' => 't8.jpg',
+                            'name' => 'Shamma',
                             'country' => 'Bangladesh',
-                            'alt' => 'Image of IELTS TRF of a student who got 8 in IELTS Reading',
+                            'avatar' => 'shamma.jpg',
+                            'certificate' => 'shamma-report.jpeg',
+                            'quote' =>
+                                'I took IELTS Preparation classes from IPP and managed to get 7.5 bands in IELTS on my first attempt. IPP\'s IELTS Preparation is highly recommended.',
+                            'alt' => 'IELTS TRF showing 7.5 bands score',
                         ],
                         (object) [
-                            'id' => 9,
-                            'name' => 'Kanza',
-                            'score' => '7.5 bands',
-                            'image' => 't9.jpg',
-                            'country' => 'Pakistan',
-                            'alt' => 'Image of IELTS TRF of a student who got 8.5 in IELTS Reading',
+                            'id' => 4,
+                            'name' => 'Irene',
+                            'country' => 'Italy',
+                            'avatar' => 'irine.jpg',
+                            'certificate' => 'irine-report.jpeg',
+                            'quote' =>
+                                'It would have been impossible to increase my speaking score from 5.5 to 6.5 bands without taking IELTS Speaking Classes from IPP.',
+                            'alt' => 'IELTS TRF showing improved speaking score',
                         ],
                         (object) [
-                            'id' => 10,
-                            'name' => 'Ramya',
-                            'score' => '7 bands',
-                            'image' => 't10.jpg',
-                            'country' => 'India',
-                            'alt' => 'Image of IELTS TRF of a student who got 7.0 overall',
-                        ],
-                        (object) [
-                            'id' => 11,
-                            'name' => 'Maryeni',
-                            'score' => '7.5 bands',
-                            'image' => 't11.jpg',
-                            'country' => 'Ghana',
-                            'alt' => 'Image of IELTS TRF of a student who got 8 in IELTS Speaking',
-                        ],
-                        (object) [
-                            'id' => 12,
-                            'name' => 'Renise',
-                            'score' => '6.5 bands',
-                            'image' => 't12.jpg',
-                            'country' => 'Cameroon',
-                            'alt' => 'Image of IELTS TRF of a student who got 6.5 overall',
+                            'id' => 5,
+                            'name' => 'Hudaib',
+                            'country' => 'Jordan',
+                            'avatar' => 'hudaib.jpg',
+                            'certificate' => 'hudaib-report.jpeg',
+                            'quote' =>
+                                'I am satisfied with the course offered by this platform, as it helped me to get the desired score in just 1 month and now I\'m pursing my dreams in Spain.',
+                            'alt' => 'IELTS TRF showing desired score achievement',
                         ],
                     ];
                 @endphp
-                <div class="owl-carousel testimonial-carousel position-relative">
+
+                <div class="owl-carousel testimonial-carousel">
                     @foreach ($testimonials as $testimonial)
-                        <div class="testimonial-item text-center">
-                            <button class="mb-1" type="button" data-bs-toggle="modal"
-                                data-bs-target="#testimonial-image-{{ $testimonial->id }}">
-                                <img class="border  p-2 mx-auto mb-3"
-                                    src="{{ asset('frontend/testimonial/' . $testimonial->image) }}"
-                                    style="width: 150px; height: 200px;" />
-                            </button>
+                        <div class="testimonial-slide">
+                            <div class="row align-items-center">
+                                <!-- Left Side - Testimonial -->
+                                <div class="col-lg-6 col-md-12 mb-4">
+                                    <div class="card  h-100" style="background-color: #f8f9fa; border-radius: 20px;">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex align-items-start mb-4">
+                                                <img src="{{ asset('frontend/testimonial/' . $testimonial->avatar) }}"
+                                                    alt="Client {{ $testimonial->name }}" class="rounded-circle me-3"
+                                                    style="width: 80px; height: 80px; object-fit: cover;">
+                                                <div class="flex-grow-1">
+                                                    <button class="btn p-0 border-0 bg-transparent" type="button"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#testimonial-image-{{ $testimonial->id }}">
+                                                        <img src="{{ asset('frontend/testimonial/' . $testimonial->certificate) }}"
+                                                            alt="{{ $testimonial->alt }}" class="img-fluid rounded "
+                                                            style="max-height: 400px; cursor: pointer;">
+                                                    </button>
+                                                </div>
+                                            </div>
 
-                            <h5 class="mb-0">{{ $testimonial->name }}</h5>
-                            <span>{{ $testimonial->score }}</span>
-                            <p>{{ $testimonial->country }}</p>
+                                            <p class="text-muted mb-3" style="font-size: 0.95rem; line-height: 1.6;">
+                                                {{ $testimonial->quote }}
+                                            </p>
 
+                                            <div class="mb-3">
+                                                <div class="text-warning mb-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
 
+                                            <div
+                                                style="height: 3px; width: 60px; background-color: #17a2b8; margin-bottom: 15px;">
+                                            </div>
+
+                                            <h5 class="fw-bold mb-1">{{ $testimonial->name }}</h5>
+                                            <small class="text-muted">{{ $testimonial->country }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Side - Static Content -->
+                                <div class="col-lg-6 col-md-12 mb-4">
+                                    <div class="h-100 d-flex flex-column justify-content-center ps-lg-4">
+                                        <h2 class="fw-bold mb-4" style="color: #2c3e50;">Client Testimonials and Feedback
+                                        </h2>
+
+                                        <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+                                            Master the IELTS exam with confidence! Our team of experts is dedicated to
+                                            providing personalized guidance and top-notch resources to ensure you achieve
+                                            your desired band score. With our courses, materials, and mock tests, success is
+                                            just a step away.
+                                        </p>
+
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                    style="width: 50px; height: 50px; background-color: #17a2b8;">
+                                                    <i class="fas fa-phone text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <small class="text-muted d-block">CUSTOMER SERVICES</small>
+                                                    <a href="tel:+923154315382" class="text-decoration-none"
+                                                        style="color: #17a2b8; font-size: 1.1rem;">
+                                                        +92 315 431 5382
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mb-4">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                    style="width: 50px; height: 50px; background-color: #17a2b8;">
+                                                    <i class="fas fa-envelope text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <small class="text-muted d-block">EMAIL ADDRESS</small>
+                                                    <a href="mailto:info@ieltsprepandpractice.com"
+                                                        class="text-decoration-none"
+                                                        style="color: #17a2b8; font-size: 1.1rem;">
+                                                        info@ieltsprepandpractice.com
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-lg text-white fw-bold"
+                                                style="background-color: #17a2b8; border-radius: 25px; padding: 12px 40px; border: none;">
+                                                OUR SCORES
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
-
-
-
                 </div>
             </div>
         </div>
+
+        <!-- Modals for Certificate Images -->
         @foreach ($testimonials as $testimonial)
-            @include('layouts.partials.models.testimonial-image')
+            <div class="modal fade" id="testimonial-image-{{ $testimonial->id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" style="max-width:800px;">
+                    <div class="modal-content">
+                        <div class="modal-header border-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center p-0">
+                            <img src="{{ asset('frontend/testimonial/' . $testimonial->certificate) }}"
+                                alt="{{ $testimonial->alt }}" class="img-fluid w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endforeach
         <!-- Testimonial End -->
     @endsection
