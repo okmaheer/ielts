@@ -39,4 +39,13 @@ class FrontendController extends Controller
 
         return view('frontend.pages.faqs');
     }
+    
+    public function contactUs(Request $request){
+
+        return view('frontend.pages.contact-us');
+    }
+public function aboutUs(Request $request){
+
+        return view('frontend.pages.about-us');
+    }
 }

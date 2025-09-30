@@ -14,6 +14,9 @@
             <a href="{{ route('frontend.index') }}#ielts-mock-test" class="nav-item nav-link"> IELTS Mock Test</a>
             <a href="{{ route('frontend.index') }}#prepration-testimonial" class="nav-item nav-link">Testimonial</a>
             <a href="{{route('frontend.faqs')}}" class="nav-item nav-link">Faqs</a>
+            <a href="{{route('frontend.contact-us')}}" class="nav-item nav-link">Contact Us</a>
+            <a href="{{route('frontend.about-us')}}" class="nav-item nav-link">About Us</a>
+
         </div>
       
     </div>

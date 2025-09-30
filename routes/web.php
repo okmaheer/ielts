@@ -35,7 +35,9 @@ Route::get('/ielts/faqs', [FrontendController::class, 'faqs'])->name('frontend.f
 ///
 Route::get('/ielts/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('frontend.privacy-policy');
 //
-Route::get('/ielts/terms-conditions', [FrontendController::class, 'termsConditions'])->name('frontend.terms-conditions');
+Route::get('/ielts/terms-conditions',[FrontendController::class, 'termsConditions'])->name('frontend.terms-conditions');
+Route::get('/ielts/contact-us',  [FrontendController::class, 'contactUs'])->name('frontend.contact-us');
+Route::get('/ielts/about-us', [FrontendController::class, 'aboutUs'])->name('frontend.about-us');
 
 Route::get('/general-training/test', [GeneralTrainingTestController::class, 'getGeneralTrainingTests'])->name('general.training.test');
 Route::get('/academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');
