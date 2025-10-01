@@ -486,13 +486,13 @@
                     ];
                 @endphp
 
-                <div class="owl-carousel testimonial-carousel">
-                    @foreach ($testimonials as $testimonial)
-                        <div class="testimonial-slide">
-                            <div class="row align-items-center">
-                                <!-- Left Side - Testimonial -->
-                                <div class="col-lg-6 col-md-12 mb-4">
-                                    <div class="card  h-100" style="background-color: #f8f9fa; border-radius: 20px;">
+                <div class="row align-items-center">
+                    <!-- Left Side - Testimonials Carousel -->
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="owl-carousel testimonial-carousel">
+                            @foreach ($testimonials as $testimonial)
+                                <div class="testimonial-slide">
+                                    <div class="card h-100" style="background-color: #f8f9fa; border-radius: 20px;">
                                         <div class="card-body p-4">
                                             <div class="d-flex align-items-start mb-4">
                                                 <img src="{{ asset('frontend/testimonial/' . $testimonial->avatar) }}"
@@ -532,62 +532,61 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach
+                        </div>
+                    </div>
 
-                                <!-- Right Side - Static Content -->
-                                <div class="col-lg-6 col-md-12 mb-4">
-                                    <div class="h-100 d-flex flex-column justify-content-center ps-lg-4">
-                                        <h2 class="fw-bold mb-4" style="color: #2c3e50;">Client Testimonials and Feedback
-                                        </h2>
+                    <!-- Right Side - Static Content -->
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="h-100 d-flex flex-column justify-content-center ps-lg-4">
+                            <h2 class="fw-bold mb-4" style="color: #2c3e50;">Client Testimonials and Feedback
+                            </h2>
 
-                                        <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
-                                            Master the IELTS exam with confidence! Our team of experts is dedicated to
-                                            providing personalized guidance and top-notch resources to ensure you achieve
-                                            your desired band score. With our courses, materials, and mock tests, success is
-                                            just a step away.
-                                        </p>
+                            <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+                                Master the IELTS exam with confidence! Our team of experts is dedicated to
+                                providing personalized guidance and top-notch resources to ensure you achieve
+                                your desired band score. With our courses, materials, and mock tests, success is
+                                just a step away.
+                            </p>
 
-                                        <div class="mb-4">
-                                            <div class="d-flex align-items-center mb-3">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
-                                                    style="width: 50px; height: 50px; background-color: #17a2b8;">
-                                                    <i class="fas fa-phone text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <small class="text-muted d-block">CUSTOMER SERVICES</small>
-                                                    <a href="tel:+923154315382" class="text-decoration-none"
-                                                        style="color: #17a2b8; font-size: 1.1rem;">
-                                                        +92 315 431 5382
-                                                    </a>
-                                                </div>
-                                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; background-color: #17a2b8;">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">CUSTOMER SERVICES</small>
+                                        <a href="tel:+923154315382" class="text-decoration-none"
+                                            style="color: #17a2b8; font-size: 1.1rem;">
+                                            +92 315 431 5382
+                                        </a>
+                                    </div>
+                                </div>
 
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
-                                                    style="width: 50px; height: 50px; background-color: #17a2b8;">
-                                                    <i class="fas fa-envelope text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <small class="text-muted d-block">EMAIL ADDRESS</small>
-                                                    <a href="mailto:info@ieltsprepandpractice.com"
-                                                        class="text-decoration-none"
-                                                        style="color: #17a2b8; font-size: 1.1rem;">
-                                                        info@ieltsprepandpractice.com
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-center">
-                                            <a href="#" class="btn btn-lg text-white fw-bold"
-                                                style="background-color: #17a2b8; border-radius: 25px; padding: 12px 40px; border: none;">
-                                                OUR SCORES
-                                            </a>
-                                        </div>
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; background-color: #17a2b8;">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">EMAIL ADDRESS</small>
+                                        <a href="mailto:info@ieltsprepandpractice.com" class="text-decoration-none"
+                                            style="color: #17a2b8; font-size: 1.1rem;">
+                                            info@ieltsprepandpractice.com
+                                        </a>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="text-center">
+                                <a href="#" class="btn btn-lg text-white fw-bold"
+                                    style="background-color: #17a2b8; border-radius: 25px; padding: 12px 40px; border: none;">
+                                    OUR SCORES
+                                </a>
+                            </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -609,7 +608,6 @@
                 </div>
             </div>
         @endforeach
-        <!-- Testimonial End -->
     @endsection
 
     @section('script')

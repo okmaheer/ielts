@@ -305,7 +305,8 @@
                     <p class="section-label">WHO WE ARE</p>
                     <h2 class="section-heading">Our Services</h2>
                     <p class="section-description">
-                        We provide expert IELTS preparation to help you reach your target band. Our Expert tutors have taught more than a thousand students with a success rate of 90%.
+                        We provide expert IELTS preparation to help you reach your target band. Our Expert tutors have
+                        taught more than a thousand students with a success rate of 90%.
                     </p>
 
                     <div class="service-item">
@@ -341,7 +342,8 @@
 
                 <div class="col-lg-6">
                     <div class="services-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&w=800" alt="IELTS Study Materials">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&w=800"
+                            alt="IELTS Study Materials">
                         <div class="experience-badge">
                             <span class="number">5+</span>
                             <span class="text">YEARS OF EXPERIENCE</span>
@@ -360,7 +362,8 @@
                 <p class="section-label">OUR VALUE</p>
                 <h2 class="section-heading">Because Your Future Deserves<br>the Best</h2>
                 <p class="section-description">
-                    We value excellence, integrity, and personalized learning, empowering students to achieve IELTS success with confidence and clarity.
+                    We value excellence, integrity, and personalized learning, empowering students to achieve IELTS success
+                    with confidence and clarity.
                 </p>
             </div>
 
@@ -372,7 +375,8 @@
                         </div>
                         <h3 class="value-card-title">Our Vision</h3>
                         <p class="value-card-text">
-                            Our vision is to be the most trusted partner in IELTS preparation, empowering learners worldwide to achieve their dreams and open doors to global opportunities.
+                            Our vision is to be the most trusted partner in IELTS preparation, empowering learners worldwide
+                            to achieve their dreams and open doors to global opportunities.
                         </p>
                     </div>
                 </div>
@@ -384,7 +388,8 @@
                         </div>
                         <h3 class="value-card-title">Our Mission</h3>
                         <p class="value-card-text">
-                            To deliver expert, personalized IELTS training that equips every learner with the skills, strategies, and confidence to achieve their target band score.
+                            To deliver expert, personalized IELTS training that equips every learner with the skills,
+                            strategies, and confidence to achieve their target band score.
                         </p>
                     </div>
                 </div>
@@ -396,7 +401,8 @@
                         </div>
                         <h3 class="value-card-title">Our Motto</h3>
                         <p class="value-card-text">
-                            Guiding every learner with dedication and expertise, we inspire confidence and success in IELTS preparation.
+                            Guiding every learner with dedication and expertise, we inspire confidence and success in IELTS
+                            preparation.
                         </p>
                     </div>
                 </div>
@@ -404,6 +410,185 @@
         </div>
     </div>
     <!-- Our Values Section End -->
+<div class="container-xxl py-5 wow fadeInUp" id="prepration-testimonial" data-wow-delay="0.1s">
+    <div class="container">
+        @php
+            $testimonials = [
+                (object) [
+                    'id' => 1,
+                    'name' => 'Ziana',
+                    'country' => 'Malaysia',
+                    'avatar' => 'ziana.jpg',
+                    'certificate' => 'ziana-report-card.jpeg',
+                    'quote' =>
+                        'With IPP\'s IELTS preparation course I managed to get 6.5 bands overall and enabled me to start my graduate studies in Malaysia.',
+                    'alt' => 'IELTS TRF showing 6.5 overall score',
+                ],
+                (object) [
+                    'id' => 2,
+                    'name' => 'Raheem',
+                    'country' => 'Pakistan',
+                    'avatar' => 'raheem.jpg',
+                    'certificate' => 'raheem-report.jpeg',
+                    'quote' =>
+                        'IPP helped me to get 7.5 Bands in IELTS. I would recommend other students to take IELTS Preparation classes from this platform as well.',
+                    'alt' => 'IELTS TRF showing 7.5 bands score',
+                ],
+                (object) [
+                    'id' => 3,
+                    'name' => 'Shamma',
+                    'country' => 'Bangladesh',
+                    'avatar' => 'shamma.jpg',
+                    'certificate' => 'shamma-report.jpeg',
+                    'quote' =>
+                        'I took IELTS Preparation classes from IPP and managed to get 7.5 bands in IELTS on my first attempt. IPP\'s IELTS Preparation is highly recommended.',
+                    'alt' => 'IELTS TRF showing 7.5 bands score',
+                ],
+                (object) [
+                    'id' => 4,
+                    'name' => 'Irene',
+                    'country' => 'Italy',
+                    'avatar' => 'irine.jpg',
+                    'certificate' => 'irine-report.jpeg',
+                    'quote' =>
+                        'It would have been impossible to increase my speaking score from 5.5 to 6.5 bands without taking IELTS Speaking Classes from IPP.',
+                    'alt' => 'IELTS TRF showing improved speaking score',
+                ],
+                (object) [
+                    'id' => 5,
+                    'name' => 'Hudaib',
+                    'country' => 'Jordan',
+                    'avatar' => 'hudaib.jpg',
+                    'certificate' => 'hudaib-report.jpeg',
+                    'quote' =>
+                        'I am satisfied with the course offered by this platform, as it helped me to get the desired score in just 1 month and now I\'m pursing my dreams in Spain.',
+                    'alt' => 'IELTS TRF showing desired score achievement',
+                ],
+            ];
+        @endphp
+
+        <div class="row align-items-center">
+            <!-- Left Side - Testimonials Carousel -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="owl-carousel testimonial-carousel">
+                    @foreach ($testimonials as $testimonial)
+                        <div class="testimonial-slide">
+                            <div class="card h-100" style="background-color: #f8f9fa; border-radius: 20px;">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start mb-4">
+                                        <img src="{{ asset('frontend/testimonial/' . $testimonial->avatar) }}"
+                                            alt="Client {{ $testimonial->name }}" class="rounded-circle me-3"
+                                            style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="flex-grow-1">
+                                            <button class="btn p-0 border-0 bg-transparent" type="button"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#testimonial-image-{{ $testimonial->id }}">
+                                                <img src="{{ asset('frontend/testimonial/' . $testimonial->certificate) }}"
+                                                    alt="{{ $testimonial->alt }}" class="img-fluid rounded "
+                                                    style="max-height: 400px; cursor: pointer;">
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-muted mb-3" style="font-size: 0.95rem; line-height: 1.6;">
+                                        {{ $testimonial->quote }}
+                                    </p>
+
+                                    <div class="mb-3">
+                                        <div class="text-warning mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        style="height: 3px; width: 60px; background-color: #17a2b8; margin-bottom: 15px;">
+                                    </div>
+
+                                    <h5 class="fw-bold mb-1">{{ $testimonial->name }}</h5>
+                                    <small class="text-muted">{{ $testimonial->country }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Right Side - Static Content -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="h-100 d-flex flex-column justify-content-center ps-lg-4">
+                    <h2 class="fw-bold mb-4" style="color: #2c3e50;">Client Testimonials and Feedback
+                    </h2>
+
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+                        Master the IELTS exam with confidence! Our team of experts is dedicated to
+                        providing personalized guidance and top-notch resources to ensure you achieve
+                        your desired band score. With our courses, materials, and mock tests, success is
+                        just a step away.
+                    </p>
+
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; background-color: #17a2b8;">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">CUSTOMER SERVICES</small>
+                                <a href="tel:+923154315382" class="text-decoration-none"
+                                    style="color: #17a2b8; font-size: 1.1rem;">
+                                    +92 315 431 5382
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px; background-color: #17a2b8;">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">EMAIL ADDRESS</small>
+                                <a href="mailto:info@ieltsprepandpractice.com"
+                                    class="text-decoration-none"
+                                    style="color: #17a2b8; font-size: 1.1rem;">
+                                    info@ieltsprepandpractice.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-lg text-white fw-bold"
+                            style="background-color: #17a2b8; border-radius: 25px; padding: 12px 40px; border: none;">
+                            OUR SCORES
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals for Certificate Images -->
+@foreach ($testimonials as $testimonial)
+    <div class="modal fade" id="testimonial-image-{{ $testimonial->id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:800px;">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img src="{{ asset('frontend/testimonial/' . $testimonial->certificate) }}"
+                        alt="{{ $testimonial->alt }}" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
 @endsection
 
 @section('script')

@@ -25,7 +25,6 @@
                 </div>
             </div>
             
-            <a href="{{route('frontend.faqs')}}" class="nav-item nav-link">Faqs</a>
             <a href="{{route('frontend.contact-us')}}" class="nav-item nav-link">Contact Us</a>
             <a href="{{route('frontend.about-us')}}" class="nav-item nav-link">About Us</a>
         </div>
