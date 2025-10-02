@@ -5,18 +5,32 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofP+NM6P1d5Eegx6A7Yq4MK5S+76E4uBxj" crossorigin="anonymous">
-        <!-- Google tag (gtag.js) -->
-        @if(Route::currentRouteName() != 'frontend.index')
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ0H8BREG0"></script>
-            <script>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "tjzl5whmrs");
+    </script>
+    @if (Route::currentRouteName() != 'frontend.index')
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ0H8BREG0"></script>
+        <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag('js', new Date());
 
             gtag('config', 'G-TZ0H8BREG0');
-            </script>
-@endif
+        </script>
+    @endif
     @include('layouts.partials.frontend-head')
     <style>
         .card {
@@ -60,6 +74,7 @@
             border: 6px solid #06BBCC;
             background-color: #fff
         }
+
         input[type="checkbox"]:checked~label .circle {
             border: 6px solid #06BBCC;
             background-color: #fff
@@ -86,6 +101,7 @@
             display: inline-block}input[type="radio"] {
                 display: none
             }
+
             input[type="checkbox"] {
                 display: none
             }
@@ -117,17 +133,33 @@
     </div> --}}
     <!-- Spinner End -->
 
-    @if (!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test'))
+    @if (
+        !Request::routeIs('test.score') &&
+            !Request::routeIs('test.correct.answer') &&
+            !Request::routeIs('reading.test.finish') &&
+            !Request::routeIs('test.correct.listening.answer') &&
+            !Request::routeIs('reading.test') &&
+            !Request::routeIs('listening.test') &&
+            !Request::routeIs('show.listening.test') &&
+            !Request::routeIs('show.reading.test'))
         <!-- Navbar Start -->
         @include('layouts.partials.frontend-navbar')
         <!-- Navbar End -->
     @endif
     @yield('content')
     <!--end::Root-->
-  @include('cookie-consent::index')
-    @if (!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test'))
-    @include('layouts.partials.frontend-footer')
-     @endif
+    @include('cookie-consent::index')
+    @if (
+        !Request::routeIs('test.score') &&
+            !Request::routeIs('test.correct.answer') &&
+            !Request::routeIs('reading.test.finish') &&
+            !Request::routeIs('test.correct.listening.answer') &&
+            !Request::routeIs('reading.test') &&
+            !Request::routeIs('listening.test') &&
+            !Request::routeIs('show.listening.test') &&
+            !Request::routeIs('show.reading.test'))
+        @include('layouts.partials.frontend-footer')
+    @endif
     @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')
@@ -146,8 +178,6 @@
             let baseUrl = url.split('?')[0];
             window.history.replaceState(null, null, baseUrl);
         }
-
-
     </script>
     <script type="application/ld+json">
         {
