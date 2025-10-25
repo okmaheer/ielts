@@ -1,7 +1,59 @@
+@php
+    // Detect test type from current URL
+    $currentUrl = Request::url();
+    $isListening = str_contains($currentUrl, '/listening/');
+    $isReading = str_contains($currentUrl, '/reading/');
+    
+    // Get appropriate meta data based on URL
+    $metaTitle = 'IPP - IELTS Computer Based Test';
+    $metaDescription = 'Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.';
+    $focusKeywords = null;
+    
+    if (isset($test)) {
+        if ($isListening) {
+            $metaTitle = $test->getMetaTitle('listening');
+            $metaDescription = $test->getMetaDescription('listening');
+            $focusKeywords = $test->getFocusKeywords('listening');
+        } elseif ($isReading) {
+            $metaTitle = $test->getMetaTitle('reading');
+            $metaDescription = $test->getMetaDescription('reading');
+            $focusKeywords = $test->getFocusKeywords('reading');
+        }
+    }
+@endphp
+
 <meta charset="utf-8">
-<title>IPP - IELTS Computer Based Test </title>
+
+{{-- Dynamic Meta Title --}}
+<title>{{ $metaTitle }}</title>
+
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta name="description" content=": Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.">
+
+{{-- Dynamic Meta Description --}}
+<meta name="description" content="{{ $metaDescription }}">
+
+{{-- Dynamic Keywords (SEO) --}}
+@if($focusKeywords)
+<meta name="keywords" content="{{ $focusKeywords }}">
+@endif
+
+{{-- Canonical URL --}}
+<link rel="canonical" href="{{ Request::url() }}">
+
+{{-- Open Graph Tags for Social Media --}}
+<meta property="og:title" content="{{ $metaTitle }}">
+<meta property="og:description" content="{{ $metaDescription }}">
+<meta property="og:url" content="{{ Request::url() }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ asset('frontend/logo/logo.png') }}">
+<meta property="og:site_name" content="IELTS Prep And Practice">
+
+{{-- Twitter Card Tags --}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $metaTitle }}">
+<meta name="twitter:description" content="{{ $metaDescription }}">
+<meta name="twitter:image" content="{{ asset('frontend/logo/logo.png') }}">
+
 <!-- Favicon -->
 <link href="{{ asset('frontend/logo/fv.png')}}" rel="icon">
 

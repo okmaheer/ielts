@@ -12,7 +12,7 @@
         <div class="page d-flex flex-row flex-column-fluid">
             <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                <!--begin::Header-->
+                <!--begin::Header.  a-->
                 <div id="kt_header" class="header">
                     <!--begin::Container-->
                     <div class="container-fluid d-flex flex-stack">
