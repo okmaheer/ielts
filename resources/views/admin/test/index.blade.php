@@ -92,20 +92,26 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('admin.question.index', [$test->id]) }}"
-                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                      <a href="{{ route('admin.question.index', [$test->id]) }}"
+                                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                        <i class="fa-solid fa-book-open"></i>
+                                        <!--end::Svg Icon-->
+                                    </a>
 
-                                            <i class="fa-brands fa-readme"></i>
-                                            <!--end::Svg Icon-->
-                                        </a>
-                                        <a href="{{ route('admin.question.index', [$test->id, 'listening' => 'true']) }}"
-                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                    <a href="{{ route('admin.question.index', [$test->id, 'listening' => 'true']) }}"
+                                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                        <i class="fa-solid fa-headphones"></i>
+                                        <!--end::Svg Icon-->
+                                    </a>
 
-                                            <i class="fa-solid fa-music"></i>
-                                            <!--end::Svg Icon-->
-                                        </a>
+                                    <a href="{{ route('admin.writing-question.index', [$test->id]) }}"
+                                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        <!--end::Svg Icon-->
+                                    </a>
                                         <a href="{{ route('admin.test.edit', [$test->id]) }}"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->

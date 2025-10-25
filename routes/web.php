@@ -7,6 +7,7 @@ use App\Http\Controllers\GeneralTrainingTestController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListeningTestController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\WritingQuestionController;
 use App\Http\Controllers\QuestionGroupController;
 use App\Http\Controllers\ReadingTestController;
 use App\Http\Controllers\RegisterationRequestController;
@@ -124,6 +125,13 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('test/question/update/', 'update')->name('question.update');
             Route::get('test/question/delete/{id}', 'delete')->name('question.delete');
             Route::get('test/five/options-edit/{id}', 'editFiveOptions')->name('five-options.edit');
+        });
+        Route::controller(WritingQuestionController::class)->group(function () {
+            Route::get('test/writing-question/index/{id}', 'index')->name('writing-question.index');
+            Route::post('test/writing-question/store', 'store')->name('writing-question.store');
+            Route::get('test/writing-question/edit/{id}', 'edit')->name('writing-question.edit');
+            Route::post('test/writing-question/update/', 'update')->name('writing-question.update');
+            Route::get('test/writing-question/delete/{id}', 'delete')->name('writing-question.delete');
         });
         Route::controller(QuestionGroupController::class)->group(function () {
             Route::get('test/question-group/index/{id}', 'index')->name('question.group.index');
