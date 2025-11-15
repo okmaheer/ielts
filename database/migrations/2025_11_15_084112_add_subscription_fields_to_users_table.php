@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('is_user_paid')->default(true)->after('duration');
+            $table->string('is_user_paid')->default(false)->after('duration');
         });
     }
 
