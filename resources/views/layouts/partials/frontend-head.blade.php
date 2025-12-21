@@ -38,7 +38,17 @@
 @endif
 
 {{-- Canonical URL --}}
-<link rel="canonical" href="{{ Request::url() }}">
+@php
+    $canonicalUrl = Request::url();
+
+    // Override canonical URL for specific routes
+    if (Request::is('academic/test*')) {
+        $canonicalUrl = 'https://cbt.ieltsprepandpractice.com/academic/test?type=1';
+    } elseif (Request::is('general-training/test*')) {
+        $canonicalUrl = 'https://cbt.ieltsprepandpractice.com/general-training/test?type=1';
+    }
+@endphp
+<link rel="canonical" href="{{ $canonicalUrl }}">
 
 {{-- Open Graph Tags for Social Media --}}
 <meta property="og:title" content="{{ $metaTitle }}">
