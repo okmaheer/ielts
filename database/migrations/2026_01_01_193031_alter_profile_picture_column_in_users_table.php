@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -11,10 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            // Change profile_picture from VARCHAR(255) to TEXT
-            $table->text('profile_picture')->nullable()->change();
-        });
+        // Use raw SQL to alter the column without requiring doctrine/dbal
+        DB::statement('ALTER TABLE users MODIFY profile_picture TEXT NULL');
     }
 
     /**
@@ -22,9 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            // Revert back to VARCHAR(255)
-            $table->string('profile_picture', 255)->nullable()->change();
-        });
+        // Revert back to VARCHAR(255)
+        DB::statement('ALTER TABLE users MODIFY profile_picture VARCHAR(255) NULL');
     }
 };
