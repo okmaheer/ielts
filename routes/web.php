@@ -13,6 +13,8 @@ use App\Http\Controllers\ReadingTestController;
 use App\Http\Controllers\RegisterationRequestController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserLoginController;
 use App\Models\FinishedTest;
 use Illuminate\Support\Facades\Route;
@@ -147,6 +149,9 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('user/update', 'update')->name('user.update');
             Route::get('user/delete/{id}', 'delete')->name('user.delete');
         });
+
+        // Transactions
+        Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
     });
 });
 Route::post('/startTimer', [FinishedTestController::class, 'startTimer'])->name('startTimer');
@@ -162,6 +167,12 @@ Route::get('listening/getCountdownValue', [FinishedTestController::class, 'getli
 Route::get('user/login', [UserLoginController::class, 'showLoginForm'])->name('show.loginForm')->middleware(['auth-role']);
 
 Route::post('admin/register', 'Auth\RegisterController@register');
+
+// Payment Routes (Swichnow)
+Route::get('/payment/checkout/{course}', [PaymentController::class, 'checkout'])->name('payment.checkout');
+Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
+Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/payment/fail', [PaymentController::class, 'fail'])->name('payment.fail');
 
 ///paid test
 

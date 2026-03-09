@@ -223,6 +223,12 @@
                                 </a>
                             </div>
 
+                            <div class="menu-item">
+                                <a href="{{ route('admin.transactions.index') }}" class="menu-link">
+                                    <span class="menu-title">Transactions</span>
+                                </a>
+                            </div>
+
 
                         </div>
                     </div>
