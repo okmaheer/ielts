@@ -35,6 +35,7 @@
 
                     <a href="{{ route('frontend.index') }}" class="btn btn-lg text-white fw-bold"
                         style="background-color:#17a2b8;border-radius:8px;">
+                        
                         Back to Home
                     </a>
                 </div>
