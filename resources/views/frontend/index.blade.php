@@ -222,7 +222,7 @@
                             <div class="price-badge">$40 <small>USD</small></div>
                         </div>
                         <div class="course-card-body">
-                            <p>Covers all question types of each module so you get your desired scores on the first attempt.</p>
+                            <p>The IELTS Complete Preparation Course ensures that students understand all the question types of each module and get their desired scores on their first attempt.</p>
                             <ul class="list-group list-group-flush mt-2">
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>1 on 1 Sessions</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Each session of 1 Hour</li>
@@ -251,14 +251,14 @@
                             <div class="price-badge">$30 <small>USD</small></div>
                         </div>
                         <div class="course-card-body">
-                            <p>1 Month IELTS Writing Course tailored for students aiming for a 6.5 or higher score.</p>
+                            <p>1-Month IELTS Writing Course tailored for students aiming for a 6.5 or higher band score in IELTS for academic or immigration purposes.</p>
                             <ul class="list-group list-group-flush mt-2">
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>1 on 1 Sessions</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Evaluation of Writing Task 1 &amp; 2</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Advanced Grammar &amp; Vocabulary</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Learn Advance Grammatical Structures &amp; Vocabulary</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Improvement in Task Response</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Write each task in correct format</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Duration: 1 Month</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Write each task using correct format</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Duration: 1 Month (Five sessions per week)</li>
                             </ul>
                         </div>
                         <div class="course-card-footer">
@@ -280,14 +280,14 @@
                             <div class="price-badge">$30 <small>USD</small></div>
                         </div>
                         <div class="course-card-body">
-                            <p>Improve your fluency, grammar and vocabulary with our expert-led Speaking Course.</p>
+                            <p>Take our IELTS Speaking Course if you struggle to speak fluently and make mistakes. Our course will help you improve your fluency, grammar, and vocabulary.</p>
                             <ul class="list-group list-group-flush mt-2">
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>1 on 1 Sessions</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>2 Mock Speaking Tests Everyday</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Improvement in Fluency</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Learn usage of cohesive devices</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Idioms for high band scores</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Duration: 1 Month</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Learn the usage of cohesive devices</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Practice using different idioms for high band scores</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Duration: 1 Month (40 Mock Speaking Tests)</li>
                             </ul>
                         </div>
                         <div class="course-card-footer">
@@ -307,7 +307,7 @@
 <div class="section-white" id="ielts-mock-test">
     <div class="container section-wrap">
         <h2 class="section-heading">IELTS Computer Based Practice Test</h2>
-        <p class="section-sub mb-5">Practice FREE Cambridge IELTS Listening &amp; Reading Tests online with instant results and band score predictions. Full Academic &amp; General Training available.</p>
+        <p class="section-sub mb-5">Practice FREE Cambridge IELTS Listening, Reading &amp; Writing Tests online. Experience real Computer-Based IELTS simulation with instant results, band score predictions, and detailed evaluations. Full-length IELTS Academic &amp; General Training Mock Tests available.</p>
         <div class="row g-4 justify-content-center">
 
             <div class="col-lg-5 col-md-6">
@@ -321,8 +321,8 @@
                         <div class="course-card-body">
                             <ul class="list-group list-group-flush mt-2">
                                 <li class="list-group-item"><i class="fas fa-check chk-icon" style="color:#28a745;"></i>Access for Unlimited Time</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon" style="color:#28a745;"></i>8 Listening &amp; Reading Mock Tests</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon" style="color:#28a745;"></i>Expert Feedback for both Modules</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon" style="color:#28a745;"></i>8 Listening and Reading Mock Tests</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon" style="color:#28a745;"></i>4 Free Writing Tests with Instant-AI Feedback</li>
                             </ul>
                         </div>
                         <div class="course-card-footer">
@@ -341,13 +341,13 @@
                         <div class="course-card-top">
                             <div class="course-icon"><i class="fas fa-layer-group"></i></div>
                             <h2>Paid Access</h2>
-                            <div class="price-badge">$5 <small>USD</small></div>
+                            <div class="price-badge">$8 <small>USD</small></div>
                         </div>
                         <div class="course-card-body">
                             <ul class="list-group list-group-flush mt-2">
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Access for 2 Months</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>28 Listening &amp; Reading Mock Tests</li>
-                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Expert Feedback for both Modules</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Access for 1 Month</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>30 Listening and Reading Mock Tests</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>30 Writing Tests with AI+Expert Feedback</li>
                             </ul>
                         </div>
                         <div class="course-card-footer">
@@ -367,7 +367,7 @@
 <div class="section-light" id="prepration-material">
     <div class="container section-wrap">
         <h2 class="section-heading">IELTS Preparation Material</h2>
-        <p class="section-sub mb-5">Access FREE IELTS resources including Cambridge IELTS Books PDF, vocabulary and grammar notes. Choose flexible online or offline preparation.</p>
+        <p class="section-sub mb-5">Access FREE IELTS resources, including Cambridge IELTS Books PDF, vocabulary, and grammar notes. Choose flexible online or offline IELTS preparation with IELTS computer-based practice tests, interactive lessons, and study materials for listening, reading, writing, and speaking.</p>
         <div class="row g-4 justify-content-center">
 
             <div class="col-lg-5 col-md-6">
@@ -383,6 +383,7 @@
                                 <li class="list-group-item"><i class="fas fa-check chk-icon" style="color:#28a745;"></i>Cambridge IELTS Books</li>
                                 <li class="list-group-item"><i class="fas fa-times x-icon"></i>Grammar &amp; Vocabulary books</li>
                                 <li class="list-group-item"><i class="fas fa-times x-icon"></i>Band 7 Essays</li>
+                                <li class="list-group-item"><i class="fas fa-times x-icon"></i>IELTS Vocabulary Book</li>
                             </ul>
                         </div>
                         <div class="course-card-footer">
@@ -408,6 +409,7 @@
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Cambridge IELTS Books</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Book for Speaking &amp; Writing</li>
                                 <li class="list-group-item"><i class="fas fa-check chk-icon"></i>Band 7 Essays</li>
+                                <li class="list-group-item"><i class="fas fa-check chk-icon"></i>IELTS Vocabulary Book</li>
                             </ul>
                         </div>
                         <div class="course-card-footer">
