@@ -24,7 +24,7 @@ class PaymentController extends Controller
         ],
         'computer-based-test' => [
             'name'   => 'IELTS Computer Based Practice Test',
-            'amount' => 5.00,
+            'amount' => 8.00,
         ],
         'preparation-material' => [
             'name'   => 'IELTS Preparation Material',
