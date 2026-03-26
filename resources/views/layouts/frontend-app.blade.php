@@ -18,6 +18,9 @@
             y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "tjzl5whmrs");
     </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2263600332188384"
+        crossorigin="anonymous"></script>
     @if (Route::currentRouteName() != 'frontend.index')
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ0H8BREG0"></script>
         <script>
