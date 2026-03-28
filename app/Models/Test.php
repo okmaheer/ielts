@@ -14,6 +14,19 @@ class Test extends Model
     {
         return $this->hasMany(Question::class, 'test_id', 'id');
     }
+    
+    public function writingQuestions()
+    {
+        return $this->hasMany(WritingQuestion::class, 'test_id', 'id');
+    }
+
+    /**
+     * Check if test has writing questions
+     */
+    public function hasWritingQuestions()
+    {
+        return $this->writingQuestions()->exists();
+    }
 
     /**
      * Get meta title based on test type (reading/listening)

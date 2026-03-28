@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                        @include('layouts.partials.models.test-category')
+                        @include('layouts.partials.models.test-category', ['category' => 'generalTraining'])
                     @endforeach
 
 
