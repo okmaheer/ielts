@@ -236,6 +236,71 @@
     .co-input-wrap input.is-invalid { border-color: #ef4444; }
     .co-hint { font-size: 11.5px; color: #9ca3af; margin-top: 6px; }
 
+    /* Country code selector */
+    .co-country-code-wrap {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    .co-country-select {
+        min-width: 110px;
+        padding: 14px 12px;
+        border: 1.5px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 14px;
+        color: #111827;
+        background: #f9fafb;
+        outline: none;
+        transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    .co-country-select:focus {
+        border-color: #17a2b8;
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(23,162,184,0.1);
+    }
+    .co-country-select:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .co-phone-input-wrap {
+        flex: 1;
+        position: relative;
+    }
+    .co-phone-input-wrap .ico {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #c4cdd7;
+        font-size: 14px;
+        pointer-events: none;
+        transition: color 0.2s;
+    }
+    .co-phone-input-wrap input {
+        width: 100%;
+        padding: 14px 16px 14px 44px;
+        border: 1.5px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 14px;
+        color: #111827;
+        background: #f9fafb;
+        outline: none;
+        transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        box-sizing: border-box;
+    }
+    .co-phone-input-wrap input::placeholder { color: #c4cdd7; }
+    .co-phone-input-wrap input:focus {
+        border-color: #17a2b8;
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(23,162,184,0.1);
+    }
+    .co-phone-input-wrap input:focus + .ico,
+    .co-phone-input-wrap input:focus ~ .ico { color: #17a2b8; }
+    .co-phone-input-wrap input.is-invalid { border-color: #ef4444; }
+
     /* Pay button */
     .co-pay-btn {
         width: 100%;
@@ -352,11 +417,11 @@
                         ['icon'=>'fa-calendar-alt','text'=>'1 month duration'],
                     ],
                     'computer-based-test' => [
-                        ['icon'=>'fa-desktop','text'=>'Computer-based simulation'],
-                        ['icon'=>'fa-layer-group','text'=>'28 listening & reading tests'],
-                        ['icon'=>'fa-comments','text'=>'Expert feedback'],
-                        ['icon'=>'fa-bolt','text'=>'Instant results & band score'],
-                        ['icon'=>'fa-clock','text'=>'2 months access'],
+                        ['icon'=>'fa-desktop','text'=>'Computer based simulation'],
+                        ['icon'=>'fa-book','text'=>'30 Listening and reading tests'],
+                        ['icon'=>'fa-pen-fancy','text'=>'28 Academic Writing Tests & 30 General Training Writing Tests'],
+                        ['icon'=>'fa-chart-line','text'=>'Detailed band score breakdown'],
+                        ['icon'=>'fa-user-tie','text'=>'Expert review access'],
                     ],
                     'preparation-material' => [
                         ['icon'=>'fa-book-open','text'=>'Cambridge IELTS books'],
@@ -437,15 +502,115 @@
 
                 <div class="co-field">
                     <label>Phone Number <span style="color:#ef4444;">*</span></label>
-                    <div class="co-input-wrap">
-                        <input type="tel" name="payer_phone"
-                            id="payer_phone"
-                            class="@error('payer_phone') is-invalid @enderror"
-                            placeholder="+1234567890"
-                            value="{{ old('payer_phone') }}" required>
-                        <i class="fas fa-mobile-alt ico"></i>
+                    <div class="co-country-code-wrap">
+                        <select name="country_code" id="country_code" class="co-country-select" required>
+                            <option value="">Code</option>
+                            <option value="+1">🇺🇸 +1 USA</option>
+                            <option value="+1">🇨🇦 +1 Canada</option>
+                            <option value="+44">🇬🇧 +44 UK</option>
+                            <option value="+92" selected>🇵🇰 +92 Pakistan</option>
+                            <option value="+91">🇮🇳 +91 India</option>
+                            <option value="+880">🇧🇩 +880 Bangladesh</option>
+                            <option value="+94">🇱🇰 +94 Sri Lanka</option>
+                            <option value="+60">🇲🇾 +60 Malaysia</option>
+                            <option value="+65">🇸🇬 +65 Singapore</option>
+                            <option value="+61">🇦🇺 +61 Australia</option>
+                            <option value="+64">🇳🇿 +64 New Zealand</option>
+                            <option value="+33">🇫🇷 +33 France</option>
+                            <option value="+49">🇩🇪 +49 Germany</option>
+                            <option value="+39">🇮🇹 +39 Italy</option>
+                            <option value="+34">🇪🇸 +34 Spain</option>
+                            <option value="+31">🇳🇱 +31 Netherlands</option>
+                            <option value="+46">🇸🇪 +46 Sweden</option>
+                            <option value="+47">🇳🇴 +47 Norway</option>
+                            <option value="+45">🇩🇰 +45 Denmark</option>
+                            <option value="+358">🇫🇮 +358 Finland</option>
+                            <option value="+86">🇨🇳 +86 China</option>
+                            <option value="+81">🇯🇵 +81 Japan</option>
+                            <option value="+82">🇰🇷 +82 South Korea</option>
+                            <option value="+84">🇻🇳 +84 Vietnam</option>
+                            <option value="+66">🇹🇭 +66 Thailand</option>
+                            <option value="+62">🇮🇩 +62 Indonesia</option>
+                            <option value="+63">🇵🇭 +63 Philippines</option>
+                            <option value="+966">🇸🇦 +966 Saudi Arabia</option>
+                            <option value="+971">🇦🇪 +971 UAE</option>
+                            <option value="+974">🇶🇦 +974 Qatar</option>
+                            <option value="+966">🇰🇼 +965 Kuwait</option>
+                            <option value="+968">🇴🇲 +968 Oman</option>
+                            <option value="+973">🇧🇭 +973 Bahrain</option>
+                            <option value="+20">🇪🇬 +20 Egypt</option>
+                            <option value="+234">🇳🇬 +234 Nigeria</option>
+                            <option value="+27">🇿🇦 +27 South Africa</option>
+                            <option value="+254">🇰🇪 +254 Kenya</option>
+                            <option value="+256">�🇬 +256 Uganda</option>
+                            <option value="+55">�🇧🇷 +55 Brazil</option>
+                            <option value="+1">🇲🇽 +52 Mexico</option>
+                            <option value="+56">🇨🇱 +56 Chile</option>
+                            <option value="+57">🇨🇴 +57 Colombia</option>
+                            <option value="+54">�🇷 +54 Argentina</option>
+                            <option value="+51">🇵🇪 +51 Peru</option>
+                            <option value="+58">🇻🇪 +58 Venezuela</option>
+                            <option value="+998">🇺🇿 +998 Uzbekistan</option>
+                            <option value="+992">🇹🇯 +992 Tajikistan</option>
+                            <option value="+993">🇹🇲 +993 Turkmenistan</option>
+                            <option value="+996">🇰🇬 +996 Kyrgyzstan</option>
+                            <option value="+7">🇰🇿 +7 Kazakhstan</option>
+                            <option value="+374">🇦🇲 +374 Armenia</option>
+                            <option value="+373">🇲🇩 +373 Moldova</option>
+                            <option value="+359">🇧🇬 +359 Bulgaria</option>
+                            <option value="+421">🇸🇰 +421 Slovakia</option>
+                            <option value="+420">🇨🇿 +420 Czech Republic</option>
+                            <option value="+48">🇵🇱 +48 Poland</option>
+                            <option value="+40">🇷🇴 +40 Romania</option>
+                            <option value="+36">🇭🇺 +36 Hungary</option>
+                            <option value="+43">�🇹 +43 Austria</option>
+                            <option value="+41">🇨🇭 +41 Switzerland</option>
+                            <option value="+32">�🇧� +32 Belgium</option>
+                            <option value="+352">🇱🇺 +352 Luxembourg</option>
+                            <option value="+386">🇸🇮 +386 Slovenia</option>
+                            <option value="+385">🇭🇷 +385 Croatia</option>
+                            <option value="+381">�🇸 +381 Serbia</option>
+                            <option value="+383">🇽🇰 +383 Kosovo</option>
+                            <option value="+389">🇲🇰 +389 North Macedonia</option>
+                            <option value="+355">🇦�🇱 +355 Albania</option>
+                            <option value="+30">�🇷 +30 Greece</option>
+                            <option value="+90">🇹🇷 +90 Turkey</option>
+                            <option value="+212">🇲🇦 +212 Morocco</option>
+                            <option value="+213">🇩🇿 +213 Algeria</option>
+                            <option value="+216">�� +216 Tunisia</option>
+                            <option value="+218">🇱🇾 +218 Libya</option>
+                            <option value="+852">🇭🇰 +852 Hong Kong</option>
+                            <option value="+886">🇹🇼 +886 Taiwan</option>
+                            <option value="+853">🇲🇴 +853 Macao</option>
+                            <option value="+1">🇵🇷 +1-787 Puerto Rico</option>
+                            <option value="+1">🇻🇮 +1-340 US Virgin Islands</option>
+                            <option value="+677">🇸🇧 +677 Solomon Islands</option>
+                            <option value="+685">🇼🇸 +685 Samoa</option>
+                            <option value="+687">🇳🇨 +687 New Caledonia</option>
+                            <option value="+689">🇵🇫 +689 French Polynesia</option>
+                            <option value="+692">🇲🇭 +692 Marshall Islands</option>
+                            <option value="+95">🇲🇲 +95 Myanmar</option>
+                            <option value="+856">🇱🇦 +856 Laos</option>
+                            <option value="+855">🇰🇭 +855 Cambodia</option>
+                            <option value="+880">🇧🇩 +880 Bangladesh</option>
+                            <option value="+880">🇳� +977 Nepal</option>
+                            <option value="+880">🇧🇹 +975 Bhutan</option>
+                            <option value="+880">🇲🇻 +960 Maldives</option>
+                            <option value="+880">🇱🇦 +1-809 Dominican Republic</option>
+                            <option value="+880">�� +507 Panama</option>
+                            <option value="+880">🇨🇮 +225 Ivory Coast</option>
+                            <option value="+880">🇬🇭 +233 Ghana</option>
+                        </select>
+                        <div class="co-phone-input-wrap">
+                            <input type="tel" name="payer_phone"
+                                id="payer_phone"
+                                class="@error('payer_phone') is-invalid @enderror"
+                                placeholder="1234567890"
+                                value="{{ old('payer_phone') }}" required>
+                            <i class="fas fa-mobile-alt ico"></i>
+                        </div>
                     </div>
-                    <div class="co-hint"><i class="fas fa-info-circle me-1"></i>Include country code, e.g. +14155552671</div>
+                    <div class="co-hint"><i class="fas fa-info-circle me-1"></i>Select country code, then enter phone number without the code</div>
                 </div>
 
                 <button type="submit" class="co-pay-btn" id="pay-btn">
@@ -468,16 +633,39 @@
 @section('script')
 <script>
 document.getElementById('checkout-form').addEventListener('submit', function(e) {
+    const countryCode = document.getElementById('country_code').value.trim();
     const phone = document.getElementById('payer_phone').value.trim();
+    
+    if (!countryCode) {
+        e.preventDefault();
+        document.getElementById('country_code').focus();
+        alert('Please select a country code');
+        return;
+    }
+    
     if (phone.length < 7) {
         e.preventDefault();
         document.getElementById('payer_phone').classList.add('is-invalid');
         document.getElementById('payer_phone').focus();
+        alert('Please enter a valid phone number');
         return;
     }
+    
+    // Update the phone field with full number (country code + phone)
+    document.getElementById('payer_phone').value = countryCode + phone;
+    
     const btn = document.getElementById('pay-btn');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>&nbsp; Redirecting to payment...';
     btn.disabled = true;
+});
+
+// Clear error state when user starts typing
+document.getElementById('payer_phone').addEventListener('input', function() {
+    this.classList.remove('is-invalid');
+});
+
+document.getElementById('country_code').addEventListener('change', function() {
+    document.getElementById('payer_phone').focus();
 });
 </script>
 @endsection
