@@ -54,23 +54,29 @@
                     </div>
 
                 </div>
+                @php
+                    $testListUrl = $test->category == 1
+                        ? route('academic.training.test', ['type' => $type])
+                        : route('general.training.test', ['type' => $type]);
+                    $testListLabel = $test->category == 1 ? 'Academic Tests' : 'General Training Tests';
+                @endphp
                 @if ($type == 1)
                     <div class="row">
                         <center>
-                            <h4><a class="btn btn-primary" href="{{ route('test.correct.answer', $finishtest->id) }}">View
-                                    Correct Answers</a>
+                            <h4>
+                                <a class="btn btn-primary me-2" href="{{ route('test.correct.answer', $finishtest->id) }}">View Correct Answers</a>
+                                <a class="btn btn-outline-secondary" href="{{ $testListUrl }}"><i class="fas fa-arrow-left me-1"></i>Back to {{ $testListLabel }}</a>
+                            </h4>
                         </center>
-
-
                     </div>
                 @else
                     <div class="row">
                         <center>
-                            <h4><a class="btn btn-primary" href="{{ route('test.correct.listening.answer', $finishtest->id) }}">View
-                                    Correct Answers</a>
+                            <h4>
+                                <a class="btn btn-primary me-2" href="{{ route('test.correct.listening.answer', $finishtest->id) }}">View Correct Answers</a>
+                                <a class="btn btn-outline-secondary" href="{{ $testListUrl }}"><i class="fas fa-arrow-left me-1"></i>Back to {{ $testListLabel }}</a>
+                            </h4>
                         </center>
-
-
                     </div>
                 @endif
 

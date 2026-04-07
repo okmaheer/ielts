@@ -484,6 +484,18 @@
         {{-- </div> --}}
     </div>
     <!-- Service End -->
+
+    <div class="container pb-5 text-center">
+        @php
+            $testListUrl = $test->category == 1
+                ? route('academic.training.test', ['type' => 2])
+                : route('general.training.test', ['type' => 2]);
+            $testListLabel = $test->category == 1 ? 'Academic Tests' : 'General Training Tests';
+        @endphp
+        <a class="btn btn-outline-secondary" href="{{ $testListUrl }}">
+            <i class="fas fa-arrow-left me-1"></i>Back to {{ $testListLabel }}
+        </a>
+    </div>
 @endsection
 
 @section('script')
