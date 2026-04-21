@@ -49,7 +49,9 @@ class UserController extends Controller
             'password' =>  Hash::make($request->password), // Use bcrypt to hash the password
             'country' =>  $request->country,
             'duration' =>  $request->duration,
-            'status' => $request->status
+            'status' => $request->status,
+            'is_user_paid' => true,
+
         ]);
       
         // $role = "User";
