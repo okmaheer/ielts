@@ -1,10 +1,30 @@
 @extends('layouts.frontend-app')
 
+@section('css')
+<style>
+    .fail-card.card,
+    .fail-card.card:hover,
+    .fail-card.card::after { all: unset; }
+    .fail-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    @media (max-width: 480px) {
+        .fail-card .card-body { padding: 28px 20px !important; }
+        .fail-card h2 { font-size: 1.4rem; }
+        .fail-btn-row { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+        .fail-btn-row .btn { width: 100%; margin: 0 !important; }
+    }
+</style>
+@endsection
+
 @section('content')
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 text-center">
-            <div class="card shadow">
+        <div class="col-lg-6 col-md-8 col-11 text-center">
+            <div class="card shadow fail-card">
                 <div class="card-body p-5">
                     <div class="mb-4">
                         <div class="rounded-circle d-inline-flex align-items-center justify-content-center"
@@ -28,7 +48,8 @@
                         with your transaction ID.
                     </p>
 
-                    <a href="{{ route('frontend.index') }}" class="btn btn-lg text-white fw-bold me-2"
+                    <div class="fail-btn-row">
+                    <a href="{{ route('frontend.index') }}" class="btn btn-lg text-white fw-bold"
                         style="background-color:#17a2b8;border-radius:8px;">
                         Back to Home
                     </a>
@@ -36,6 +57,7 @@
                         style="border-radius:8px;">
                         Try Again
                     </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -349,13 +349,47 @@
 
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 768px) {
+        .co-page { padding: 24px 0 48px; }
         .co-wrapper {
             grid-template-columns: 1fr;
             border-radius: 16px;
         }
-        .co-left  { padding: 36px 28px 32px; }
-        .co-right { padding: 36px 28px 40px; }
+        .co-left  { padding: 32px 24px 28px; }
+        .co-right { padding: 32px 24px 36px; }
         .co-price-num { font-size: 48px; }
+    }
+
+    @media (max-width: 480px) {
+        .co-page { padding: 12px 0 32px; }
+        .co-breadcrumb { font-size: 12px; padding: 0 4px; }
+        .co-wrapper { padding: 0 8px; border-radius: 14px; }
+        .co-left  { padding: 24px 16px 20px; }
+        .co-right { padding: 24px 16px 28px; }
+        .co-price-num { font-size: 38px; letter-spacing: -2px; }
+        .co-price-sym { font-size: 20px; }
+        .co-course-name { font-size: 18px; }
+        .co-form-title { font-size: 20px; }
+        .co-amount-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 14px 16px;
+        }
+        .co-amount-bar .co-ab-val { font-size: 20px; }
+        .co-country-code-wrap { flex-wrap: nowrap; gap: 6px; }
+        .co-country-select {
+            min-width: 0;
+            width: 90px;
+            flex-shrink: 0;
+            font-size: 13px;
+            padding: 12px 6px;
+        }
+        .co-phone-input-wrap { min-width: 0; }
+        .co-phone-input-wrap input { font-size: 13px; padding: 12px 12px 12px 38px; }
+        .co-input-wrap input { font-size: 13px; padding: 12px 12px 12px 38px; }
+        .co-pay-btn { font-size: 14px; padding: 15px 16px; }
+        .co-trust { gap: 8px; }
+        .co-trust-item { font-size: 10.5px; }
     }
 </style>
 @endsection

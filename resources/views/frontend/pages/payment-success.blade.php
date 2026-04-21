@@ -1,10 +1,40 @@
 @extends('layouts.frontend-app')
 
+@section('css')
+<style>
+    .success-card.card,
+    .success-card.card:hover,
+    .success-card.card::after { all: unset; }
+    .success-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .success-inner-card.card,
+    .success-inner-card.card:hover,
+    .success-inner-card.card::after { all: unset; }
+    .success-inner-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+    }
+    .success-inner-card .card-body { padding: 16px; display: block; }
+    @media (max-width: 480px) {
+        .success-card .card-body { padding: 28px 20px !important; }
+        .success-card h2 { font-size: 1.4rem; }
+        .success-btn-row { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+        .success-btn-row .btn { width: 100%; }
+    }
+</style>
+@endsection
+
 @section('content')
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 text-center">
-            <div class="card shadow">
+        <div class="col-lg-6 col-md-8 col-11 text-center">
+            <div class="card shadow success-card">
                 <div class="card-body p-5">
                     <div class="mb-4">
                         <div class="rounded-circle d-inline-flex align-items-center justify-content-center"
@@ -17,7 +47,7 @@
                     <p class="text-muted mb-4">Thank you for your purchase. Your payment has been confirmed.</p>
 
                     @if($transaction)
-                        <div class="card bg-light mb-4 text-start">
+                        <div class="card bg-light mb-4 text-start success-inner-card">
                             <div class="card-body">
                                 <p class="mb-1"><strong>Course:</strong> {{ $transaction->item }}</p>
                                 <p class="mb-1"><strong>Amount:</strong> ${{ number_format($transaction->amount, 2) }} USD</p>
