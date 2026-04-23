@@ -39,7 +39,7 @@
                     <!-- Writing Test Button (Conditional) -->
                     @if ($test->hasWritingQuestions())
                     <div class="col-md-6">
-                        <a href="{{ env('WRITING_TEST_URL', 'https://writingtest.ieltsprepandpractice.com') }}/writing-test-instructions?testId={{ $test->id }}&category={{ $category }}&testName={{ $test->name }}" 
+                        <a href="{{ env('WRITING_TEST_URL', 'https://online.ieltsprepandpractice.com') }}/writing-test-instructions?testId={{ $test->id }}&category={{ $category }}&testName={{ $test->name }}" 
                            class="btn btn-outline-primary btn-lg w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square me-2" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .706 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.396 1.409 1.41-.396a.5.5 0 0 0 .196-.12l6.813-6.814z"/>

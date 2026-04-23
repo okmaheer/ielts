@@ -43,7 +43,7 @@
                     <!-- Writing Test Card (Conditional) -->
                     @if ($test->hasWritingQuestions())
                     <div class="col-md-6">
-                        <a href="{{ env('WRITING_TEST_URL', 'https://writingtest.ieltsprepandpractice.com') }}/writing-test-instructions?testId={{ $test->id }}&category=academic&testName={{ $test->name }}" 
+                        <a href="{{ env('WRITING_TEST_URL', 'https://online.ieltsprepandpractice.com') }}/writing-test-instructions?testId={{ $test->id }}&category=academic&testName={{ $test->name }}" 
                            class="d-flex flex-column align-items-center justify-content-center text-center text-decoration-none p-3 rounded-3 h-100"
                            style="border: 1px solid #e9ecef; background: #f8f9fb; transition: all 0.3s ease; min-height: 150px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0d6efd" class="bi bi-pencil-square mb-2" viewBox="0 0 16 16">
