@@ -151,7 +151,9 @@
                     @endphp
                     @foreach ($data as $key => $group)
                         <div class="row">
-                            <div class="col-md-2"></div>
+                            <div class="col-md-2 mt-5 d-none d-md-block">
+                                @include('layouts.partials.ad-unit', ['slot' => 'vertical'])
+                            </div>
                             <div class="col-md-8 mt-5"
                                 style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
 
@@ -210,7 +212,9 @@
 
 
                             </div>
-
+                            <div class="col-md-2 mt-5 d-none d-md-block">
+                                @include('layouts.partials.ad-unit', ['slot' => 'vertical'])
+                            </div>
                         </div>
                     @endforeach
 

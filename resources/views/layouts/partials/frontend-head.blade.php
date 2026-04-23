@@ -85,3 +85,6 @@
 
 <!-- Template Stylesheet -->
 <link href="{{ asset('frontend/css/style.css')}}" rel="stylesheet">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2263600332188384" crossorigin="anonymous"></script>
