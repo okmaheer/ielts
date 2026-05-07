@@ -54,6 +54,14 @@
                     </div>
 
                 </div>
+
+                {{-- Ad: shown after test is complete, before action buttons --}}
+                <div class="row mt-4 mb-2">
+                    <div class="col-12">
+                        @include('layouts.partials.ad-unit', ['slot' => 'result'])
+                    </div>
+                </div>
+
                 @php
                     $testListUrl = $test->category == 1
                         ? route('academic.training.test', ['type' => $type])

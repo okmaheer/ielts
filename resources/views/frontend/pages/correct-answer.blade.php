@@ -485,6 +485,11 @@
     </div>
     <!-- Service End -->
 
+    {{-- Ad: after reviewing answers, before back button --}}
+    <div class="container py-3">
+        @include('layouts.partials.ad-unit', ['slot' => 'result'])
+    </div>
+
     <div class="container pb-5 text-center">
         @php
             $testListUrl = $test->category == 1

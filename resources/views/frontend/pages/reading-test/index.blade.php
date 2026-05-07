@@ -139,15 +139,6 @@
                         $iteration = 1;
                     @endphp
                     @foreach ($data as $key => $group)
-                        {{-- Ad between passages (not before the first one) --}}
-                        @if ($loop->index > 0)
-                        <div class="row">
-                            <div class="col-12 px-3">
-                                @include('layouts.partials.ad-unit', ['slot' => 'horizontal'])
-                            </div>
-                        </div>
-                        @endif
-
                         <div class="row">
 
                             <div class="col-md-6">

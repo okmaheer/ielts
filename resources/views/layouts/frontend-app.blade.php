@@ -166,6 +166,7 @@
     @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')
+    @include('layouts.partials.sticky-footer-ad')
     <script>
         var queryParams = new URLSearchParams(window.location.search);
         const param = queryParams.get('success');

@@ -108,12 +108,17 @@
 
                 <div class="row">
                     <h1 class="mb-4">IELTS Academic Practice Test</h1>
-                    <p class="mb-4">The IELTS Academic test assesses English language proficiency 
-                        for higher education and professional purposes. 
-                        It evaluates reading, writing, listening, and speaking skills. 
-                        The test is recognized globally and used by universities and employers 
+                    <p class="mb-4">The IELTS Academic test assesses English language proficiency
+                        for higher education and professional purposes.
+                        It evaluates reading, writing, listening, and speaking skills.
+                        The test is recognized globally and used by universities and employers
                         to determine a candidate's ability to use English in an academic environment. </p>
-                    
+
+                    {{-- Ad: browsing test list, before cards --}}
+                    <div class="col-12 mb-4">
+                        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+                    </div>
+
                         @foreach ($tests as $test)
                         <div class="col-lg-3 col-md-3 mb-4">
                             <div class="card  shadow-lg">

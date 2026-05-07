@@ -468,6 +468,11 @@
         </div>
     </div>
     <!-- Service End -->
+
+    {{-- Ad: bottom of FAQ page --}}
+    <div class="container py-3">
+        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+    </div>
 @endsection
 
 @section('script')
