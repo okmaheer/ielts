@@ -1,4 +1,5 @@
 {{-- Sticky Footer Ad — fixed slim banner at bottom of every page, dismissible --}}
+@if (config('ads.enabled'))
 <style>
     #sticky-footer-ad {
         position: fixed;
@@ -90,3 +91,4 @@
         }
     }
 </script>
+@endif

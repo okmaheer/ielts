@@ -6,15 +6,12 @@
      *   @include('layouts.partials.ad-unit', ['slot' => 'banner'])   — top/between-section leaderboard
      *   @include('layouts.partials.ad-unit', ['slot' => 'result'])   — post-test / results pages
      *
-     * How many AdSense units to create:
-     *   1. "Banner – Browsing Pages"  → data-ad-slot="7282407453"  (homepage, test listing)
-     *   2. "Result – Post Test"       → data-ad-slot="7442189556"  (score, correct answers)
-     *   Both should be created as "Display > Responsive" in your AdSense dashboard.
+     * Kill switch: set ADS_ENABLED=false in .env to hide all ads.
      */
     $slot = $slot ?? 'banner';
 @endphp
 
-@if ($slot === 'banner')
+@if (config('ads.enabled') && $slot === 'banner')
 <div class="ad-unit-wrap" style="text-align:center; padding: 12px 0; overflow:hidden;">
     <ins class="adsbygoogle"
          style="display:block;"
@@ -25,7 +22,7 @@
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-@elseif ($slot === 'result')
+@elseif (config('ads.enabled') && $slot === 'result')
 <div class="ad-unit-wrap" style="text-align:center; padding: 12px 0; overflow:hidden;">
     <ins class="adsbygoogle"
          style="display:block;"
