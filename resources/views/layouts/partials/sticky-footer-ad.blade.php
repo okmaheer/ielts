@@ -14,8 +14,10 @@
         border-top: 1px solid #e0e0e0;
         box-shadow: 0 -2px 8px rgba(0,0,0,0.10);
         text-align: center;
-        padding: 6px 40px 6px 6px;
-        min-height: 60px;
+        padding: 4px 36px 4px 4px;
+        height: 60px;
+        max-height: 60px;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -47,7 +49,7 @@
     }
     /* Push page content up so sticky ad doesn't cover it */
     body.has-sticky-ad {
-        padding-bottom: 70px;
+        padding-bottom: 64px;
     }
 </style>
 
@@ -55,10 +57,10 @@
     <button class="sticky-ad-close" onclick="closeStickyAd()" title="Close ad">&#x2715;</button>
     <div class="ad-inner">
         <ins class="adsbygoogle"
-             style="display:block;"
+             style="display:inline-block; width:100%; height:50px;"
              data-ad-client="ca-pub-2263600332188384"
              data-ad-slot="8198386964"
-             data-ad-format="auto"
+             data-ad-format="horizontal"
              data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
