@@ -5,7 +5,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 9999;
+        z-index: 1000;
         background: #fff;
         border-top: 2px solid #e0e0e0;
         box-shadow: 0 -2px 8px rgba(0,0,0,0.10);
@@ -18,8 +18,7 @@
         padding: 0;
     }
     #sticky-footer-ad .ad-inner {
-        width: 728px;
-        max-width: 100%;
+        width: 100%;
         height: 90px;
         overflow: hidden;
         position: relative;
