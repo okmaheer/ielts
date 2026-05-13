@@ -174,7 +174,7 @@
                                 <i class="fas fa-graduation-cap me-2"></i>Cambridge IELTS Preparation
                             </p>
                             <h1 class="hero-title text-white animated slideInDown mb-3">
-                                Achieve Your Target<br>IELTS Band Score
+                                IELTS Mock Test — Practice Online, Academic &amp; General Training
                             </h1>
                             <p class="text-white mb-4 animated slideInDown"
                                 style="font-size:1.05rem;opacity:0.9;max-width:540px;line-height:1.7;">

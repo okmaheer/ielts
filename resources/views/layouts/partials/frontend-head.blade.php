@@ -1,23 +1,46 @@
 @php
-    // Detect test type from current URL
+    // Detect page type from current URL
     $currentUrl = Request::url();
     $isListening = str_contains($currentUrl, '/listening/');
-    $isReading = str_contains($currentUrl, '/reading/');
-    
-    // Get appropriate meta data based on URL
-    $metaTitle = 'IPP - IELTS Computer Based Test';
+    $isReading   = str_contains($currentUrl, '/reading/');
+    $isShowPage   = str_contains($currentUrl, '/show/');
+    $isResultPage = str_contains($currentUrl, '/correct/answer/');
+
+    // Derive test type for result pages from the URL segment
+    if ($isResultPage && !$isListening && !$isReading) {
+        $isListening = str_contains($currentUrl, '/correct/listening/');
+        $isReading   = !$isListening;
+    }
+
+    $metaTitle       = 'IPP - IELTS Computer Based Test';
     $metaDescription = 'Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.';
-    $focusKeywords = null;
-    
+    $focusKeywords   = null;
+
+    // Static meta for the homepage
+    if (Request::is('/') || Request::routeIs('frontend.index')) {
+        $metaTitle       = 'IELTS Mock Test — Academic & General Training Practice | IPP';
+        $metaDescription = 'Take a full-length IELTS mock test online. Computer-based Academic and General Training practice tests with instant band score predictions and detailed feedback.';
+    }
+
     if (isset($test)) {
-        if ($isListening) {
-            $metaTitle = $test->getMetaTitle('listening');
+        $type = $isListening ? 'listening' : ($isReading ? 'reading' : null);
+
+        if ($isShowPage) {
+            $metaTitle       = $test->getShowMetaTitle($type);
+            $metaDescription = $test->getShowMetaDescription($type);
+            $focusKeywords   = $test->getShowFocusKeywords($type);
+        } elseif ($isResultPage) {
+            $metaTitle       = $test->getResultMetaTitle($type);
+            $metaDescription = $test->getResultMetaDescription($type);
+            $focusKeywords   = $test->getResultFocusKeywords($type);
+        } elseif ($isListening) {
+            $metaTitle       = $test->getMetaTitle('listening');
             $metaDescription = $test->getMetaDescription('listening');
-            $focusKeywords = $test->getFocusKeywords('listening');
+            $focusKeywords   = $test->getFocusKeywords('listening');
         } elseif ($isReading) {
-            $metaTitle = $test->getMetaTitle('reading');
+            $metaTitle       = $test->getMetaTitle('reading');
             $metaDescription = $test->getMetaDescription('reading');
-            $focusKeywords = $test->getFocusKeywords('reading');
+            $focusKeywords   = $test->getFocusKeywords('reading');
         }
     }
 @endphp

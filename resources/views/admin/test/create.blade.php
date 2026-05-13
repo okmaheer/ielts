@@ -125,9 +125,18 @@
                         <div class="row g-9 mb-4">
                             <div class="col-md-12">
                                 <label class="fs-6 fw-bold mb-2">Listening Focus Keywords</label>
-                                <input type="text" class="form-control form-control-solid" 
-                                       name="listening_focus_keywords" 
+                                <input type="text" class="form-control form-control-solid"
+                                       name="listening_focus_keywords"
                                        placeholder="e.g., junior cycle camp listening test" />
+                            </div>
+                        </div>
+
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Listening H1 Heading <span class="text-muted fw-normal">(displayed above questions on the test page)</span></label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="listening_h1_heading"
+                                       placeholder="e.g., Cambridge IELTS 16 Listening Test 3" />
                             </div>
                         </div>
 
@@ -184,9 +193,18 @@
                         <div class="row g-9 mb-4">
                             <div class="col-md-12">
                                 <label class="fs-6 fw-bold mb-2">Reading Focus Keywords</label>
-                                <input type="text" class="form-control form-control-solid" 
-                                       name="reading_focus_keywords" 
+                                <input type="text" class="form-control form-control-solid"
+                                       name="reading_focus_keywords"
                                        placeholder="e.g., pagodas fall down reading test" />
+                            </div>
+                        </div>
+
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Reading H1 Heading <span class="text-muted fw-normal">(displayed above questions on the test page)</span></label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="reading_h1_heading"
+                                       placeholder="e.g., Cambridge IELTS 7 Academic Reading Test 1" />
                             </div>
                         </div>
 
@@ -205,6 +223,156 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Instructions / Show Page SEO -->
+                <div class="card mt-8 mb-8" style="border: 2px solid #e4e6ef;">
+                    <div class="card-header" style="background-color: #f5f8fa;">
+                        <h3 class="card-title">
+                            <i class="fas fa-info-circle me-2"></i>Instructions Page SEO
+                            <small class="text-muted ms-2 fw-normal" style="font-size:13px;">/show/listening/test/{id} &amp; /show/reading/test/{id}</small>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+
+                        <h5 class="text-primary mb-4"><i class="fa-solid fa-headphones me-2"></i>Listening Instructions Page</h5>
+
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Title</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="listening_show_meta_title"
+                                       maxlength="70"
+                                       placeholder="e.g., IELTS Listening Test Instructions – Cambridge 16 Test 3" />
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Description</label>
+                                <textarea class="form-control form-control-solid"
+                                          name="listening_show_meta_description"
+                                          rows="3"
+                                          maxlength="170"
+                                          placeholder="e.g., Read instructions and start Cambridge 16 Listening Test 3 on IPP."></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Focus Keywords</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="listening_show_focus_keywords"
+                                       placeholder="e.g., cambridge 16 listening test 3 instructions" />
+                            </div>
+                        </div>
+
+                        <hr class="my-6">
+
+                        <h5 class="text-success mb-4"><i class="fa-solid fa-book-open me-2"></i>Reading Instructions Page</h5>
+
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Title</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="reading_show_meta_title"
+                                       maxlength="70"
+                                       placeholder="e.g., IELTS Reading Test Instructions – Cambridge 7 Test 1" />
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Description</label>
+                                <textarea class="form-control form-control-solid"
+                                          name="reading_show_meta_description"
+                                          rows="3"
+                                          maxlength="170"
+                                          placeholder="e.g., Read instructions and start Cambridge 7 Academic Reading Test 1 on IPP."></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Focus Keywords</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="reading_show_focus_keywords"
+                                       placeholder="e.g., cambridge 7 reading test 1 instructions" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Results / Correct Answers Page SEO -->
+                <div class="card mt-8 mb-8" style="border: 2px solid #e4e6ef;">
+                    <div class="card-header" style="background-color: #f5f8fa;">
+                        <h3 class="card-title">
+                            <i class="fas fa-check-circle me-2"></i>Results Page SEO
+                            <small class="text-muted ms-2 fw-normal" style="font-size:13px;">/test/correct/answer/{id} &amp; /test/correct/listening/answer/{id}</small>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+
+                        <h5 class="text-primary mb-4"><i class="fa-solid fa-headphones me-2"></i>Listening Results Page</h5>
+
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Title</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="listening_result_meta_title"
+                                       maxlength="70"
+                                       placeholder="e.g., Cambridge 16 Listening Test 3 Answers & Score" />
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Description</label>
+                                <textarea class="form-control form-control-solid"
+                                          name="listening_result_meta_description"
+                                          rows="3"
+                                          maxlength="170"
+                                          placeholder="e.g., View your score and correct answers for Cambridge 16 Listening Test 3."></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Focus Keywords</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="listening_result_focus_keywords"
+                                       placeholder="e.g., cambridge 16 listening test 3 answers" />
+                            </div>
+                        </div>
+
+                        <hr class="my-6">
+
+                        <h5 class="text-success mb-4"><i class="fa-solid fa-book-open me-2"></i>Reading Results Page</h5>
+
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Title</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="reading_result_meta_title"
+                                       maxlength="70"
+                                       placeholder="e.g., Cambridge 7 Reading Test 1 Answers & Score" />
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Meta Description</label>
+                                <textarea class="form-control form-control-solid"
+                                          name="reading_result_meta_description"
+                                          rows="3"
+                                          maxlength="170"
+                                          placeholder="e.g., View your score and correct answers for Cambridge 7 Academic Reading Test 1."></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-4">
+                            <div class="col-md-12">
+                                <label class="fs-6 fw-bold mb-2">Focus Keywords</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="reading_result_focus_keywords"
+                                       placeholder="e.g., cambridge 7 reading test 1 answers" />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

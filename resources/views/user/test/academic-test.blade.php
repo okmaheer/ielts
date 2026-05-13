@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', 'IELTS Academic Practice Test — Free Online Mock Test | IPP')
+@section('meta_description', 'Prepare for IELTS Academic with full-length computer-based mock tests. Reading, Listening, Writing practice with instant band score predictions and expert feedback.')
+
 @section('content')
     <!--begin::Toolbar-->
     <div class="toolbar mb-5 mb-lg-7" id="kt_toolbar">
@@ -38,7 +41,7 @@
     </div>
     <!--end::Toolbar-->
 
-
+    <h1 class="fs-2 fw-bold mb-5">IELTS Academic Practice Test</h1>
 
     <div class="row mb-5 mb-lg-7">
         <div class="col-sm-12 col-md-12">

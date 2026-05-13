@@ -1,5 +1,10 @@
-        <title>IPP</title>
-		<meta charset="utf-8" />
+        <title>@yield('meta_title', 'IPP')</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="@yield('meta_description', '')">
+        @hasSection('meta_keywords')
+        <meta name="keywords" content="@yield('meta_keywords')">
+        @endif
+        <link rel="canonical" href="{{ Request::url() }}">
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->

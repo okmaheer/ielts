@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', 'IELTS General Training Practice Test — Free Online Mock Test | IPP')
+@section('meta_description', 'Practise for IELTS General Training with full-length computer-based mock tests. Covers Listening, Reading and Writing with instant band score results and expert feedback.')
+
 @section('content')
     <!--begin::Toolbar-->
     <div class="toolbar mb-5 mb-lg-7" id="kt_toolbar">
@@ -38,7 +41,7 @@
     </div>
     <!--end::Toolbar-->
 
-
+    <h1 class="fs-2 fw-bold mb-5">IELTS General Training Practice Test</h1>
 
     <div class="row mb-5 mb-lg-7">
         <div class="col-sm-12 col-md-12">

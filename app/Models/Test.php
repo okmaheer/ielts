@@ -68,11 +68,77 @@ class Test extends Model
         if ($type === 'reading' && $this->reading_focus_keywords) {
             return $this->reading_focus_keywords;
         }
-        
+
         if ($type === 'listening' && $this->listening_focus_keywords) {
             return $this->listening_focus_keywords;
         }
-        
+
+        return null;
+    }
+
+    public function getShowMetaTitle($type = null)
+    {
+        if ($type === 'reading' && $this->reading_show_meta_title) {
+            return $this->reading_show_meta_title;
+        }
+        if ($type === 'listening' && $this->listening_show_meta_title) {
+            return $this->listening_show_meta_title;
+        }
+        return 'IPP - IELTS Computer Based Test';
+    }
+
+    public function getShowMetaDescription($type = null)
+    {
+        if ($type === 'reading' && $this->reading_show_meta_description) {
+            return $this->reading_show_meta_description;
+        }
+        if ($type === 'listening' && $this->listening_show_meta_description) {
+            return $this->listening_show_meta_description;
+        }
+        return 'Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.';
+    }
+
+    public function getShowFocusKeywords($type = null)
+    {
+        if ($type === 'reading' && $this->reading_show_focus_keywords) {
+            return $this->reading_show_focus_keywords;
+        }
+        if ($type === 'listening' && $this->listening_show_focus_keywords) {
+            return $this->listening_show_focus_keywords;
+        }
+        return null;
+    }
+
+    public function getResultMetaTitle($type = null)
+    {
+        if ($type === 'reading' && $this->reading_result_meta_title) {
+            return $this->reading_result_meta_title;
+        }
+        if ($type === 'listening' && $this->listening_result_meta_title) {
+            return $this->listening_result_meta_title;
+        }
+        return 'IPP - IELTS Computer Based Test';
+    }
+
+    public function getResultMetaDescription($type = null)
+    {
+        if ($type === 'reading' && $this->reading_result_meta_description) {
+            return $this->reading_result_meta_description;
+        }
+        if ($type === 'listening' && $this->listening_result_meta_description) {
+            return $this->listening_result_meta_description;
+        }
+        return 'Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.';
+    }
+
+    public function getResultFocusKeywords($type = null)
+    {
+        if ($type === 'reading' && $this->reading_result_focus_keywords) {
+            return $this->reading_result_focus_keywords;
+        }
+        if ($type === 'listening' && $this->listening_result_focus_keywords) {
+            return $this->listening_result_focus_keywords;
+        }
         return null;
     }
 }

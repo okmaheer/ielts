@@ -130,6 +130,11 @@
             </div>
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
+            @if($test->reading_h1_heading)
+            <div class="container" style="max-width: 1500px;">
+                <h1 class="mt-4 mb-2" style="font-size: 1.5rem;">{{ $test->reading_h1_heading }}</h1>
+            </div>
+            @endif
             <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
                 <input type="hidden" name="test_id" value="{{ $test->id }}">
                 <input type="hidden" name="type" value="reading">

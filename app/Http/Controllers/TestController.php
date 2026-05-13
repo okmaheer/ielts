@@ -31,6 +31,20 @@ class TestController extends Controller
       'listening_meta_title' => $request->listening_meta_title,
       'listening_meta_description' => $request->listening_meta_description,
       'listening_focus_keywords' => $request->listening_focus_keywords,
+      'listening_h1_heading' => $request->listening_h1_heading,
+      'reading_h1_heading' => $request->reading_h1_heading,
+      'listening_show_meta_title' => $request->listening_show_meta_title,
+      'listening_show_meta_description' => $request->listening_show_meta_description,
+      'listening_show_focus_keywords' => $request->listening_show_focus_keywords,
+      'reading_show_meta_title' => $request->reading_show_meta_title,
+      'reading_show_meta_description' => $request->reading_show_meta_description,
+      'reading_show_focus_keywords' => $request->reading_show_focus_keywords,
+      'listening_result_meta_title' => $request->listening_result_meta_title,
+      'listening_result_meta_description' => $request->listening_result_meta_description,
+      'listening_result_focus_keywords' => $request->listening_result_focus_keywords,
+      'reading_result_meta_title' => $request->reading_result_meta_title,
+      'reading_result_meta_description' => $request->reading_result_meta_description,
+      'reading_result_focus_keywords' => $request->reading_result_focus_keywords,
     ]);
     return redirect()->route('admin.test.index')->with('success', 'Test created successfully!');
   }
@@ -54,6 +68,20 @@ class TestController extends Controller
       'listening_meta_title' => $request->listening_meta_title,
       'listening_meta_description' => $request->listening_meta_description,
       'listening_focus_keywords' => $request->listening_focus_keywords,
+      'listening_h1_heading' => $request->listening_h1_heading,
+      'reading_h1_heading' => $request->reading_h1_heading,
+      'listening_show_meta_title' => $request->listening_show_meta_title,
+      'listening_show_meta_description' => $request->listening_show_meta_description,
+      'listening_show_focus_keywords' => $request->listening_show_focus_keywords,
+      'reading_show_meta_title' => $request->reading_show_meta_title,
+      'reading_show_meta_description' => $request->reading_show_meta_description,
+      'reading_show_focus_keywords' => $request->reading_show_focus_keywords,
+      'listening_result_meta_title' => $request->listening_result_meta_title,
+      'listening_result_meta_description' => $request->listening_result_meta_description,
+      'listening_result_focus_keywords' => $request->listening_result_focus_keywords,
+      'reading_result_meta_title' => $request->reading_result_meta_title,
+      'reading_result_meta_description' => $request->reading_result_meta_description,
+      'reading_result_focus_keywords' => $request->reading_result_focus_keywords,
     ]);
     return redirect()->route('admin.test.index')->with('success', 'Test updated successfully!');
   }
