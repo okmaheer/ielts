@@ -1,3 +1,12 @@
+{{-- Ad strip above footer — light background so AdSense renders correctly --}}
+@if (config('ads.enabled'))
+<div style="background:#f8fafc; border-top:1px solid #e5e7eb; border-bottom:1px solid #e5e7eb; padding: 12px 0;">
+    <div class="container">
+        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+    </div>
+</div>
+@endif
+
 <!-- Footer Start -->
 <div class="container-fluid pt-5 mt-5" style="background:#111827;">
     <div class="container py-5">

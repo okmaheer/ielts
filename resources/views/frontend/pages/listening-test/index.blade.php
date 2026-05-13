@@ -150,6 +150,14 @@
                         $iteration = 1;
                     @endphp
                     @foreach ($data as $key => $group)
+                        {{-- Ad between parts only (not before Part 1) --}}
+                        @if (!$loop->first)
+                        <div class="row my-2">
+                            <div class="col-12">
+                                @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+                            </div>
+                        </div>
+                        @endif
                         <div class="row">
                             <div class="col-12 mt-5"
                                 style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
