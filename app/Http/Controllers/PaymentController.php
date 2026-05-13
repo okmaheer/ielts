@@ -41,7 +41,7 @@ class PaymentController extends Controller
         return view('frontend.pages.checkout', [
             'course'     => $course,
             'courseData' => $this->courses[$course],
-            'currency'   => env('SWICHNOW_CURRENCY', 'USD'),
+            'currency'   => config('services.swichnow.currency'),
         ]);
     }
 
@@ -61,12 +61,12 @@ class PaymentController extends Controller
         }
 
         $courseData    = $this->courses[$courseSlug];
-        $currency      = env('SWICHNOW_CURRENCY', 'USD');
+        $currency      = config('services.swichnow.currency');
         $amount        = number_format($courseData['amount'], 2, '.', '');
         $transactionId = 'IPP_' . time() . '_' . rand(1000, 9999);
 
         $checksumString = 'Swich:' . $transactionId . ':' . $courseData['name'] . ':' . $amount;
-        $checksum       = hash_hmac('sha256', $checksumString, env('SWICHNOW_SECRET_KEY'), false);
+        $checksum       = hash_hmac('sha256', $checksumString, config('services.swichnow.secret_key'), false);
 
         PaymentTransaction::create([
             'user_id'        => auth()->id(),
@@ -82,7 +82,7 @@ class PaymentController extends Controller
         ]);
 
         $params = [
-            'clientId'              => env('SWICHNOW_CLIENT_ID'),
+            'clientId'              => config('services.swichnow.client_id'),
             'customerTransactionId' => $transactionId,
             'item'                  => substr($courseData['name'], 0, 500),
             'amount'                => $amount,
@@ -98,11 +98,11 @@ class PaymentController extends Controller
             'failRedirectUrl'       => route('payment.fail'),
         ];
 
-        $gatewayUrl = env('SWICHNOW_GATEWAY_URL') . '/?' . http_build_query($params);
+        $gatewayUrl = config('services.swichnow.gateway_url') . '/?' . http_build_query($params);
 
         // Notify admin that a new purchase was initiated
         EmailNotifier::send(
-            to:          env('ADMIN_EMAIL'),
+            to:          config('services.admin.email'),
             subject:     "New Purchase: {$courseData['name']} — {$request->input('payer_name')}",
             body:        $this->buildAdminPendingBody(
                              name:          $request->input('payer_name'),
@@ -171,7 +171,7 @@ class PaymentController extends Controller
 
             // Notify admin
             EmailNotifier::send(
-                to:          env('ADMIN_EMAIL'),
+                to:          config('services.admin.email'),
                 subject:     "Payment Received: {$transaction->item} — {$transaction->payer_name}",
                 body:        $this->buildStatusBody($transaction, 'success', $methodRow),
                 previewText: "{$transaction->payer_name} — {$transaction->item} — Success",
@@ -186,7 +186,7 @@ class PaymentController extends Controller
                 body:        $this->buildCustomerSuccessBody($transaction, $methodRow),
                 previewText: "Thank you {$transaction->payer_name}! Your purchase of {$transaction->item} is confirmed.",
                 footerNote:  "Transaction ID: {$transaction->transaction_id}",
-                replyTo:     env('ADMIN_EMAIL'),
+                replyTo:     config('services.admin.email'),
             );
         }
 
@@ -232,7 +232,7 @@ class PaymentController extends Controller
         if ($transaction) {
             // Notify admin
             EmailNotifier::send(
-                to:          env('ADMIN_EMAIL'),
+                to:          config('services.admin.email'),
                 subject:     "Payment Failed: {$transaction->item} — {$transaction->payer_name}",
                 body:        $this->buildStatusBody($transaction, 'failed'),
                 previewText: "{$transaction->payer_name} — {$transaction->item} — Failed",
@@ -247,7 +247,7 @@ class PaymentController extends Controller
                 body:        $this->buildCustomerFailBody($transaction),
                 previewText: "Hi {$transaction->payer_name}, unfortunately your payment could not be processed.",
                 footerNote:  "Transaction ID: {$transaction->transaction_id}",
-                replyTo:     env('ADMIN_EMAIL'),
+                replyTo:     config('services.admin.email'),
             );
         }
 
@@ -349,8 +349,8 @@ class PaymentController extends Controller
 
     private function buildCustomerSuccessBody(PaymentTransaction $transaction, string $methodRow = ''): string
     {
-        $adminEmail = env('ADMIN_EMAIL');
-        $waNumber   = env('WHATSAPP_NUMBER');
+        $adminEmail = config('services.admin.email');
+        $waNumber   = config('services.admin.whatsapp');
         $waUrl      = "https://wa.me/{$waNumber}";
 
         return "
@@ -393,8 +393,8 @@ class PaymentController extends Controller
 
     private function buildCustomerFailBody(PaymentTransaction $transaction): string
     {
-        $adminEmail = env('ADMIN_EMAIL');
-        $waNumber   = env('WHATSAPP_NUMBER');
+        $adminEmail = config('services.admin.email');
+        $waNumber   = config('services.admin.whatsapp');
         $waUrl      = "https://wa.me/{$waNumber}";
 
         return "

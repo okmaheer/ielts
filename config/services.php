@@ -31,4 +31,25 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'swichnow' => [
+        'client_id'   => env('SWICHNOW_CLIENT_ID'),
+        'secret_key'  => env('SWICHNOW_SECRET_KEY'),
+        'gateway_url' => env('SWICHNOW_GATEWAY_URL'),
+        'currency'    => env('SWICHNOW_CURRENCY', 'USD'),
+    ],
+
+    'email_api' => [
+        'url' => env('EMAIL_API_URL'),
+        'key' => env('EMAIL_API_KEY'),
+    ],
+
+    'admin' => [
+        'email'     => env('ADMIN_EMAIL'),
+        'whatsapp'  => env('WHATSAPP_NUMBER'),
+    ],
+
+    'writing_test' => [
+        'url' => env('WRITING_TEST_URL', 'https://online.ieltsprepandpractice.com'),
+    ],
+
 ];

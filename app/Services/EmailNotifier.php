@@ -35,7 +35,7 @@ class EmailNotifier
         string $footerNote  = '',
         string $replyTo     = '',
     ): void {
-        $endpoint = env('EMAIL_API_URL') . '/api/email/send';
+        $endpoint = config('services.email_api.url') . '/api/email/send';
 
         Log::info('[EmailNotifier] Attempting to send email', [
             'to'          => $to,
@@ -58,7 +58,7 @@ class EmailNotifier
 
             $response = Http::timeout(8)
                 ->withHeaders([
-                    'x-api-key'    => env('EMAIL_API_KEY'),
+                    'x-api-key'    => config('services.email_api.key'),
                     'Content-Type' => 'application/json',
                 ])
                 ->post($endpoint, $payload);
