@@ -34,7 +34,7 @@ php artisan config:clear
 php artisan cache:clear
 php artisan route:clear
 php artisan view:clear
-
+php artisan optimize:clear
 # Run database migrations
 echo -e "${GREEN}Running database migrations...${NC}"
 php artisan migrate --force
