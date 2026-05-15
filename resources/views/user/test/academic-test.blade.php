@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('meta_title', 'IELTS Academic Practice Test — Free Online Mock Test | IPP')
+@section('meta_title', 'IELTS Academic Practice Test')
 @section('meta_description', 'Prepare for IELTS Academic with full-length computer-based mock tests. Reading, Listening, Writing practice with instant band score predictions and expert feedback.')
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('meta_title', 'IELTS General Training Practice Test — Free Online Mock Test | IPP')
-@section('meta_description', 'Practise for IELTS General Training with full-length computer-based mock tests. Covers Listening, Reading and Writing with instant band score results and expert feedback.')
+@section('meta_title', 'IELTS General Training Practice Test')
+@section('meta_description', 'Practice for IELTS General Training with full-length computer-based mock tests. Covers Listening, Reading and Writing with instant band score results and expert feedback.')
 
 @section('content')
     <!--begin::Toolbar-->

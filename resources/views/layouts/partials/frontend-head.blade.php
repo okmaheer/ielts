@@ -1,15 +1,16 @@
 @php
     // Detect page type from current URL
     $currentUrl = Request::url();
-    $isListening = str_contains($currentUrl, '/listening/');
-    $isReading   = str_contains($currentUrl, '/reading/');
+    // Result pages match both /correct/answer/ (reading) and /correct/listening/answer/ (listening)
+    $isResultPage = str_contains($currentUrl, '/correct/') && str_contains($currentUrl, '/answer/');
     $isShowPage   = str_contains($currentUrl, '/show/');
-    $isResultPage = str_contains($currentUrl, '/correct/answer/');
-
-    // Derive test type for result pages from the URL segment
-    if ($isResultPage && !$isListening && !$isReading) {
+    // For result pages derive test type from URL; for other pages use /listening/ or /reading/ segment
+    if ($isResultPage) {
         $isListening = str_contains($currentUrl, '/correct/listening/');
         $isReading   = !$isListening;
+    } else {
+        $isListening = str_contains($currentUrl, '/listening/');
+        $isReading   = str_contains($currentUrl, '/reading/');
     }
 
     $metaTitle       = 'IPP - IELTS Computer Based Test';
