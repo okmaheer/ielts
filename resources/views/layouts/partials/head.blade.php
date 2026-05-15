@@ -1,5 +1,9 @@
         <title>@yield('meta_title', 'IPP')</title>
         <meta charset="utf-8" />
+        <!-- Google AdSense -->
+        @if(config('ads.enabled'))
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config('ads.client') }}" crossorigin="anonymous"></script>
+        @endif
         <meta name="description" content="@yield('meta_description', '')">
         @hasSection('meta_keywords')
         <meta name="keywords" content="@yield('meta_keywords')">

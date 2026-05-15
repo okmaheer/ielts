@@ -43,9 +43,13 @@
 
     <h1 class="fs-2 fw-bold mb-5">IELTS General Training Practice Test</h1>
 
+    {{-- Ad 1: leaderboard above the test grid --}}
+    @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+
     <div class="row mb-5 mb-lg-7">
         <div class="col-sm-12 col-md-12">
             <div class="row mb-5 mb-lg-7">
+                @php $adCounter = 0; @endphp
                 @foreach($tests as $test)
                 <div class="col-sm-12 col-md-3 mt-4">
                     <div class="card shadow-lg">
@@ -54,21 +58,30 @@
                                 <span>{{$test->name}}</span>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#academic-{{$test->id}}" class="btn ms-5 btn-dark">
                                     <span class="indicator-label">Start Test</span>
-                    
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 @include('user.test.partials.test-type')
+                @php $adCounter++; @endphp
+                {{-- Ad 2 & 3: inject a full-width in-content ad after every 4 test cards --}}
+                @if ($adCounter % 4 === 0)
+                <div class="col-12">
+                    @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
+                </div>
+                @endif
                 @endforeach
 
             </div>
 
-
         </div>
-
     </div>
 
+    {{-- Ad 4: multiplex / related-content ad below the grid --}}
+    @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
+
+    {{-- Ad 5: ipp-listing-bottom banner --}}
+    @include('layouts.partials.ad-unit', ['slot' => 'listing-bottom'])
 
 @endsection
