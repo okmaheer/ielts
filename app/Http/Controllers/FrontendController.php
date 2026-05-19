@@ -48,4 +48,14 @@ public function aboutUs(Request $request){
 
         return view('frontend.pages.about-us');
     }
+
+    public function computerBasedPracticeTest()
+    {
+        return view('frontend.pages.computer-based-practice-test');
+    }
+
+    public function writingPracticeTest()
+    {
+        return view('frontend.pages.writing-practice-test');
+    }
 }

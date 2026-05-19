@@ -76,6 +76,12 @@
                 <a class="footer-link" href="{{ route('frontend.index') }}#ielts-mock-test">
                     <i class="fas fa-chevron-right me-2"></i>Free Mock Tests
                 </a>
+                <a class="footer-link" href="{{ route('frontend.computer-based-practice-test') }}">
+                    <i class="fas fa-chevron-right me-2"></i>Computer Based Practice Test
+                </a>
+                <a class="footer-link" href="{{ route('frontend.writing-practice-test') }}">
+                    <i class="fas fa-chevron-right me-2"></i>Writing Practice Tests
+                </a>
             </div>
 
         </div>

@@ -13,8 +13,8 @@
         $isReading   = str_contains($currentUrl, '/reading/');
     }
 
-    $metaTitle       = 'IPP - IELTS Computer Based Test';
-    $metaDescription = 'Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.';
+    $metaTitle       = $metaTitle       ?? 'IPP - IELTS Computer Based Test';
+    $metaDescription = $metaDescription ?? 'Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.';
     $focusKeywords   = null;
 
     // Static meta for the homepage
@@ -67,9 +67,11 @@
 
     // Override canonical URL for specific routes
     if (Request::is('academic/test*')) {
-        $canonicalUrl = 'https://cbt.ieltsprepandpractice.com/academic/test?type=1';
+        $typeParam    = request('type', '1');
+        $canonicalUrl = 'https://cbt.ieltsprepandpractice.com/academic/test?type=' . $typeParam;
     } elseif (Request::is('general-training/test*')) {
-        $canonicalUrl = 'https://cbt.ieltsprepandpractice.com/general-training/test?type=1';
+        $typeParam    = request('type', '1');
+        $canonicalUrl = 'https://cbt.ieltsprepandpractice.com/general-training/test?type=' . $typeParam;
     }
 @endphp
 <link rel="canonical" href="{{ $canonicalUrl }}">
