@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ asset('computer-based-practice-test/style.css') }}" />
+  <link rel="stylesheet" href="{{ asset('page-assets/computer-based-practice-test/style.css') }}" />
 </head>
 <body>
 
@@ -100,7 +100,7 @@
 
 <!-- ============ SECTION 1: GT Reading ============ -->
 <section class="section" id="section1" aria-labelledby="gt-reading-heading">
-  <div class="section-bg" style="background-image:url('{{ asset('computer-based-practice-test/images/gt-reading-bg.webp') }}')"></div>
+  <div class="section-bg" style="background-image:url('{{ asset('page-assets/computer-based-practice-test/images/gt-reading-bg.webp') }}')"></div>
   <div class="section-inner">
     <div class="section-layout">
       <div class="section-icon" aria-hidden="true">
@@ -130,7 +130,7 @@
 
 <!-- ============ SECTION 2: Academic Reading ============ -->
 <section class="section alt" id="section2" aria-labelledby="academic-reading-heading">
-  <div class="section-bg" style="background-image:url('{{ asset('computer-based-practice-test/images/academic-reading-bg.webp') }}')"></div>
+  <div class="section-bg" style="background-image:url('{{ asset('page-assets/computer-based-practice-test/images/academic-reading-bg.webp') }}')"></div>
   <div class="section-inner">
     <div class="section-layout">
       <div class="section-icon" aria-hidden="true">
@@ -160,7 +160,7 @@
 
 <!-- ============ SECTION 3: Writing ============ -->
 <section class="section" id="section3" aria-labelledby="writing-heading">
-  <div class="section-bg" style="background-image:url('{{ asset('computer-based-practice-test/images/writing-bg.webp') }}')"></div>
+  <div class="section-bg" style="background-image:url('{{ asset('page-assets/computer-based-practice-test/images/writing-bg.webp') }}')"></div>
   <div class="section-inner">
     <div class="section-layout">
       <div class="section-icon" aria-hidden="true">
@@ -190,7 +190,7 @@
 
 <!-- ============ SECTION 4: Listening ============ -->
 <section class="section alt" id="section4" aria-labelledby="listening-heading">
-  <div class="section-bg" style="background-image:url('{{ asset('computer-based-practice-test/images/listening-bg.webp') }}')"></div>
+  <div class="section-bg" style="background-image:url('{{ asset('page-assets/computer-based-practice-test/images/listening-bg.webp') }}')"></div>
   <div class="section-inner">
     <div class="section-layout">
       <div class="section-icon" aria-hidden="true">
@@ -227,6 +227,6 @@
   </div>
 </footer>
 
-<script src="{{ asset('computer-based-practice-test/script.js') }}"></script>
+<script src="{{ asset('page-assets/computer-based-practice-test/script.js') }}"></script>
 </body>
 </html>
