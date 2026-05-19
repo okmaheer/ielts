@@ -15,11 +15,11 @@ class AcademicTestController extends Controller
         $type = (int) $request->input('type', 1);
 
         if ($type === 2) {
-            $metaTitle       = 'IELTS Academic Listening Practice Test | IPP';
-            $metaDescription = 'Practice computer-based IELTS Academic listening tests online. All 4 parts with authentic audio, instant band scores and correct answers.';
+            $metaTitle       = 'IELTS Academic  Practice Test | IPP';
+            $metaDescription = 'Practice computer-based IELTS Academic tests online. All 4 parts with authentic audio, instant band scores and correct answers.';
         } else {
-            $metaTitle       = 'IELTS Academic Reading Practice Test | IPP';
-            $metaDescription = 'Practice computer-based IELTS Academic reading tests online. Complex passages with instant band scores, True/False/Not Given and matching headings.';
+            $metaTitle       = 'IELTS Academic Practice Test | IPP';
+            $metaDescription = 'Practice computer-based IELTS Academic tests online. Complex passages with instant band scores, True/False/Not Given and matching headings.';
         }
 
         return view('frontend.pages.academic-test', compact('tests', 'metaTitle', 'metaDescription'));
