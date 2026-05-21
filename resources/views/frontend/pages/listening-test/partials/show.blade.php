@@ -38,6 +38,10 @@
                         @include('layouts.partials.ad-unit', ['slot' => 'banner'])
                     </div>
 
+                    <div class="my-4">
+                        @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
+                    </div>
+
                     <a class="btn btn-outline-primary btn-lg" href="{{ route('listening.test', ['id' => $test->id]) }}"
                         style="border-radius:30px"> Start Test </a>
 

@@ -119,33 +119,35 @@
                         @include('layouts.partials.ad-unit', ['slot' => 'banner'])
                     </div>
 
-                        @foreach ($tests as $test)
+                    @foreach ($tests as $test)
                         <div class="col-lg-3 col-md-3 mb-4">
                             <div class="card  shadow-lg">
                                 <div class="card-body">
                                     <div class="text-center p-3">
                                         <h5 class="card-title" style="font-size:17px;">{{ $test->name }}</h5>
-
                                     </div>
-
                                 </div>
-
                                 <div class="card-body text-center">
                                     <button style="border-radius:30px;" type="button" data-bs-toggle="modal"
                                         data-bs-target="#test-category-{{ $test->id }}"
                                         class="btn btn-outline-primary btn-lg">
                                         <span class="indicator-label">Start Test</span>
-
                                     </button>
-
                                 </div>
                             </div>
                         </div>
                         @include('layouts.partials.models.test-category', ['category' => 'academic'])
                     @endforeach
 
+                    {{-- Ad: after test cards --}}
+                    <div class="col-12 mt-2 mb-4">
+                        @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
+                    </div>
 
                 </div>
+
+                {{-- Ad: bottom of listing page --}}
+                @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
             </div>
         </div>
         <!-- About Start -->

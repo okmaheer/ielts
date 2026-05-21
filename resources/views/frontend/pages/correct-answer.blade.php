@@ -319,6 +319,11 @@
 @endsection
 @section('content')
     <!-- Service Start -->
+    {{-- Ad: top of correct answers page --}}
+    <div class="container pt-4">
+        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+    </div>
+
     <div class="container-xxl py-5">
         <div class="container">
             <div class="job-tab text-center">
@@ -484,6 +489,11 @@
         {{-- </div> --}}
     </div>
     <!-- Service End -->
+
+    {{-- Ad: mid-page after answer tables --}}
+    <div class="container py-2">
+        @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
+    </div>
 
     {{-- Ad: after reviewing answers, before back button --}}
     <div class="container py-3">
