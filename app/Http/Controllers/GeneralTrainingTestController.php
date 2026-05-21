@@ -16,7 +16,7 @@ class GeneralTrainingTestController extends Controller
             $metaTitle       = 'IELTS General Training Listening Practice Test | IPP';
             $metaDescription = 'Practice computer-based IELTS General Training listening tests online. Get instant band scores with correct answers for all 4 parts.';
         } else {
-            $metaTitle       = 'IELTS General Training Reading Practice Test | IPP';
+            $metaTitle       = 'IELTS General Training Practice Test | IPP';
             $metaDescription = 'Practice computer-based IELTS General Training reading tests online. Real exam-style passages with instant band scores and detailed answers.';
         }
 

@@ -15,7 +15,7 @@ class AcademicTestController extends Controller
         $type = (int) $request->input('type', 1);
 
         if ($type === 2) {
-            $metaTitle       = 'IELTS Academic  Practice Test | IPP';
+            $metaTitle       = 'IELTS Academic Listening Practice Test | IPP';
             $metaDescription = 'Practice computer-based IELTS Academic tests online. All 4 parts with authentic audio, instant band scores and correct answers.';
         } else {
             $metaTitle       = 'IELTS Academic Practice Test | IPP';
