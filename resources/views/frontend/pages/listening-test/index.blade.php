@@ -166,7 +166,7 @@
                         <div class="row align-items-start">
                             {{-- Left sidebar ad --}}
                             <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
-                                @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
+                                @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                             </div>
 
                             {{-- Question box (constrained width) --}}
@@ -219,7 +219,7 @@
 
                             {{-- Right sidebar ad --}}
                             <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
-                                @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
+                                @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                             </div>
                         </div>
                     @endforeach

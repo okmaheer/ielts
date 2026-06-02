@@ -60,6 +60,16 @@
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
+@elseif ($slot === 'sidebar')
+<div class="ad-unit-wrap" style="text-align:center; overflow:hidden;">
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="{{ $client }}"
+         data-ad-slot="9656135372"
+         data-ad-format="auto"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
 @elseif ($slot === 'listing-bottom')
 <div class="ad-unit-wrap my-4" style="text-align:center; overflow:hidden;">
     <ins class="adsbygoogle"
