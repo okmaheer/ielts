@@ -133,7 +133,9 @@ class FinishedTestController extends Controller
         });
 
         $data =  $organizedData;
-        return view('frontend.pages.correct-answer', compact('test', 'data', 'userTest'));
+        $metaTitle       = $test->getResultMetaTitle('reading');
+        $metaDescription = $test->getResultMetaDescription('reading');
+        return view('frontend.pages.correct-answer', compact('test', 'data', 'userTest', 'metaTitle', 'metaDescription'));
     }
 
     public function correctListeningAnswers(Request $request, $id)
@@ -166,6 +168,8 @@ class FinishedTestController extends Controller
         });
 
         $data =  $organizedData;
-        return view('frontend.pages.correct-listening-answer', compact('test', 'data', 'userTest'));
+        $metaTitle       = $test->getResultMetaTitle('listening');
+        $metaDescription = $test->getResultMetaDescription('listening');
+        return view('frontend.pages.correct-listening-answer', compact('test', 'data', 'userTest', 'metaTitle', 'metaDescription'));
     }
 }

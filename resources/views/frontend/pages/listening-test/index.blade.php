@@ -163,11 +163,17 @@
                             </div>
                         </div>
                         @endif
-                        <div class="row">
-                            <div class="col-12 mt-5"
-                                style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
+                        <div class="row align-items-start">
+                            {{-- Left sidebar ad --}}
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
+                                @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
+                            </div>
 
-                                <div class="card-body mb-5" style="padding : 0px; ">
+                            {{-- Question box (constrained width) --}}
+                            <div class="col-lg-8 col-12 mt-5"
+                                style="padding:0px; max-height:700px; overflow-y:auto; border:2px solid #BFBDBD;">
+
+                                <div class="card-body mb-5" style="padding:0px;">
 
                                     <div class="container mb-5">
                                         <h2>
@@ -188,39 +194,32 @@
                                             @endif
                                         </h2>
                                         @foreach ($group['questionGroups'] as $group)
-                                            <div class=" mt-5 p-2" style="border: 2px solid #BFBDBD;">
+                                            <div class="mt-5 p-2" style="border:2px solid #BFBDBD;">
                                                 {!! $group['questionGroup']->heading !!}
                                                 {!! $group['questionGroup']->description !!}
                                                 @foreach ($group['questions'] as $question)
-                                                    {{-- @include('layouts.partials.models.question-image') --}}
                                                     @if ($question->category == 1)
                                                         @include('frontend.pages.reading-test.partials.mcqs')
-                                                        @php
-                                                            $iteration++;
-                                                        @endphp
+                                                        @php $iteration++; @endphp
                                                     @endif
                                                     @if ($question->category == 2)
                                                         @include('frontend.pages.reading-test.partials.fill-in-blank')
-                                                        @php
-                                                            $iteration++;
-                                                        @endphp
+                                                        @php $iteration++; @endphp
                                                     @endif
                                                     @if ($question->category == 3)
                                                         @include('frontend.pages.reading-test.partials.five-choice')
-                                                        @php
-                                                            $iteration++;
-                                                        @endphp
+                                                        @php $iteration++; @endphp
                                                     @endif
                                                 @endforeach
-
-
                                             </div>
                                         @endforeach
-
                                     </div>
                                 </div>
+                            </div>
 
-
+                            {{-- Right sidebar ad --}}
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
+                                @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
                             </div>
                         </div>
                     @endforeach
