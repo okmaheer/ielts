@@ -63,11 +63,15 @@
 @elseif ($slot === 'sidebar')
 <div class="ad-unit-wrap" style="text-align:center; overflow:hidden;">
     <ins class="adsbygoogle"
-         style="display:block;"
+         style="display:block; min-width:250px; min-height:250px;"
          data-ad-client="{{ $client }}"
          data-ad-slot="9656135372"
          data-ad-format="auto"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <script>
+    window.addEventListener('load', function() {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+    </script>
 </div>
 
 @elseif ($slot === 'listing-bottom')
