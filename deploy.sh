@@ -15,7 +15,7 @@ cd $DEPLOY_PATH
 
 # Enter maintenance mode
 echo -e "${YELLOW}Entering maintenance mode...${NC}"
-php artisan down --message 'The app is being updated. Please try again in a minute.' || true
+php artisan down || true
 
 # Update codebase
 echo -e "${GREEN}Pulling latest code from GitHub...${NC}"
@@ -26,7 +26,7 @@ git pull origin main
 
 # Install Composer dependencies
 echo -e "${GREEN}Installing Composer dependencies...${NC}"
-/opt/cpanel/composer/bin/composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+php ~/composer.phar install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 # Clear and optimize Laravel caches
 echo -e "${GREEN}Clearing caches...${NC}"
