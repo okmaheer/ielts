@@ -27,19 +27,6 @@
             will-change: auto;
             box-shadow: none !important;
         }
-        .listening-sidebar-ad {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 160px;
-            z-index: 10;
-        }
-        .listening-sidebar-ad-left  { left: 8px; }
-        .listening-sidebar-ad-right { right: 8px; }
-        /* Only show when viewport has space beside the 1500px container */
-        @media (max-width: 1840px) {
-            .listening-sidebar-ad { display: none !important; }
-        }
     </style>
 @endsection
 @section('content')
@@ -172,9 +159,16 @@
                             </div>
                         </div>
                         @endif
-                        <div class="row">
-                            {{-- Question box (full width) --}}
-                            <div class="col-12 mt-5"
+                        <div class="row align-items-start">
+                            {{-- Left sidebar ad --}}
+                            <div class="col-lg-3 d-none d-lg-flex flex-column align-items-center pt-5">
+                                <div style="position:sticky; top:80px;">
+                                    @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
+                                </div>
+                            </div>
+
+                            {{-- Question box --}}
+                            <div class="col-lg-6 col-12 mt-5"
                                 style="padding:0px; max-height:700px; overflow-y:auto; border:2px solid #BFBDBD;">
 
                                 <div class="card-body mb-5" style="padding:0px;">
@@ -221,6 +215,12 @@
                                 </div>
                             </div>
 
+                            {{-- Right sidebar ad --}}
+                            <div class="col-lg-3 d-none d-lg-flex flex-column align-items-center pt-5">
+                                <div style="position:sticky; top:80px;">
+                                    @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
+                                </div>
+                            </div>
                         </div>
                     @endforeach
 
@@ -236,14 +236,6 @@
             </form>
         </div>
         <!-- About Start -->
-    </div>
-
-    {{-- Fixed sidebar ads — only visible on very wide screens (>1840px) --}}
-    <div class="listening-sidebar-ad listening-sidebar-ad-left">
-        @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
-    </div>
-    <div class="listening-sidebar-ad listening-sidebar-ad-right">
-        @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
     </div>
 
     <button style="border-radius:30px; display: none;" type="button" id="test-start" data-bs-toggle="modal"
