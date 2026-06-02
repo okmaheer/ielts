@@ -161,8 +161,9 @@
                         @endif
                         <div class="row align-items-start">
                             {{-- Left sidebar ad --}}
-                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5 listening-ad-col" id="listening-ad-left-{{ $key }}">
                                 <div style="position:sticky; top:80px;">
+                                    <button onclick="dismissListeningAd('{{ $key }}', 'left')" style="display:block; margin-left:auto; margin-bottom:4px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
                             </div>
@@ -216,8 +217,9 @@
                             </div>
 
                             {{-- Right sidebar ad --}}
-                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5 listening-ad-col" id="listening-ad-right-{{ $key }}">
                                 <div style="position:sticky; top:80px;">
+                                    <button onclick="dismissListeningAd('{{ $key }}', 'right')" style="display:block; margin-left:auto; margin-bottom:4px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
                             </div>
@@ -454,5 +456,23 @@
 
         // Start the timer when the page loads
         updateTimer();
+    </script>
+    <script>
+        function dismissListeningAd(key, side) {
+            var el = document.getElementById('listening-ad-' + side + '-' + key);
+            if (el) {
+                el.style.display = 'none';
+                // Expand question box to fill the freed column
+                var row = el.closest('.row');
+                if (row) {
+                    var qbox = row.querySelector('.col-lg-8');
+                    if (qbox) {
+                        var otherAd = row.querySelector('.listening-ad-col:not([style*="display: none"])');
+                        qbox.classList.remove('col-lg-8');
+                        qbox.classList.add(otherAd ? 'col-lg-10' : 'col-lg-12');
+                    }
+                }
+            }
+        }
     </script>
 @endsection
