@@ -161,14 +161,14 @@
                         @endif
                         <div class="row align-items-start">
                             {{-- Left sidebar ad --}}
-                            <div class="col-lg-3 d-none d-lg-flex flex-column align-items-center pt-5">
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
                                 <div style="position:sticky; top:80px;">
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
                             </div>
 
                             {{-- Question box --}}
-                            <div class="col-lg-6 col-12 mt-5"
+                            <div class="col-lg-8 col-12 mt-5"
                                 style="padding:0px; max-height:700px; overflow-y:auto; border:2px solid #BFBDBD;">
 
                                 <div class="card-body mb-5" style="padding:0px;">
@@ -216,7 +216,7 @@
                             </div>
 
                             {{-- Right sidebar ad --}}
-                            <div class="col-lg-3 d-none d-lg-flex flex-column align-items-center pt-5">
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5">
                                 <div style="position:sticky; top:80px;">
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
