@@ -6,10 +6,10 @@
     <title>IELTS Writing Practice Test – Computer Based | IPP</title>
     <meta name="description" content="Practice Free IELTS General Training & Academic Writing practice tests with AI + human expert feedback. Practice using the real CBT interface.">
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="{{ url('/writing-practice-test') }}" />
+    <link rel="canonical" href="{{ url('/free-ielts-writing-practice-test') }}" />
     <meta property="og:title" content="IELTS Writing Practice Test – Computer Based | IPP" />
     <meta property="og:description" content="Practice Free IELTS General Training & Academic Writing practice tests with AI + human expert feedback. Practice using the real CBT interface." />
-    <meta property="og:url" content="{{ url('/writing-practice-test') }}" />
+    <meta property="og:url" content="{{ url('/free-ielts-writing-practice-test') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{ asset('frontend/logo/logo.png') }}" />
     <meta property="og:site_name" content="IELTS Prep And Practice" />

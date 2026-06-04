@@ -40,8 +40,10 @@ Route::get('/ielts/privacy-policy', [FrontendController::class, 'privacyPolicy']
 Route::get('/ielts/terms-conditions',[FrontendController::class, 'termsConditions'])->name('frontend.terms-conditions');
 Route::get('/ielts/contact-us',  [FrontendController::class, 'contactUs'])->name('frontend.contact-us');
 Route::get('/ielts/about-us', [FrontendController::class, 'aboutUs'])->name('frontend.about-us');
-Route::get('/computer-based-practice-test', [FrontendController::class, 'computerBasedPracticeTest'])->name('frontend.computer-based-practice-test');
-Route::get('/writing-practice-test', [FrontendController::class, 'writingPracticeTest'])->name('frontend.writing-practice-test');
+Route::get('/computer-based-ielts-practice-test-online', [FrontendController::class, 'computerBasedPracticeTest'])->name('frontend.computer-based-practice-test');
+Route::get('/free-ielts-writing-practice-test', [FrontendController::class, 'writingPracticeTest'])->name('frontend.writing-practice-test');
+Route::redirect('/computer-based-practice-test', '/computer-based-ielts-practice-test-online', 301);
+Route::redirect('/writing-practice-test', '/free-ielts-writing-practice-test', 301);
 
 Route::get('/general-training/test', [GeneralTrainingTestController::class, 'getGeneralTrainingTests'])->name('general.training.test');
 Route::get('/academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');

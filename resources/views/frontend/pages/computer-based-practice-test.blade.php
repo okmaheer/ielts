@@ -6,10 +6,10 @@
   <title>IELTS Computer Based Practice Test with Band Scores</title>
   <meta name="description" content="Practice computer based IELTS GT and academic practice test online and get instant band scores with correct answers. Solve listening, reading and writing practice tests for FREE." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://cbt.ieltsprepandpractice.com/computer-based-practice-test" />
+  <link rel="canonical" href="https://cbt.ieltsprepandpractice.com/computer-based-ielts-practice-test-online" />
   <meta property="og:title" content="IELTS Computer Based Practice Test with Band Scores" />
   <meta property="og:description" content="Practice computer based IELTS GT and academic practice test online and get instant band scores with correct answers." />
-  <meta property="og:url" content="https://cbt.ieltsprepandpractice.com/computer-based-practice-test" />
+  <meta property="og:url" content="https://cbt.ieltsprepandpractice.com/computer-based-ielts-practice-test-online" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{{ asset('frontend/logo/logo.png') }}" />
   <meta property="og:site_name" content="IELTS Prep And Practice" />
