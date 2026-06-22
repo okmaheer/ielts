@@ -43,9 +43,15 @@
                         <input type="hidden" name="audio_url" value="{{$test->audio}}">
                         <input type="file" id="upload"  name="audio" />
                         <audio id="audio" controls>
-                            {{-- <source src="audio651db3e5b3706.mp3" id="src" /> --}}
-                          <source  id="src" src="{{$test->audio}}" />
+                          <source id="src" src="{{$test->audio}}" />
                         </audio>
+                        @if($test->audio)
+                        <div class="mt-3">
+                            <a href="{{ $test->audio }}" download target="_blank" class="btn btn-sm btn-light-primary">
+                                <i class="fas fa-download me-1"></i> Download Current Audio
+                            </a>
+                        </div>
+                        @endif
                    
                     </div>
 
