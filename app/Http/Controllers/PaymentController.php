@@ -11,24 +11,34 @@ class PaymentController extends Controller
 {
     private array $courses = [
         'complete-preparation' => [
-            'name'   => 'IELTS Complete Preparation Course',
-            'amount' => 40.00,
+            'name'        => 'IELTS Complete Preparation Course',
+            'amount'      => 40.00,
+            'metaTitle'   => 'Purchase IELTS Complete Preparation Course - IPP',
+            'metaDesc'    => 'Buy premium IELTS preparation course to prepare for all four modules of the exam and achieve desired scores on first attempt.',
         ],
         'writing-course' => [
-            'name'   => 'IELTS Writing Course',
-            'amount' => 30.00,
+            'name'        => 'IELTS Writing Course',
+            'amount'      => 30.00,
+            'metaTitle'   => 'Purchase IELTS Writing Course - IPP',
+            'metaDesc'    => 'Our writing course will help you achieve 7 bands and above in the writing module by providing authentic evaluation and improvement strategies.',
         ],
         'speaking-course' => [
-            'name'   => 'IELTS Speaking Course',
-            'amount' => 30.00,
+            'name'        => 'IELTS Speaking Course',
+            'amount'      => 30.00,
+            'metaTitle'   => 'Book IELTS Speaking Module Preparation Course - IPP',
+            'metaDesc'    => 'IPP\'s IELTS speaking course is designed to help students improve their scores within a short period of time. If you scored 6.5 in speaking previously and need 7 or higher now, then book our course now.',
         ],
         'computer-based-test' => [
-            'name'   => 'IELTS Computer Based Practice Test',
-            'amount' => 8.00,
+            'name'        => 'IELTS Computer Based Practice Test',
+            'amount'      => 8.00,
+            'metaTitle'   => 'Purchase IELTS Premium Computer Based Tests - IPP',
+            'metaDesc'    => 'You will get 30 authentic computer-based listening, reading, and writing practice tests with expert feedback and scores to achieve desired score first time.',
         ],
         'preparation-material' => [
-            'name'   => 'IELTS Preparation Material',
-            'amount' => 5.00,
+            'name'        => 'IELTS Preparation Material',
+            'amount'      => 5.00,
+            'metaTitle'   => 'Buy IELTS Preparation Material - IPP',
+            'metaDesc'    => 'Get authentic IELTS preparation books, band 7 vocabulary file, model sample essays for 7 bands, and helpful strategies for listening and reading module.',
         ],
     ];
 
@@ -38,10 +48,13 @@ class PaymentController extends Controller
             abort(404);
         }
 
+        $courseData = $this->courses[$course];
         return view('frontend.pages.checkout', [
-            'course'     => $course,
-            'courseData' => $this->courses[$course],
-            'currency'   => config('services.swichnow.currency'),
+            'course'          => $course,
+            'courseData'      => $courseData,
+            'currency'        => config('services.swichnow.currency'),
+            'metaTitle'       => $courseData['metaTitle'],
+            'metaDescription' => $courseData['metaDesc'],
         ]);
     }
 
