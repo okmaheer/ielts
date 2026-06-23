@@ -16,16 +16,33 @@ trait AuthenticatesUsers {
 
     public function login(Request $request) {
         $this->validateLogin($request);
-      
+
         if ($this->attemptLogin($request)) {
-            
-            if($request->is_user == '1'){
+            $user = $this->guard()->user();
+
+            if ($request->is_user == '1' && $user->hasRole('User')) {
+                // Auto-expire if duration has passed
+                if ($user->hasAccessExpired()) {
+                    $user->status = '0';
+                    $user->save();
+                }
+
+                if (!$user->isActive()) {
+                    $this->guard()->logout();
+                    $request->session()->invalidate();
+                    $request->session()->regenerateToken();
+
+                    throw ValidationException::withMessages([
+                        $this->email() => ['Your account access has expired or been deactivated. Please contact the administrator.'],
+                    ]);
+                }
 
                 return redirect()->route('user.dashboard');
             }
+
             return $this->sendLoginResponse($request);
         }
-     
+
         return $this->sendFailedLoginResponse($request);
     }
 

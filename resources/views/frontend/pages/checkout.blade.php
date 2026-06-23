@@ -359,6 +359,80 @@
         .co-price-num { font-size: 48px; }
     }
 
+    /* ── Recently Purchased ─────────────────────────────────── */
+    .co-recent {
+        max-width: 980px;
+        margin: 32px auto 0;
+        padding: 0 16px;
+    }
+    .co-recent-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .co-recent-title::before, .co-recent-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #e5e7eb;
+    }
+    .co-recent-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 12px;
+    }
+    .co-recent-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        border: 1px solid #f0f0f0;
+    }
+    .co-recent-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #17a2b8, #0a7a8f);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .co-recent-body { flex: 1; min-width: 0; }
+    .co-recent-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 2px;
+    }
+    .co-recent-meta {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .co-recent-stars { color: #f59e0b; font-size: 11px; }
+    .co-recent-review {
+        font-size: 12px;
+        color: #4b5563;
+        line-height: 1.5;
+        font-style: italic;
+    }
+
     @media (max-width: 480px) {
         .co-page { padding: 12px 0 32px; }
         .co-breadcrumb { font-size: 12px; padding: 0 4px; }
@@ -764,6 +838,37 @@
         </div>
 
     </div>
+
+    {{-- Recently Purchased (real transaction data) --}}
+    @if($recentBuyers->isNotEmpty())
+    <div class="co-recent">
+        <div class="co-recent-title">Recently Purchased</div>
+        <div class="co-recent-list">
+            @foreach($recentBuyers as $buyer)
+            @php
+                $parts     = explode(' ', trim($buyer->payer_name));
+                $firstName = $parts[0];
+                $lastInit  = count($parts) > 1 ? strtoupper(substr(end($parts), 0, 1)) . '.' : '';
+                $display   = $firstName . ($lastInit ? ' ' . $lastInit : '');
+                $avatar    = strtoupper(substr($firstName, 0, 1));
+                $diff      = now()->diffForHumans($buyer->created_at, ['parts' => 1, 'short' => false]);
+            @endphp
+            <div class="co-recent-card">
+                <div class="co-recent-avatar">{{ $avatar }}</div>
+                <div class="co-recent-body">
+                    <div class="co-recent-name">{{ $display }}</div>
+                    <div class="co-recent-meta">
+                        <span class="co-recent-stars">★★★★★</span>
+                        &bull; {{ $diff }}
+                    </div>
+                    <div class="co-recent-review">Purchased {{ $courseData['name'] }}</div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    @endif
+
 </div>
 @endsection
 

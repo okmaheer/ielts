@@ -57,8 +57,6 @@ Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('
 Route::get('/test/correct/answer/{id}', [FinishedTestController::class, 'correctAnswers'])->name('test.correct.answer');
 Route::get('/test/correct/listening/answer/{id}', [FinishedTestController::class, 'correctListeningAnswers'])->name('test.correct.listening.answer');
 
-///////////////////////////////////////////
-
 Route::get('/show/listening/test/{id}', [ListeningTestController::class, 'show'])->name('show.listening.test');
 Route::get('/show/reading/test/{id}', [ReadingTestController::class, 'show'])->name('show.reading.test');
 Route::controller(RegisterationRequestController::class)->group(function () {
@@ -75,7 +73,7 @@ Route::get('admin/dashboard', [
 ]);
 
 
-Route::get('user/dashboard', [HomeController::class, 'userDashboard'])->name('user.dashboard');
+Route::get('user/dashboard', [HomeController::class, 'userDashboard'])->name('user.dashboard')->middleware(['active-user']);
 
 
 
@@ -179,8 +177,7 @@ Route::get('/payment/fail', [PaymentController::class, 'fail'])->name('payment.f
 
 ///paid test
 
-
-Route::controller(TestController::class)->group(function () {
+Route::controller(TestController::class)->middleware(['active-user'])->group(function () {
     Route::get('user/academic/tests', 'academicTest')->name('academic.tests');
     Route::get('user/general-training/tests', 'generalTest')->name('general-training.tests');
 });

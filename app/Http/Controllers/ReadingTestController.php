@@ -9,14 +9,37 @@ use App\Models\Question;
 use App\Models\QuestionGroup;
 use App\Models\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReadingTestController extends Controller
 {
 
     public function index(Request $request, $id)
     {
-      
+
         $test = Test::where('id', $id)->with('questions')->first();
+
+        // Paid tests require an active, non-expired user account
+        if ($test && $test->type == 2) {
+            if (!Auth::check()) {
+                return redirect()->route('show.loginForm')
+                    ->with('error', 'Please log in to access this test.');
+            }
+            $user = Auth::user();
+            if ($user->hasRole('User')) {
+                if ($user->hasAccessExpired()) {
+                    $user->status = '0';
+                    $user->save();
+                }
+                if (!$user->isActive()) {
+                    Auth::logout();
+                    $request->session()->invalidate();
+                    $request->session()->regenerateToken();
+                    return redirect()->route('show.loginForm')
+                        ->with('error', 'Your account access has expired or been deactivated. Please contact the administrator.');
+                }
+            }
+        }
         $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
             $query->where('type',1)->WhereNotNull('paragraph')->orderBy('paragraph', 'asc');
         })->orderBy('position', 'asc')->get();

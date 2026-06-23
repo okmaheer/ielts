@@ -36,7 +36,42 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'access_given_at'   => 'datetime',
     ];
+
+    // Duration value → days map (matches admin create/edit dropdown)
+    private static array $durationDays = [
+        '1' => 15,
+        '2' => 30,
+        '3' => 60,
+        '4' => 90,
+    ];
+
+    public function getAccessExpiresAt(): ?\Carbon\Carbon
+    {
+        if (!$this->access_given_at || !$this->duration) {
+            return null;
+        }
+        $days = self::$durationDays[$this->duration] ?? null;
+        if (!$days) {
+            return null;
+        }
+        return $this->access_given_at->copy()->addDays($days);
+    }
+
+    public function hasAccessExpired(): bool
+    {
+        $expiresAt = $this->getAccessExpiresAt();
+        if (!$expiresAt) {
+            return false;
+        }
+        return now()->gt($expiresAt);
+    }
+
+    public function isActive(): bool
+    {
+        return $this->status == '1';
+    }
 
     /**
      * 

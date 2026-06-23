@@ -21,11 +21,12 @@ class UserController extends Controller
             'name' => $request->name,
             'email' =>  $request->email,
             'phone' =>  $request->phone,
-            'password' =>  Hash::make($request->password), // Use bcrypt to hash the password
+            'password' =>  Hash::make($request->password),
             'country' =>  $request->country,
             'duration' =>  $request->duration,
             'status' => $request->status,
             'is_user_paid' => true,
+            'access_given_at' => now(),
         ]);
         $role = "User";
         if ($role) {
@@ -46,12 +47,12 @@ class UserController extends Controller
             'name' => $request->name,
             'email' =>  $request->email,
             'phone' =>  $request->phone,
-            'password' =>  Hash::make($request->password), // Use bcrypt to hash the password
+            'password' =>  Hash::make($request->password),
             'country' =>  $request->country,
             'duration' =>  $request->duration,
             'status' => $request->status,
             'is_user_paid' => true,
-
+            'access_given_at' => now(),
         ]);
       
         // $role = "User";

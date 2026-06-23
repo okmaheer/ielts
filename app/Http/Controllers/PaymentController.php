@@ -49,12 +49,20 @@ class PaymentController extends Controller
         }
 
         $courseData = $this->courses[$course];
+
+        $recentBuyers = PaymentTransaction::where('course_slug', $course)
+            ->where('payment_status', 'completed')
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get(['payer_name', 'created_at']);
+
         return view('frontend.pages.checkout', [
             'course'          => $course,
             'courseData'      => $courseData,
             'currency'        => config('services.swichnow.currency'),
             'metaTitle'       => $courseData['metaTitle'],
             'metaDescription' => $courseData['metaDesc'],
+            'recentBuyers'    => $recentBuyers,
         ]);
     }
 
