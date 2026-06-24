@@ -362,75 +362,72 @@
     /* ── Recently Purchased ─────────────────────────────────── */
     .co-recent {
         max-width: 980px;
-        margin: 32px auto 0;
-        padding: 0 16px;
+        margin: 48px auto 0;
+        padding: 0 16px 40px;
     }
-    .co-recent-title {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #9ca3af;
-        margin-bottom: 14px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    .co-recent-heading {
+        font-size: 26px;
+        font-weight: 800;
+        color: #111827;
+        margin-bottom: 12px;
+        text-align: center;
     }
-    .co-recent-title::before, .co-recent-title::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background: #e5e7eb;
+    .co-recent-desc {
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.7;
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 28px;
     }
     .co-recent-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    @media (max-width: 700px) {
+        .co-recent-list { grid-template-columns: 1fr; }
     }
     .co-recent-card {
         background: #fff;
-        border-radius: 14px;
-        padding: 14px 16px;
+        border-radius: 16px;
+        padding: 20px 18px;
         display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        border: 1px solid #f0f0f0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+        border: 1px solid #f0f4f8;
+        transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .co-recent-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(23,162,184,0.13);
     }
     .co-recent-avatar {
-        width: 38px;
-        height: 38px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #17a2b8, #0a7a8f);
-        color: #fff;
-        font-size: 14px;
-        font-weight: 700;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        overflow: hidden;
     }
-    .co-recent-body { flex: 1; min-width: 0; }
     .co-recent-name {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 700;
         color: #111827;
-        margin-bottom: 2px;
     }
-    .co-recent-meta {
-        font-size: 11px;
-        color: #9ca3af;
-        margin-bottom: 6px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-    .co-recent-stars { color: #f59e0b; font-size: 11px; }
-    .co-recent-review {
+    .co-recent-date {
         font-size: 12px;
-        color: #4b5563;
-        line-height: 1.5;
-        font-style: italic;
+        color: #9ca3af;
+    }
+    .co-recent-course {
+        font-size: 12px;
+        color: #17a2b8;
+        font-weight: 600;
     }
 
     @media (max-width: 480px) {
@@ -840,34 +837,49 @@
     </div>
 
     {{-- Recently Purchased (real transaction data) --}}
-    @if($recentBuyers->isNotEmpty())
+    @php
+        $avatarColors = ['#17a2b8','#0e9f6e','#f59e0b','#8b5cf6','#ef4444','#3b82f6'];
+        $courseNames  = [
+            'complete-preparation' => 'IELTS Complete Preparation',
+            'writing-course'       => 'IELTS Writing Course',
+            'speaking-course'      => 'IELTS Speaking Course',
+            'computer-based-test'  => 'IELTS Computer Based Test',
+            'preparation-material' => 'IELTS Preparation Material',
+        ];
+    @endphp
     <div class="co-recent">
-        <div class="co-recent-title">Recently Purchased</div>
+        <h2 class="co-recent-heading">Recent Purchases</h2>
+        <p class="co-recent-desc">We are trusted by thousands of IELTS candidates by providing authentic IELTS GT and Academic practice tests for Listening, Reading and Writing module. This helps the students to get their desired band scores on their first attempt. Currently, we don't offer speaking mock tests in this package, but it will be available soon.</p>
+
+        @if($recentBuyers->isNotEmpty())
         <div class="co-recent-list">
-            @foreach($recentBuyers as $buyer)
+            @foreach($recentBuyers as $i => $buyer)
             @php
                 $parts     = explode(' ', trim($buyer->payer_name));
                 $firstName = $parts[0];
                 $lastInit  = count($parts) > 1 ? strtoupper(substr(end($parts), 0, 1)) . '.' : '';
                 $display   = $firstName . ($lastInit ? ' ' . $lastInit : '');
-                $avatar    = strtoupper(substr($firstName, 0, 1));
-                $diff      = now()->diffForHumans($buyer->created_at, ['parts' => 1, 'short' => false]);
+                $color     = $avatarColors[$i % count($avatarColors)];
+                $dateStr   = \Carbon\Carbon::parse($buyer->created_at)->format('d M Y');
+                $slugLabel = $courseNames[$buyer->course_slug] ?? $buyer->course_slug;
             @endphp
             <div class="co-recent-card">
-                <div class="co-recent-avatar">{{ $avatar }}</div>
-                <div class="co-recent-body">
-                    <div class="co-recent-name">{{ $display }}</div>
-                    <div class="co-recent-meta">
-                        <span class="co-recent-stars">★★★★★</span>
-                        &bull; {{ $diff }}
-                    </div>
-                    <div class="co-recent-review">Purchased {{ $courseData['name'] }}</div>
+                <div class="co-recent-avatar">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="32" fill="{{ $color }}22"/>
+                        <circle cx="32" cy="24" r="10" fill="{{ $color }}"/>
+                        <ellipse cx="32" cy="50" rx="16" ry="10" fill="{{ $color }}"/>
+                        <circle cx="32" cy="24" r="8" fill="#fff" opacity=".15"/>
+                    </svg>
                 </div>
+                <div class="co-recent-name">{{ $display }}</div>
+                <div class="co-recent-date">{{ $dateStr }}</div>
+                <div class="co-recent-course">{{ $slugLabel }}</div>
             </div>
             @endforeach
         </div>
+        @endif
     </div>
-    @endif
 
 </div>
 @endsection

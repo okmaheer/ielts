@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PaymentTransaction;
+use App\Models\User;
 use App\Services\EmailNotifier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -50,11 +51,10 @@ class PaymentController extends Controller
 
         $courseData = $this->courses[$course];
 
-        $recentBuyers = PaymentTransaction::where('course_slug', $course)
-            ->where('payment_status', 'completed')
+        $recentBuyers = PaymentTransaction::where('payment_status', 'completed')
             ->orderBy('created_at', 'desc')
-            ->limit(6)
-            ->get(['payer_name', 'created_at']);
+            ->limit(3)
+            ->get(['payer_name', 'course_slug', 'created_at']);
 
         return view('frontend.pages.checkout', [
             'course'          => $course,
@@ -168,7 +168,7 @@ class PaymentController extends Controller
         session()->forget('pending_transaction_id');
 
         if ($transactionId) {
-            $updateData = ['payment_status' => 'success'];
+            $updateData = ['payment_status' => 'completed'];
             if ($paymentMethod) {
                 $updateData['payment_method'] = $paymentMethod;
             }
@@ -178,6 +178,19 @@ class PaymentController extends Controller
         $transaction = $transactionId
             ? PaymentTransaction::where('transaction_id', $transactionId)->first()
             : null;
+
+        // Auto-activate the user account linked to this purchase email
+        if ($transaction && $transaction->payer_email) {
+            $user = User::where('email', $transaction->payer_email)->first();
+            if ($user) {
+                $user->update([
+                    'access_given_at' => now(),
+                    'duration'        => '2', // 30 days
+                    'status'          => '1',
+                    'is_user_paid'    => true,
+                ]);
+            }
+        }
 
         Log::info('[PaymentController] Transaction lookup result', [
             'transaction_id' => $transactionId,
