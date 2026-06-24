@@ -51,7 +51,7 @@ class PaymentController extends Controller
 
         $courseData = $this->courses[$course];
 
-        $recentBuyers = PaymentTransaction::where('payment_status', 'completed')
+        $recentBuyers = PaymentTransaction::whereIn('payment_status', ['completed', 'success'])
             ->orderBy('created_at', 'desc')
             ->limit(3)
             ->get(['payer_name', 'course_slug', 'created_at']);
