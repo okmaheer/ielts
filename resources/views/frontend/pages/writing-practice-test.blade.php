@@ -143,6 +143,84 @@
         <!-- Populated by main.js -->
     </div>
 
+    <!-- FAQ Section -->
+    <div class="mt-5 pt-3">
+        <h2 class="font-playfair fw-bold mb-4" style="font-size:26px;color:#1a2b4b;">Frequently asked Questions (FAQs)</h2>
+        <div class="accordion" id="writingFaq">
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq1">How long is the IELTS Writing test?</button></h2>
+                <div id="wfaq1" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">The IELTS Writing test is 60 minutes long in total. You should spend approximately 20 minutes on Task 1 and 40 minutes on Task 2. It is important to manage your time carefully because Task 2 carries more marks than Task 1.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq2">What are the minimum word counts for IELTS Writing tasks?</button></h2>
+                <div id="wfaq2" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">You must write at least 150 words for Task 1 and at least 250 words for Task 2. Writing under the word count will negatively affect your Task Achievement score. There is no strict maximum, but examiners focus on quality — writing more does not necessarily lead to a higher score if the extra content is irrelevant or repetitive.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq3">What is the difference between Academic and General Training Writing Task 1?</button></h2>
+                <div id="wfaq3" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">In IELTS Academic Writing Task 1, you are asked to describe, summarise, or explain visual information such as a graph, chart, table, map, or diagram in your own words. In IELTS General Training Writing Task 1, you are asked to write a letter — formal, semi-formal, or informal — in response to a given situation. Both tasks require at least 150 words.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq4">Can I use scrap paper during the IELTS Writing test?</button></h2>
+                <div id="wfaq4" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">Yes, rough paper is provided at the test centre for planning and drafting your answers. However, only what is written on your official answer sheet will be assessed by the examiner — rough notes are not marked. Make sure you transfer your final answers clearly and within the time limit.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq5">Is IELTS Writing the hardest module?</button></h2>
+                <div id="wfaq5" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">Many candidates find Writing to be the most challenging IELTS module because it requires combining strong grammar, a wide vocabulary, logical organisation, and the ability to address the task accurately — all under strict time pressure. However, with regular practice, a good understanding of the band descriptors, and expert feedback, significant improvement is achievable.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq6">How do I get a good band score in IELTS Writing?</button></h2>
+                <div id="wfaq6" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">To achieve a high Writing band score, focus on fully addressing all parts of the task, organising your response logically with clear paragraphing, using a range of academic vocabulary accurately, and demonstrating variety in your grammatical structures while keeping errors to a minimum. Getting your writing evaluated by an experienced IELTS tutor and studying high-band model answers are among the most effective strategies.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq7">Should I complete Task 1 before Task 2 in IELTS Writing?</button></h2>
+                <div id="wfaq7" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">There is no rule about the order in which you complete the tasks. However, many experienced tutors recommend completing Task 2 first because it carries more marks. If you spend too long on Task 1, you may run out of time for Task 2. Starting with Task 2 ensures you give sufficient attention to the higher-weighted task.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq8">What is the weightage of Task 1 and Task 2 in IELTS Writing?</button></h2>
+                <div id="wfaq8" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">Task 2 contributes twice as much to your overall Writing band score as Task 1. This means Task 1 accounts for approximately one-third of the Writing marks, while Task 2 accounts for approximately two-thirds. Prioritising Task 2 in both preparation and time allocation during the test is strongly recommended.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq9">How should I prepare for IELTS Writing?</button></h2>
+                <div id="wfaq9" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">Effective preparation includes practising writing regularly under timed conditions, studying band 7+ model essays to understand what examiners reward, building your academic vocabulary, working on grammatical accuracy and variety, and getting expert feedback on your writing. Using authentic practice tests like those available on this platform will help you become familiar with the exam format and question types.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wfaq10">Is there a maximum word limit in IELTS Writing?</button></h2>
+                <div id="wfaq10" class="accordion-collapse collapse" data-bs-parent="#writingFaq">
+                    <div class="accordion-body text-muted">There is no official maximum word limit in IELTS Writing. However, writing significantly more than required does not automatically improve your score and may introduce more errors, which could lower your mark. Focus on quality, relevance, and accuracy rather than word count. Most high-scoring candidates write between 160–200 words for Task 1 and 270–320 words for Task 2.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </main>
 
 <!-- FOOTER -->

@@ -359,6 +359,30 @@
         .co-price-num { font-size: 48px; }
     }
 
+    /* ── Page H1 intro section ──────────────────────────────── */
+    .co-intro {
+        max-width: 980px;
+        margin: 0 auto 32px;
+        padding: 0 16px;
+    }
+    .co-intro h1 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #111827;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+    .co-intro p {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 1.75;
+        max-width: 820px;
+    }
+    @media (max-width: 768px) {
+        .co-intro h1 { font-size: 22px; }
+        .co-intro p  { font-size: 14px; }
+    }
+
     /* ── Recently Purchased ─────────────────────────────────── */
     .co-recent {
         max-width: 980px;
@@ -475,6 +499,12 @@
         <span>Checkout</span>
         <span>/</span>
         <span style="color:#374151;font-weight:600;">{{ $courseData['name'] }}</span>
+    </div>
+
+    {{-- Per-course H1 intro --}}
+    <div class="co-intro">
+        <h1>{{ $pageH1 }}</h1>
+        <p>{{ $pageDesc }}</p>
     </div>
 
     <div class="co-wrapper">
@@ -836,7 +866,8 @@
 
     </div>
 
-    {{-- Recently Purchased (real transaction data) --}}
+    {{-- Recently Purchased --}}
+    @if($isCbt || $recentBuyers->isNotEmpty())
     @php
         $avatarColors = ['#17a2b8','#0e9f6e','#f59e0b','#8b5cf6','#ef4444','#3b82f6'];
         $courseNames  = [
@@ -849,7 +880,9 @@
     @endphp
     <div class="co-recent">
         <h2 class="co-recent-heading">Recent Purchases</h2>
-        <p class="co-recent-desc">We are trusted by thousands of IELTS candidates by providing authentic IELTS GT and Academic practice tests for Listening, Reading and Writing module. This helps the students to get their desired band scores on their first attempt. Currently, we don't offer speaking mock tests in this package, but it will be available soon.</p>
+        @if($isCbt)
+        <p class="co-recent-desc">We are trusted by thousands of IELTS candidates by providing authentic IELTS GT and Academic practice tests for Listening, Reading and Writing module. This helps the students to get their desired band scores on their first attempt.</p>
+        @endif
 
         @if($recentBuyers->isNotEmpty())
         <div class="co-recent-list">
@@ -859,11 +892,11 @@
                 $firstName = $parts[0];
                 $lastInit  = count($parts) > 1 ? strtoupper(substr(end($parts), 0, 1)) . '.' : '';
                 $display   = $firstName . ($lastInit ? ' ' . $lastInit : '');
-                $color     = $avatarColors[$i % count($avatarColors)];
                 $dateStr   = \Carbon\Carbon::parse($buyer->created_at)->format('d M Y');
-                $slugLabel = $courseNames[$buyer->course_slug] ?? $buyer->course_slug;
             @endphp
             <div class="co-recent-card">
+                @if($isCbt)
+                @php $color = $avatarColors[$i % count($avatarColors)]; $slugLabel = $courseNames[$buyer->course_slug] ?? $buyer->course_slug; @endphp
                 <div class="co-recent-avatar">
                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="32" cy="32" r="32" fill="{{ $color }}22"/>
@@ -875,11 +908,16 @@
                 <div class="co-recent-name">{{ $display }}</div>
                 <div class="co-recent-date">{{ $dateStr }}</div>
                 <div class="co-recent-course">{{ $slugLabel }}</div>
+                @else
+                <div class="co-recent-name">{{ $display }}</div>
+                <div class="co-recent-date">{{ $dateStr }}</div>
+                @endif
             </div>
             @endforeach
         </div>
         @endif
     </div>
+    @endif
 
 </div>
 @endsection

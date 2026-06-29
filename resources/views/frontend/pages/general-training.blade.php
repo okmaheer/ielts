@@ -147,6 +147,87 @@
 
                 {{-- Ad: bottom of listing page --}}
                 @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
+
+                {{-- FAQ Section --}}
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h2 class="mb-4" style="font-size:24px;font-weight:800;color:#111827;">Frequently asked Questions (FAQs)</h2>
+                        <div class="accordion" id="gtFaq">
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq1">Why is IELTS General Training considered easier than Academic?</button></h2>
+                                <div id="gfaq1" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">IELTS General Training is often considered more accessible because the Reading texts focus on practical, everyday topics rather than complex academic content. The Writing Task 1 is a letter rather than a data description. However, the Listening and Speaking modules are identical to Academic, and the same band scoring applies — so preparation is still very important.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq2">What is the format of the IELTS General Training test?</button></h2>
+                                <div id="gfaq2" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">The IELTS General Training test has four modules: Listening (approximately 30 minutes, 40 questions), Reading (60 minutes, 40 questions), Writing (60 minutes, 2 tasks), and Speaking (11–14 minutes, 3 parts). All modules are completed on the same day except Speaking, which may be scheduled up to a week before or after the other modules.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq3">How difficult is the Reading section in IELTS General Training?</button></h2>
+                                <div id="gfaq3" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">The GT Reading section is divided into three sections. Sections 1 and 2 contain practical, everyday texts such as advertisements and workplace documents, which are generally straightforward. Section 3 contains a longer, more complex text on a topic of general interest. While sections 1 and 2 are manageable, Section 3 can be challenging, particularly for lower-band-score candidates.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq4">Where is IELTS General Training accepted?</button></h2>
+                                <div id="gfaq4" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">IELTS General Training is primarily accepted for immigration applications to countries such as Canada, Australia, the UK, and New Zealand. It is also accepted by employers for skilled worker visas and by some secondary education institutions. Most universities and professional registration bodies require IELTS Academic rather than General Training.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq5">What are the writing task types in IELTS General Training?</button></h2>
+                                <div id="gfaq5" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">In IELTS General Training Writing, Task 1 requires you to write a letter of at least 150 words. The letter can be formal, semi-formal, or informal depending on the situation described in the question. Task 2 requires you to write an essay of at least 250 words responding to a point of view, argument, or problem — this task is the same format as in the Academic test.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq6">Do I need Band 6 in IELTS GT for a Canadian Post-Graduate Work Permit (PGWP)?</button></h2>
+                                <div id="gfaq6" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">Yes, for the Canadian Post-Graduate Work Permit (PGWP), applicants typically need to demonstrate CLB 7 or higher in all four skills, which generally corresponds to a minimum IELTS score of 6.0 in each band. However, requirements can vary, so it is essential to check the latest guidelines from Immigration, Refugees and Citizenship Canada (IRCC) before applying.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq7">What are the common question types in IELTS General Training Reading?</button></h2>
+                                <div id="gfaq7" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">Common question types include Multiple Choice, Short Answer, Sentence Completion, Summary Completion, True/False/Not Given, Yes/No/Not Given, Matching Information, Matching Headings, and Matching Features. Different question types test different reading skills, so practising each type is important for achieving a high band score.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq8">Should I follow the question order when answering IELTS Reading?</button></h2>
+                                <div id="gfaq8" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">For most question types in IELTS Reading, answers appear in the same order as the text, so following the question order is generally an effective strategy. However, for Matching Headings and Matching Features questions, answers do not necessarily appear in order. Always read the instructions carefully and adapt your strategy based on the question type.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq9">What types of letters can appear in IELTS GT Writing Task 1?</button></h2>
+                                <div id="gfaq9" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">IELTS GT Writing Task 1 can require a formal letter (e.g. a complaint to a company or application to an organisation), a semi-formal letter (e.g. a letter to a neighbour or landlord), or an informal letter (e.g. a letter to a friend or family member). The tone, opening, and closing style must match the letter type specified in the task. Understanding the differences is essential to scoring well.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq10">Can I use IELTS Academic instead of General Training for university admission?</button></h2>
+                                <div id="gfaq10" class="accordion-collapse collapse" data-bs-parent="#gtFaq">
+                                    <div class="accordion-body text-muted">Yes, universities almost always require IELTS Academic for undergraduate and postgraduate admission. IELTS General Training is not accepted for university admission in most cases. If you are planning to apply to a university, you should take the IELTS Academic test. General Training is primarily used for immigration, work, and secondary school purposes.</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- About Start -->

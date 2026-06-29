@@ -16,30 +16,40 @@ class PaymentController extends Controller
             'amount'      => 40.00,
             'metaTitle'   => 'Purchase IELTS Complete Preparation Course - IPP',
             'metaDesc'    => 'Buy premium IELTS preparation course to prepare for all four modules of the exam and achieve desired scores on first attempt.',
+            'pageH1'      => 'Why Book Complete IELTS Preparation Course with us?',
+            'pageDesc'    => 'We will provide you with guidance about each question of all four modules. Our course lasts 1.5 months and includes 22 sessions. In these sessions you will get to practice Listening, Reading, Speaking and Writing. Specifically for Writing, you get unlimited Task 1 and Task 2 evaluations. Specifically for Speaking, you get 2 mock speaking sessions per day with our certified IELTS examiner.',
         ],
         'writing-course' => [
             'name'        => 'IELTS Writing Course',
             'amount'      => 30.00,
             'metaTitle'   => 'Purchase IELTS Writing Course - IPP',
             'metaDesc'    => 'Our writing course will help you achieve 7 bands and above in the writing module by providing authentic evaluation and improvement strategies.',
+            'pageH1'      => 'Why Book Writing Course with us',
+            'pageDesc'    => 'We provide 1 on 1 IELTS Writing evaluation sessions with our experienced IELTS tutor. Our tutor Hamza Ahmad was an IELTS examiner himself so he understands the marking criteria. We will be providing you writing evaluation sessions for 1 month. This includes unlimited Task 1 and Task 2 evaluations. We will guide you about how to improve your writing, what errors you are making and how to avoid them.',
         ],
         'speaking-course' => [
             'name'        => 'IELTS Speaking Course',
             'amount'      => 30.00,
             'metaTitle'   => 'Book IELTS Speaking Module Preparation Course - IPP',
             'metaDesc'    => 'IPP\'s IELTS speaking course is designed to help students improve their scores within a short period of time. If you scored 6.5 in speaking previously and need 7 or higher now, then book our course now.',
+            'pageH1'      => 'Why Book IELTS Speaking Course with us?',
+            'pageDesc'    => 'Our tutor Hamza Ahmad conducts 1 on 1 mock speaking test sessions with the students. He is a former IELTS examiner, so he knows how to assess students and will provide them with the exact kind of preparation needed to score well in the speaking module. We provide 2 sessions per day for 1 month and every session is a full mock speaking test with feedback.',
         ],
         'computer-based-test' => [
             'name'        => 'IELTS Computer Based Practice Test',
             'amount'      => 8.00,
             'metaTitle'   => 'Purchase IELTS Premium Computer Based Tests - IPP',
             'metaDesc'    => 'You will get 30 authentic computer-based listening, reading, and writing practice tests with expert feedback and scores to achieve desired score first time.',
+            'pageH1'      => 'Why purchase our premium IELTS Computer Based Practice Tests',
+            'pageDesc'    => 'Our IELTS computer based practice tests have the real-exam style interface which is identical to the actual IELTS CBT interface. Solving practice tests on this computer based platform will help you practice time management and get comfortable with the real exam environment. You will get 30 Listening and 30 Reading tests, 28 Academic and 30 General Training Writing tests. Each test gives you detailed band scores and correct answers.',
         ],
         'preparation-material' => [
             'name'        => 'IELTS Preparation Material',
             'amount'      => 5.00,
             'metaTitle'   => 'Buy IELTS Preparation Material - IPP',
             'metaDesc'    => 'Get authentic IELTS preparation books, band 7 vocabulary file, model sample essays for 7 bands, and helpful strategies for listening and reading module.',
+            'pageH1'      => 'How will our Preparation Material help you?',
+            'pageDesc'    => 'If you are looking to do self-preparation for IELTS exam, then you need the right books and study material. Our preparation material includes Cambridge IELTS books, Speaking and Writing books, Band 7 model essays, Grammar and Vocabulary notes. All books are properly organized and will be provided to you in PDF format for immediate access.',
         ],
     ];
 
@@ -51,10 +61,17 @@ class PaymentController extends Controller
 
         $courseData = $this->courses[$course];
 
-        $recentBuyers = PaymentTransaction::whereIn('payment_status', ['completed', 'success'])
+        $isCbt = ($course === 'computer-based-test');
+
+        $buyersQuery = PaymentTransaction::whereIn('payment_status', ['completed', 'success'])
             ->orderBy('created_at', 'desc')
-            ->limit(3)
-            ->get(['payer_name', 'course_slug', 'created_at']);
+            ->limit(3);
+
+        if (!$isCbt) {
+            $buyersQuery->where('course_slug', $course);
+        }
+
+        $recentBuyers = $buyersQuery->get(['payer_name', 'course_slug', 'created_at']);
 
         return view('frontend.pages.checkout', [
             'course'          => $course,
@@ -63,6 +80,9 @@ class PaymentController extends Controller
             'metaTitle'       => $courseData['metaTitle'],
             'metaDescription' => $courseData['metaDesc'],
             'recentBuyers'    => $recentBuyers,
+            'isCbt'           => $isCbt,
+            'pageH1'          => $courseData['pageH1'],
+            'pageDesc'        => $courseData['pageDesc'],
         ]);
     }
 

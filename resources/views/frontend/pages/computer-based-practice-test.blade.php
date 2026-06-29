@@ -218,6 +218,77 @@
   </div>
 </section>
 
+<!-- ============ FAQ SECTION ============ -->
+<section style="background:#f8fafc;padding:64px 0;">
+  <div style="max-width:900px;margin:0 auto;padding:0 20px;">
+    <h2 style="font-size:26px;font-weight:800;color:#1a2b4b;margin-bottom:32px;">Frequently asked Questions (FAQs)</h2>
+    <div id="cbtFaq">
+
+      <style>
+        .cbt-faq-item { background:#fff; border-radius:12px; margin-bottom:10px; box-shadow:0 2px 8px rgba(0,0,0,0.07); overflow:hidden; }
+        .cbt-faq-btn { width:100%; background:none; border:none; padding:18px 20px; text-align:left; font-size:15px; font-weight:600; color:#1a2b4b; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+        .cbt-faq-btn:hover { background:#f0fafb; }
+        .cbt-faq-icon { flex-shrink:0; width:22px; height:22px; background:#17a2b8; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:transform .25s; }
+        .cbt-faq-icon svg { width:12px; height:12px; stroke:#fff; stroke-width:2.5; fill:none; }
+        .cbt-faq-btn.open .cbt-faq-icon { transform:rotate(45deg); }
+        .cbt-faq-body { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+        .cbt-faq-body-inner { padding:0 20px 18px; color:#6b7280; font-size:14px; line-height:1.75; }
+      </style>
+
+      @php
+        $cbtFaqs = [
+          ['q'=>'Is a keyboard provided in the computer-based IELTS test?','a'=>'Yes, a keyboard is provided at the IELTS computer-based test centre for the Writing and Listening sections where typed responses are required. You will not need to bring your own keyboard or any other equipment. It is recommended to practise typing beforehand if you are not comfortable using a keyboard under timed conditions.'],
+          ['q'=>'Can I move between parts during the computer-based IELTS test?','a'=>'Within each section, you can navigate between questions and review or change your answers before the section ends. However, once you have submitted a section or time runs out, you cannot go back to previous sections. It is important to manage your time carefully within each section to review your answers before submitting.'],
+          ['q'=>'When will I get my results for the computer-based IELTS test?','a'=>'Results for the computer-based IELTS test are typically available within 3 to 5 days of your test date. This is significantly faster than the paper-based IELTS, which usually takes around 13 days. You can view your results online through your British Council or IDP test taker portal.'],
+          ['q'=>'What are the main advantages of computer-based IELTS?','a'=>'The key advantages include faster results (3–5 days), more available test dates, the ability to type Writing responses (generally neater), on-screen highlighting and navigation tools for Reading, and a familiar digital environment for those accustomed to working on computers.'],
+          ['q'=>'Can I highlight text during the computer-based IELTS Reading test?','a'=>'Yes, the computer-based IELTS Reading interface includes a highlighting tool that allows you to mark text on screen while you read. You can also flag questions for review and navigate between questions easily. These tools can help with your reading strategy, especially for locating key information and revisiting difficult questions before time expires.'],
+          ['q'=>'Is computer-based IELTS more difficult than paper-based IELTS?','a'=>'The test content — questions, texts, and scoring — is identical for both formats. The difference is your comfort level with the format. Candidates who are comfortable typing and reading on screens may find CBT easier, while those who prefer writing by hand may prefer the paper-based version. Practising with CBT-style tests beforehand is strongly recommended.'],
+          ['q'=>'How do I choose between computer-based and paper-based IELTS?','a'=>'Choose the format based on your personal comfort. If you type quickly and read comfortably on screen, CBT may give you an advantage — especially for Writing. If you prefer writing by hand and annotating printed text, the paper-based test may suit you better. Practising on both formats before deciding is a good strategy.'],
+          ['q'=>'Is paper-based IELTS being phased out?','a'=>'Paper-based IELTS is still available, but computer-based IELTS is growing rapidly in availability and popularity. Many test centres now primarily offer the computer-based format due to its efficiency and faster results. Computer-based IELTS is increasingly becoming the standard option at most centres worldwide.'],
+          ['q'=>'Can I take a mixed format test — one module paper and another on computer?','a'=>'No, you must take all modules (Listening, Reading, and Writing) in the same format — either all on computer or all on paper. You cannot mix formats within a single booking. The Speaking module is always conducted face-to-face with an examiner regardless of format.'],
+          ['q'=>'Is IELTS Reading harder on a computer screen?','a'=>'Some candidates find reading long passages on screen more tiring than on paper. However, the on-screen tools such as highlighting and easy question navigation can offset this. The key is to practise with computer-based practice tests so that reading on screen becomes familiar and comfortable before your actual test day.'],
+          ['q'=>'Does spelling matter in computer-based IELTS?','a'=>'Yes, spelling is important, particularly in Listening and Reading where you must write words or short answers. Incorrect spelling will result in a wrong answer. In Writing, spelling errors can reduce your Lexical Resource score. Both British and American spelling are accepted.'],
+          ['q'=>'How fast do I need to type for the computer-based IELTS Writing section?','a'=>'There is no minimum typing speed required. However, you should be comfortable enough to write 250+ words in 40 minutes for Task 2 and 150+ words in 20 minutes for Task 1 without significant difficulty. Practising typing regularly in the weeks before your test is strongly recommended.'],
+          ['q'=>'Is there a free Academic computer-based IELTS practice test available?','a'=>'Yes, you can practise free IELTS Academic computer-based practice tests on this platform. Our free tests include Academic Reading and Listening with instant band scores and correct answers. For the full range including Writing, our premium package provides 30 Listening, 30 Reading, and 28 Academic Writing tests.'],
+          ['q'=>'Is there a free General Training computer-based IELTS practice test available?','a'=>'Yes, free IELTS General Training computer-based practice tests for Reading and Listening are available on this platform with instant band scores and correct answers at no cost. Our premium package includes 30 General Training Writing tests alongside all other test types.'],
+        ];
+      @endphp
+
+      @foreach($cbtFaqs as $fi => $faq)
+      <div class="cbt-faq-item">
+        <button class="cbt-faq-btn" type="button" data-faq="{{ $fi }}">
+          <span>{{ $faq['q'] }}</span>
+          <span class="cbt-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="cbt-faq-body" id="cbt-faq-body-{{ $fi }}">
+          <div class="cbt-faq-body-inner">{{ $faq['a'] }}</div>
+        </div>
+      </div>
+      @endforeach
+
+    </div>
+  </div>
+  <script>
+    (function(){
+      var btns = document.querySelectorAll('.cbt-faq-btn');
+      btns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var idx = this.getAttribute('data-faq');
+          var body = document.getElementById('cbt-faq-body-' + idx);
+          var isOpen = this.classList.contains('open');
+          // close all
+          btns.forEach(function(b){ b.classList.remove('open'); });
+          document.querySelectorAll('.cbt-faq-body').forEach(function(b){ b.style.maxHeight = '0'; });
+          if(!isOpen){
+            this.classList.add('open');
+            body.style.maxHeight = body.scrollHeight + 'px';
+          }
+        });
+      });
+    })();
+  </script>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="footer-inner">

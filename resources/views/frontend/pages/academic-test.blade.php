@@ -148,6 +148,87 @@
 
                 {{-- Ad: bottom of listing page --}}
                 @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
+
+                {{-- FAQ Section --}}
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h2 class="mb-4" style="font-size:24px;font-weight:800;color:#111827;">Frequently asked Questions (FAQs)</h2>
+                        <div class="accordion" id="academicFaq">
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq1">What is the difference between IELTS Academic and General Training?</button></h2>
+                                <div id="afaq1" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">IELTS Academic is designed for people applying to undergraduate or postgraduate programmes and for professional registration. IELTS General Training is for those seeking secondary education, work experience, or immigration in an English-speaking country. The Listening and Speaking modules are the same in both versions, while Reading and Writing tasks differ.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq2">What is the format of IELTS Academic Writing?</button></h2>
+                                <div id="afaq2" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">The IELTS Academic Writing test is 60 minutes long and has two tasks. Task 1 asks you to describe visual information such as a chart, graph, table, or diagram in at least 150 words. Task 2 asks you to write an essay responding to a point of view, argument, or problem in at least 250 words. Task 2 carries more marks than Task 1.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq3">How is the IELTS Academic Reading different from General Training Reading?</button></h2>
+                                <div id="afaq3" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">IELTS Academic Reading contains three long texts taken from books, journals, magazines, and newspapers, written for a non-specialist audience on academic topics. IELTS General Training Reading uses texts from advertisements, notices, workplace materials, and everyday documents. Academic texts are generally more complex and require higher-level inference skills.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq4">What is the best band score achievable in IELTS?</button></h2>
+                                <div id="afaq4" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">The highest possible IELTS band score is 9.0, which represents an Expert User of the English language. Scores are reported in whole and half bands from 0 to 9. Most universities require a minimum of 6.0 to 7.0, while highly competitive programmes may require 7.5 or above.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq5">Can IELTS Academic results be used for scholarships?</button></h2>
+                                <div id="afaq5" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">Yes, many scholarships and funding bodies require proof of English language proficiency, and IELTS Academic is one of the most widely accepted qualifications. Scholarship requirements vary by institution, so always check the specific band score needed for each programme or funding body.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq6">What are the best resources for IELTS Academic preparation?</button></h2>
+                                <div id="afaq6" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">The best resources include official Cambridge IELTS practice books, the official IELTS website, and dedicated practice platforms like ieltsprepandpractice.com. Practising with authentic exam-style tests, studying band 7+ model essays, and getting feedback from experienced IELTS tutors are all highly effective preparation strategies.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq7">Is IELTS Academic required for professional registration?</button></h2>
+                                <div id="afaq7" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">Yes, many regulatory bodies for professions such as nursing, medicine, and engineering in countries like the UK, Australia, Canada, and New Zealand require a minimum IELTS Academic score for professional registration. The required band score varies by profession and country, so check with the relevant regulatory authority.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq8">Is IELTS Academic harder than General Training?</button></h2>
+                                <div id="afaq8" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">The IELTS Academic Reading and Writing tasks are generally considered more demanding than General Training due to the complexity of the texts and tasks involved. However, both versions share the same Listening and Speaking modules. Neither version is objectively harder overall; difficulty depends on your individual strengths and the skills each version tests.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq9">What are the scoring criteria for IELTS Academic Writing?</button></h2>
+                                <div id="afaq9" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">IELTS Academic Writing is assessed on four criteria: Task Achievement (how well you address the task), Coherence and Cohesion (how well your writing flows and is organised), Lexical Resource (your range and accuracy of vocabulary), and Grammatical Range and Accuracy (variety and correctness of grammar). Each criterion contributes equally to the Writing band score.</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#afaq10">What is the best strategy for managing passage order in IELTS Academic Reading?</button></h2>
+                                <div id="afaq10" class="accordion-collapse collapse" data-bs-parent="#academicFaq">
+                                    <div class="accordion-body text-muted">A useful strategy is to start with the passage or question type you find most familiar or straightforward to build confidence and save time. Always skim each passage before reading in detail, and use the questions to guide your reading rather than reading everything first. Time management is critical — allocate roughly 20 minutes per passage.</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- About Start -->
