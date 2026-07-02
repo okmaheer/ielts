@@ -362,25 +362,94 @@
     /* ── Page H1 intro section ──────────────────────────────── */
     .co-intro {
         max-width: 980px;
-        margin: 0 auto 32px;
+        margin: 0 auto 36px;
         padding: 0 16px;
     }
-    .co-intro h1 {
-        font-size: 28px;
+    .co-intro-box {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+        overflow: hidden;
+        position: relative;
+    }
+    .co-intro-strip {
+        height: 5px;
+        background: linear-gradient(90deg, #0a7a8f 0%, #17a2b8 50%, #1bc4dc 100%);
+    }
+    .co-intro-inner {
+        padding: 36px 44px 32px;
+        position: relative;
+    }
+    /* Decorative bg circle */
+    .co-intro-inner::after {
+        content: '';
+        position: absolute;
+        width: 260px; height: 260px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(23,162,184,0.06) 0%, transparent 70%);
+        top: -80px; right: -60px;
+        pointer-events: none;
+    }
+    .co-intro-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: #f0fafb;
+        border: 1px solid rgba(23,162,184,0.22);
+        color: #0a7a8f;
+        border-radius: 100px;
+        padding: 6px 16px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+    .co-intro-badge i { font-size: 12px; color: #17a2b8; }
+    .co-intro-inner h1 {
+        font-size: 26px;
         font-weight: 800;
         color: #111827;
-        margin-bottom: 12px;
-        line-height: 1.3;
+        margin-bottom: 14px;
+        line-height: 1.35;
+        position: relative; z-index: 1;
     }
-    .co-intro p {
+    .co-intro-inner p {
         font-size: 15px;
         color: #4b5563;
-        line-height: 1.75;
-        max-width: 820px;
+        line-height: 1.8;
+        max-width: 840px;
+        margin: 0 0 28px;
+        position: relative; z-index: 1;
     }
+    .co-intro-footer {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+        border-top: 1px solid #f0f4f8;
+        padding-top: 20px;
+        position: relative; z-index: 1;
+    }
+    .co-intro-stat {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 13px;
+        color: #6b7280;
+        font-weight: 500;
+    }
+    .co-intro-stat i { color: #17a2b8; font-size: 14px; }
     @media (max-width: 768px) {
-        .co-intro h1 { font-size: 22px; }
-        .co-intro p  { font-size: 14px; }
+        .co-intro-inner { padding: 28px 24px 24px; }
+        .co-intro-inner h1 { font-size: 21px; }
+        .co-intro-inner p  { font-size: 14px; }
+        .co-intro-footer { gap: 16px; }
+        .co-intro-stat { font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+        .co-intro-inner { padding: 22px 16px 20px; }
+        .co-intro-inner h1 { font-size: 18px; }
     }
 
     /* ── Recently Purchased ─────────────────────────────────── */
@@ -503,8 +572,23 @@
 
     {{-- Per-course H1 intro --}}
     <div class="co-intro">
-        <h1>{{ $pageH1 }}</h1>
-        <p>{{ $pageDesc }}</p>
+        <div class="co-intro-box">
+            <div class="co-intro-strip"></div>
+            <div class="co-intro-inner">
+                <div class="co-intro-badge">
+                    <i class="fas fa-award"></i>
+                    Expert-Led &nbsp;·&nbsp; Trusted by 1,000+ Students
+                </div>
+                <h1>{{ $pageH1 }}</h1>
+                <p>{{ $pageDesc }}</p>
+                <div class="co-intro-footer">
+                    <div class="co-intro-stat"><i class="fas fa-user-check"></i> Experienced IELTS Tutors</div>
+                    <div class="co-intro-stat"><i class="fas fa-shield-alt"></i> Secure Payment via Swichnow</div>
+                    <div class="co-intro-stat"><i class="fas fa-bolt"></i> Instant Access After Purchase</div>
+                    <div class="co-intro-stat"><i class="fas fa-headset"></i> Ongoing Support Included</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="co-wrapper">
