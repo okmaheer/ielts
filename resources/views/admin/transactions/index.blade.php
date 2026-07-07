@@ -17,13 +17,14 @@
     {{-- Stat cards --}}
     <div class="row g-4 mb-6">
         @foreach ([
-            ['label'=>'Total',   'count'=>$counts['all'],     'color'=>'primary', 'icon'=>'fa-list',        'status'=>''],
-            ['label'=>'Pending', 'count'=>$counts['pending'], 'color'=>'warning', 'icon'=>'fa-clock',       'status'=>'pending'],
-            ['label'=>'Success', 'count'=>$counts['success'], 'color'=>'success', 'icon'=>'fa-check-circle','status'=>'success'],
-            ['label'=>'Failed',  'count'=>$counts['failed'],  'color'=>'danger',  'icon'=>'fa-times-circle','status'=>'failed'],
+            ['label'=>'Total',        'count'=>$counts['all'],         'color'=>'primary', 'icon'=>'fa-list',        'query'=>[]],
+            ['label'=>'Pending',      'count'=>$counts['pending'],     'color'=>'warning', 'icon'=>'fa-clock',       'query'=>['status'=>'pending']],
+            ['label'=>'Success',      'count'=>$counts['success'],     'color'=>'success', 'icon'=>'fa-check-circle','query'=>['status'=>'success']],
+            ['label'=>'Failed',       'count'=>$counts['failed'],      'color'=>'danger',  'icon'=>'fa-times-circle','query'=>['status'=>'failed']],
+            ['label'=>'Needs Access', 'count'=>$counts['unfulfilled'], 'color'=>'info',    'icon'=>'fa-user-clock',  'query'=>['unfulfilled'=>1]],
         ] as $card)
         <div class="col-6 col-md-3">
-            <a href="{{ route('admin.transactions.index', $card['status'] ? ['status'=>$card['status']] : []) }}"
+            <a href="{{ route('admin.transactions.index', $card['query']) }}"
                class="card border-0 shadow-sm text-decoration-none">
                 <div class="card-body d-flex align-items-center gap-3 p-4">
                     <div class="rounded-circle d-flex align-items-center justify-content-center bg-{{ $card['color'] }} bg-opacity-10"
@@ -85,6 +86,7 @@
                             <th>Amount</th>
                             <th>Method</th>
                             <th>Status</th>
+                            <th>Access</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -123,10 +125,33 @@
                                     {{ ucfirst($tx->payment_status) }}
                                 </span>
                             </td>
+                            <td style="white-space:nowrap;">
+                                @if (!in_array($tx->payment_status, ['success', 'completed']))
+                                    <span class="text-muted fs-7">—</span>
+                                @elseif ($tx->fulfilled_at)
+                                    <span class="badge badge-light-success fw-bolder px-3 py-2 fs-7" title="Fulfilled {{ $tx->fulfilled_at->format('d M Y H:i') }}">
+                                        Access granted
+                                    </span>
+                                @else
+                                    <div class="d-flex flex-column gap-1">
+                                        <span class="badge badge-light-info fw-bolder px-3 py-2 fs-7">Needs access</span>
+                                        <a href="{{ route('admin.user.create', ['name' => $tx->payer_name, 'email' => $tx->payer_email, 'phone' => $tx->payer_phone]) }}"
+                                           class="fs-7 fw-bold">
+                                            Create / upgrade user
+                                        </a>
+                                        <form action="{{ route('admin.transactions.fulfill', $tx->id) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-light-success px-2 py-1 fs-8">
+                                                Mark fulfilled
+                                            </button>
+                                        </form>
+                                    </div>
+                                @endif
+                            </td>
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="7" class="text-center text-muted py-10">No transactions found.</td>
+                            <td colspan="8" class="text-center text-muted py-10">No transactions found.</td>
                         </tr>
                         @endforelse
                     </tbody>

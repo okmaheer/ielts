@@ -15,6 +15,10 @@ class TransactionController extends Controller
             $query->where('payment_status', $request->status);
         }
 
+        if ($request->boolean('unfulfilled')) {
+            $query->whereIn('payment_status', ['success', 'completed'])->whereNull('fulfilled_at');
+        }
+
         if ($request->filled('search')) {
             $s = $request->search;
             $query->where(function ($q) use ($s) {
@@ -28,12 +32,23 @@ class TransactionController extends Controller
         $transactions = $query->paginate(20)->withQueryString();
 
         $counts = [
-            'all'     => PaymentTransaction::count(),
-            'pending' => PaymentTransaction::where('payment_status', 'pending')->count(),
-            'success' => PaymentTransaction::where('payment_status', 'success')->count(),
-            'failed'  => PaymentTransaction::where('payment_status', 'failed')->count(),
+            'all'         => PaymentTransaction::count(),
+            'pending'     => PaymentTransaction::where('payment_status', 'pending')->count(),
+            'success'     => PaymentTransaction::where('payment_status', 'success')->count(),
+            'failed'      => PaymentTransaction::where('payment_status', 'failed')->count(),
+            'unfulfilled' => PaymentTransaction::whereIn('payment_status', ['success', 'completed'])
+                ->whereNull('fulfilled_at')
+                ->count(),
         ];
 
         return view('admin.transactions.index', compact('transactions', 'counts'));
+    }
+
+    public function markFulfilled(PaymentTransaction $transaction)
+    {
+        $transaction->update(['fulfilled_at' => now()]);
+
+        return redirect()->route('admin.transactions.index')
+            ->with('success', "Marked {$transaction->payer_name}'s payment as fulfilled.");
     }
 }

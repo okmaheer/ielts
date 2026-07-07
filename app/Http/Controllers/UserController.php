@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,28 +13,74 @@ class UserController extends Controller
     {
 
         $countries = $this->getCountries();
-        return view('admin.users.create', compact('countries'));
+        $prefill = [
+            'name'  => $request->query('name'),
+            'email' => $request->query('email'),
+            'phone' => $request->query('phone'),
+        ];
+        return view('admin.users.create', compact('countries', 'prefill'));
     }
 
     public function store(Request $request)
     {
-        $user = User::create([
-            'name' => $request->name,
-            'email' =>  $request->email,
-            'phone' =>  $request->phone,
-            'password' =>  Hash::make($request->password),
-            'country' =>  $request->country,
-            'duration' =>  $request->duration,
-            'status' => $request->status,
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'regex:/^[^@\s]+@gmail\.com$/i'],
+            'phone' => ['required', 'string', 'max:20'],
+            'password' => ['nullable', 'string', 'min:8'],
+            'country' => ['required', 'string'],
+            'duration' => ['required'],
+            'status' => ['required'],
+        ], [
+            'email.regex' => 'Premium accounts must use a Gmail address — this is the email the user will also use to sign in for free tests on the writing site.',
+        ]);
+
+        // Users log into the Writing site with Google first (free tier) before
+        // ever paying — if that row already exists, upgrade it to paid instead
+        // of creating a duplicate account for the same person.
+        $existingUser = User::where('email', $validated['email'])->first();
+
+        $generatedPassword = null;
+        if (!empty($validated['password'])) {
+            $plainPassword = $validated['password'];
+        } else {
+            $plainPassword = Str::random(12);
+            $generatedPassword = $plainPassword;
+        }
+
+        $data = [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'password' => Hash::make($plainPassword),
+            'country' => $validated['country'],
+            'duration' => $validated['duration'],
+            'status' => $validated['status'],
             'is_user_paid' => true,
             'access_given_at' => now(),
-        ]);
-        $role = "User";
-        if ($role) {
+        ];
 
-            $user->assignRole($role);
+        if ($existingUser) {
+            $existingUser->update($data);
+            $user = $existingUser;
+        } else {
+            $user = User::create($data);
         }
-        return redirect()->route('admin.user.index');
+
+        if (!$user->hasRole('User')) {
+            $user->assignRole('User');
+        }
+
+        $redirect = redirect()->route('admin.user.index');
+
+        if ($generatedPassword) {
+            $redirect->with('generated_password', [
+                'email' => $user->email,
+                'password' => $generatedPassword,
+            ]);
+        }
+
+        return $redirect;
     }
 
     public function index()
@@ -43,17 +90,35 @@ class UserController extends Controller
     }
     public function update(Request $request)
     {
-        $user = User::where('id', $request->user_id)->update([
-            'name' => $request->name,
-            'email' =>  $request->email,
-            'phone' =>  $request->phone,
-            'password' =>  Hash::make($request->password),
-            'country' =>  $request->country,
-            'duration' =>  $request->duration,
-            'status' => $request->status,
+        $validated = $request->validate([
+            'user_id' => ['required', 'integer', 'exists:users,id'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'regex:/^[^@\s]+@gmail\.com$/i', 'unique:users,email,' . $request->user_id],
+            'phone' => ['required', 'string', 'max:20'],
+            'password' => ['nullable', 'string', 'min:8'],
+            'country' => ['required', 'string'],
+            'duration' => ['required'],
+            'status' => ['required'],
+        ], [
+            'email.regex' => 'Premium accounts must use a Gmail address — this is the email the user will also use to sign in for free tests on the writing site.',
+        ]);
+
+        $data = [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'country' => $validated['country'],
+            'duration' => $validated['duration'],
+            'status' => $validated['status'],
             'is_user_paid' => true,
             'access_given_at' => now(),
-        ]);
+        ];
+
+        if (!empty($validated['password'])) {
+            $data['password'] = Hash::make($validated['password']);
+        }
+
+        User::findOrFail($validated['user_id'])->update($data);
       
         // $role = "User";
         // if ($role) {

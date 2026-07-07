@@ -153,6 +153,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         // Transactions
         Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
+        Route::post('transactions/{transaction}/fulfill', [TransactionController::class, 'markFulfilled'])->name('transactions.fulfill');
     });
 });
 Route::post('/startTimer', [FinishedTestController::class, 'startTimer'])->name('startTimer');

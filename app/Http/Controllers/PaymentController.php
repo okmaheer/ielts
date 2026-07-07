@@ -199,18 +199,10 @@ class PaymentController extends Controller
             ? PaymentTransaction::where('transaction_id', $transactionId)->first()
             : null;
 
-        // Auto-activate the user account linked to this purchase email
-        if ($transaction && $transaction->payer_email) {
-            $user = User::where('email', $transaction->payer_email)->first();
-            if ($user) {
-                $user->update([
-                    'access_given_at' => now(),
-                    'duration'        => '2', // 30 days
-                    'status'          => '1',
-                    'is_user_paid'    => true,
-                ]);
-            }
-        }
+        // Premium access is granted manually by an admin (Users > Create/Edit)
+        // after reviewing this transaction — the payer's email is not a
+        // reliable account identifier, so we no longer auto-activate a user
+        // here. See admin.transactions.index for fulfillment tracking.
 
         Log::info('[PaymentController] Transaction lookup result', [
             'transaction_id' => $transactionId,

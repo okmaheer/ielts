@@ -38,7 +38,7 @@
                         </label>
                         <!--end::Label-->
                         <input type="text" class="form-control form-control-solid required" placeholder="Enter name"
-                            name="name" />
+                            name="name" value="{{ old('name', $prefill['name'] ?? '') }}" />
                     </div>
 
 
@@ -49,12 +49,16 @@
                         </label>
                         <!--end::Label-->
                         <input type="phone" class="form-control form-control-solid required" placeholder="Enter Phone"
-                            name="phone" />
+                            name="phone" value="{{ old('phone', $prefill['phone'] ?? '') }}" />
                     </div>
 
                 </div>
 
-
+                <div class="alert alert-info">
+                    Use a valid Gmail address — this is the same email the user will use to sign in with Google
+                    on the writing site for free tests. If they already have a free account with this email,
+                    it will be upgraded to premium instead of creating a duplicate.
+                </div>
 
 
 
@@ -65,8 +69,8 @@
                             <span class="required">Email</span>
                         </label>
                         <!--end::Label-->
-                        <input type="email" class="form-control form-control-solid required" placeholder="Enter Email"
-                            name="email" />
+                        <input type="email" class="form-control form-control-solid required" placeholder="name@gmail.com"
+                            name="email" value="{{ old('email', $prefill['email'] ?? '') }}" />
                     </div>
 
 
@@ -92,11 +96,15 @@
                     <div class="col-md-6">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Password</span>
+                            <span>Password</span>
                         </label>
                         <!--end::Label-->
-                        <input type="password" class="form-control form-control-solid required" placeholder="Enter Password"
-                            name="password" />
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-solid" placeholder="Leave blank to auto-generate"
+                                name="password" id="password-field" autocomplete="off" />
+                            <button type="button" class="btn btn-light-primary" onclick="generatePassword()">Generate</button>
+                        </div>
+                        <div class="form-text">Leave blank and we'll generate a secure password for you to share with the user.</div>
                     </div>
 
 
@@ -153,4 +161,16 @@
             </form>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        function generatePassword() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+            let value = '';
+            for (let i = 0; i < 12; i++) {
+                value += chars[Math.floor(Math.random() * chars.length)];
+            }
+            document.getElementById('password-field').value = value;
+        }
+    </script>
 @endsection

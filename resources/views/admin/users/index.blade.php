@@ -32,6 +32,16 @@
         <!--end::Actions-->
     </div>
     <!--end::Toolbar-->
+    @if (session('generated_password'))
+        <div class="alert alert-success">
+            Account for <strong>{{ session('generated_password')['email'] }}</strong> is ready.
+            Generated password: <code class="fs-5">{{ session('generated_password')['password'] }}</code>
+            — copy this now and share it with the user, it won't be shown again.
+        </div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
     <div class="d-flex flex-wrap flex-stack pb-7">
         <!--begin::Title-->
         <div class="d-flex flex-wrap align-items-center my-1">
