@@ -41,7 +41,7 @@ class PaymentController extends Controller
             'metaTitle'   => 'Purchase IELTS Premium Computer Based Tests - IPP',
             'metaDesc'    => 'You will get 30 authentic computer-based listening, reading, and writing practice tests with expert feedback and scores to achieve desired score first time.',
             'pageH1'      => 'Why purchase our premium IELTS Computer Based Practice Tests',
-            'pageDesc'    => 'Our IELTS computer based practice tests have the real-exam style interface which is identical to the actual IELTS CBT interface. Solving practice tests on this computer based platform will help you practice time management and get comfortable with the real exam environment. You will get 30 Listening and 30 Reading tests, 28 Academic and 30 General Training Writing tests. Each test gives you detailed band scores and correct answers.',
+            'pageDesc'    => 'Our IELTS computer based practice tests have the real-exam style interface which is identical to the actual IELTS CBT interface. 30 Listening & 30 Reading Tests (Academic and General Training Both included). You will get 28 Academic and 30 General Training Writing tests. Each test gives you detailed band scores and correct answers.',
         ],
         'preparation-material' => [
             'name'        => 'IELTS Preparation Material',
