@@ -40,8 +40,16 @@ class PaymentController extends Controller
             'amount'      => 8.00,
             'metaTitle'   => 'Purchase IELTS Premium Computer Based Tests - IPP',
             'metaDesc'    => 'You will get 30 authentic computer-based listening, reading, and writing practice tests with expert feedback and scores to achieve desired score first time.',
-            'pageH1'      => 'Why purchase our premium IELTS Computer Based Practice Tests',
-            'pageDesc'    => 'Our IELTS computer based practice tests have the real-exam style interface which is identical to the actual IELTS CBT interface. 30 Listening & 30 Reading Tests (Academic and General Training Both included). You will get 28 Academic and 30 General Training Writing tests. Each test gives you detailed band scores and correct answers.',
+            'pageH1'      => 'Why Purchase Our Premium IELTS Computer-Based Practice Tests?',
+            'pageDesc'    => 'Our practice tests feel just like the real IELTS exam, so you know exactly what to expect before you sit the actual test. The question types and difficulty level match exactly what you\'ll face in the real exam, helping you build the confidence and skills you need to succeed. Whether you\'re preparing for Academic or General Training, we have the right tests for you. And with just the right number of tests in our package, you\'ll get all the practice you need to prepare fully and achieve your desired band score on your first attempt.',
+            'whatsIncluded' => [
+                'Computer based simulation',
+                '30 Listening and Reading Tests (Academic and General Training both included)',
+                '28 Academic Writing Tests & 30 General Training Writing Tests',
+                'Detailed band score breakdown',
+                'Expert review access',
+                '24/7 Guidance Available',
+            ],
         ],
         'preparation-material' => [
             'name'        => 'IELTS Preparation Material',
@@ -83,6 +91,7 @@ class PaymentController extends Controller
             'isCbt'           => $isCbt,
             'pageH1'          => $courseData['pageH1'],
             'pageDesc'        => $courseData['pageDesc'],
+            'whatsIncluded'   => $courseData['whatsIncluded'] ?? null,
         ]);
     }
 

@@ -422,6 +422,38 @@
         margin: 0 0 28px;
         position: relative; z-index: 1;
     }
+    .co-intro-included {
+        margin: 0 0 28px;
+        position: relative; z-index: 1;
+    }
+    .co-intro-included strong {
+        display: block;
+        font-size: 15px;
+        color: #111827;
+        margin-bottom: 12px;
+    }
+    .co-intro-included ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 24px;
+    }
+    .co-intro-included li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 14px;
+        color: #4b5563;
+        line-height: 1.5;
+    }
+    .co-intro-included li i {
+        color: #17a2b8;
+        font-size: 13px;
+        margin-top: 3px;
+        flex-shrink: 0;
+    }
     .co-intro-footer {
         display: flex;
         align-items: center;
@@ -444,6 +476,7 @@
         .co-intro-inner { padding: 28px 24px 24px; }
         .co-intro-inner h1 { font-size: 21px; }
         .co-intro-inner p  { font-size: 14px; }
+        .co-intro-included ul { grid-template-columns: 1fr; }
         .co-intro-footer { gap: 16px; }
         .co-intro-stat { font-size: 12px; }
     }
@@ -581,6 +614,16 @@
                 </div>
                 <h1>{{ $pageH1 }}</h1>
                 <p>{{ $pageDesc }}</p>
+                @if (!empty($whatsIncluded))
+                    <div class="co-intro-included">
+                        <strong>What's included:</strong>
+                        <ul>
+                            @foreach ($whatsIncluded as $item)
+                                <li><i class="fas fa-check"></i> {{ $item }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="co-intro-footer">
                     <div class="co-intro-stat"><i class="fas fa-user-check"></i> Experienced IELTS Tutors</div>
                     <div class="co-intro-stat"><i class="fas fa-shield-alt"></i> Secure Payment via Swichnow</div>
