@@ -570,27 +570,6 @@
         <span style="color:#374151;font-weight:600;">{{ $courseData['name'] }}</span>
     </div>
 
-    {{-- Per-course H1 intro --}}
-    <div class="co-intro">
-        <div class="co-intro-box">
-            <div class="co-intro-strip"></div>
-            <div class="co-intro-inner">
-                <div class="co-intro-badge">
-                    <i class="fas fa-award"></i>
-                    Expert-Led &nbsp;·&nbsp; Trusted by 1,000+ Students
-                </div>
-                <h1>{{ $pageH1 }}</h1>
-                <p>{{ $pageDesc }}</p>
-                <div class="co-intro-footer">
-                    <div class="co-intro-stat"><i class="fas fa-user-check"></i> Experienced IELTS Tutors</div>
-                    <div class="co-intro-stat"><i class="fas fa-shield-alt"></i> Secure Payment via Swichnow</div>
-                    <div class="co-intro-stat"><i class="fas fa-bolt"></i> Instant Access After Purchase</div>
-                    <div class="co-intro-stat"><i class="fas fa-headset"></i> Ongoing Support Included</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="co-wrapper">
 
         {{-- ══ LEFT ══ --}}
