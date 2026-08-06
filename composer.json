@@ -11,6 +11,7 @@
         "laravel/framework": "^9.19",
         "laravel/tinker": "^2.7",
         "nesbot/carbon": "^2.66",
+        "sentry/sentry-laravel": "^3.8",
         "spatie/laravel-cookie-consent": "^3.2",
         "spatie/laravel-permission": "^5.7",
         "yajra/laravel-datatables": "^9.0"
