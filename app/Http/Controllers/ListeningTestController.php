@@ -15,10 +15,10 @@ class ListeningTestController extends Controller
     public function index(Request $request, $id)
     {
 
-        $test = Test::where('id', $id)->with('questions')->first();
+        $test = Test::where('id', $id)->with('questions')->firstOrFail();
 
         // Paid tests require an active, non-expired user account
-        if ($test && $test->type == 2) {
+        if ($test->type == 2) {
             if (!Auth::check()) {
                 return redirect()->route('show.loginForm')
                     ->with('error', 'Please log in to access this test.');
@@ -66,15 +66,34 @@ class ListeningTestController extends Controller
     }
     public function finish(Request $request)
     {
+        $validated = $request->validate([
+            'test_id' => 'required|integer|exists:tests,id',
+            'mcqs' => 'nullable|array',
+            'fill' => 'nullable|array',
+            'fivechoice' => 'nullable|array',
+        ]);
+
         session()->forget('countdowntime');
         session()->forget('listeningcountdowntime');
-        $test = Test::findOrFail($request->test_id);
+        $test = Test::findOrFail($validated['test_id']);
+
+        // Preload every submitted option in one query instead of one lookup per answer
+        $optionIds = collect($request->mcqs ?: [])
+            ->merge(collect($request->fivechoice ?: [])->flatten())
+            ->flatten()
+            ->filter()
+            ->unique()
+            ->all();
+        $options = $optionIds
+            ? Option::whereIn('id', $optionIds)->get()->keyBy('id')
+            : collect();
+
         $mcqsResult = [];
         if ($request->mcqs) {
             foreach ($request->mcqs as $key => $option) {
 
-                $ans = Option::where('id', $option)->first();
-                if ($ans->is_correct == 0) {
+                $ans = $options->get($option);
+                if (!$ans || $ans->is_correct == 0) {
                     $mcqsResult[$key] = false;
                 } else {
                     $mcqsResult[$key] = true;
@@ -84,9 +103,17 @@ class ListeningTestController extends Controller
         $fillResult = [];
 
         if ($request->fill) {
+            // Preload the answer keys for every submitted question in one query
+            $fillAnswers = FillInBlank::whereIn('question_id', array_keys($request->fill))
+                ->get()
+                ->groupBy('question_id');
+
             foreach ($request->fill as $key => $fill) {
 
-                $fills = FillInBlank::where('question_id', $key)->first();
+                $fills = $fillAnswers->get($key)?->first();
+                if (!$fills) {
+                    continue;
+                }
                 if (isset($fill[0])) {
                     $fillResult[$key]['first'] = false;
 
@@ -131,16 +158,16 @@ class ListeningTestController extends Controller
         if ($request->fivechoice) {
             foreach ($request->fivechoice as $key => $option) {
                 if (isset($option[0])) {
-                    $ans = Option::where('id', $option[0])->first();
-                    if ($ans->is_correct == 0) {
+                    $ans = $options->get($option[0]);
+                    if (!$ans || $ans->is_correct == 0) {
                         $fiveChoice[$key][$option[0]] = false;
                     } else {
                         $fiveChoice[$key][$option[0]] = true;
                     }
                 }
                 if (isset($option[1])) {
-                    $ans = Option::where('id', $option[1])->first();
-                    if ($ans->is_correct == 0) {
+                    $ans = $options->get($option[1]);
+                    if (!$ans || $ans->is_correct == 0) {
                         $fiveChoice[$key][$option[1]] = false;
                     } else {
                         $fiveChoice[$key][$option[1]] = true;
@@ -154,7 +181,7 @@ class ListeningTestController extends Controller
         $mcqsResult =  $this->mcqsScore($mcqsResult);
 
         $test =   FinishedTest::create([
-            'test_id' => $request->test_id,
+            'test_id' => (int) $validated['test_id'],
             'fill_score' => $fillResult,
             'mcqs_score' => $mcqsResult,
             'five_choice_score' => $fiveScoreResult,
