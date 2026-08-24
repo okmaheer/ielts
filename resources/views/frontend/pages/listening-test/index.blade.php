@@ -1,6 +1,12 @@
 @extends('layouts.frontend-app')
 @section('css')
     <style>
+        /* Sidebar ads: pinned near the middle of the viewport so they stay on
+           screen for the whole of the part the user is currently solving. */
+        .listening-ad-sticky {
+            position: sticky;
+            top: calc(50vh - 160px);
+        }
         .number-box {
             width: 13px;
             height: 13px;
@@ -150,19 +156,19 @@
                     @php
                         $iteration = 1;
                     @endphp
-                    @foreach ($data as $key => $group)
-                        {{-- Ad between parts only (not before Part 1) --}}
-                        @if (!$loop->first)
-                        <div class="row my-2">
-                            <div class="col-12">
-                                @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                            </div>
+                    {{-- Ad 1 of 10: header banner, above Part 1 --}}
+                    <div class="row my-2">
+                        <div class="col-12">
+                            @include('layouts.partials.ad-unit', ['slot' => 'banner'])
                         </div>
-                        @endif
-                        <div class="row align-items-start">
+                    </div>
+
+                    @foreach ($data as $key => $group)
+                        {{-- no align-items-start: columns must stretch so the ads can stick --}}
+                        <div class="row">
                             {{-- Left sidebar ad --}}
-                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5 listening-ad-col" id="listening-ad-left-{{ $key }}">
-                                <div style="position:sticky; top:80px;">
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center justify-content-center listening-ad-col" id="listening-ad-left-{{ $key }}">
+                                <div class="listening-ad-sticky">
                                     <button onclick="dismissListeningAd('{{ $key }}', 'left')" style="display:block; margin-left:auto; margin-bottom:4px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
@@ -217,8 +223,8 @@
                             </div>
 
                             {{-- Right sidebar ad --}}
-                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center pt-5 listening-ad-col" id="listening-ad-right-{{ $key }}">
-                                <div style="position:sticky; top:80px;">
+                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center justify-content-center listening-ad-col" id="listening-ad-right-{{ $key }}">
+                                <div class="listening-ad-sticky">
                                     <button onclick="dismissListeningAd('{{ $key }}', 'right')" style="display:block; margin-left:auto; margin-bottom:4px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
@@ -232,6 +238,13 @@
 
                         </button>
 
+                    </div>
+
+                    {{-- Ad 10 of 10: footer banner, below Finish Test --}}
+                    <div class="row my-2">
+                        <div class="col-12">
+                            @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+                        </div>
                     </div>
 
                 </div>
