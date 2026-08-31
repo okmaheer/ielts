@@ -63,7 +63,7 @@
 @elseif ($slot === 'sidebar')
 <div class="ad-unit-wrap" style="text-align:center; overflow:hidden;">
     <ins class="adsbygoogle"
-         style="display:block; min-width:250px; min-height:250px;"
+         style="display:block; width:100%; min-height:250px;"
          data-ad-client="{{ $client }}"
          data-ad-slot="9656135372"
          data-ad-format="auto"></ins>

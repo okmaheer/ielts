@@ -162,20 +162,23 @@
                     @php
                         $iteration = 1;
                     @endphp
-                    {{-- Ad 1 of 10: header banner, above Part 1 --}}
-                    <div class="row my-2">
-                        <div class="col-12">
-                            @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                        </div>
-                    </div>
-
                     @foreach ($data as $key => $group)
+                        {{-- In-content banner AFTER Part 1 only. Never above the test
+                             content: AdSense prohibits layouts that push content below
+                             the fold. --}}
+                        @if ($loop->index === 1)
+                            <div class="row" style="margin-top:72px; margin-bottom:72px;">
+                                <div class="col-12">
+                                    @include('layouts.partials.ad-unit', ['slot' => 'banner'])
+                                </div>
+                            </div>
+                        @endif
                         {{-- no align-items-start: columns must stretch so the ads can stick --}}
                         <div class="row">
                             {{-- Left sidebar ad --}}
                             <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center justify-content-center listening-ad-col" id="listening-ad-left-{{ $key }}">
                                 <div class="listening-ad-sticky">
-                                    <button type="button" onclick="dismissListeningAd('{{ $key }}', 'left')" style="display:block; margin-left:auto; margin-bottom:4px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
+                                    <button type="button" onclick="dismissListeningAd('{{ $key }}', 'left')" style="display:block; margin-left:auto; margin-bottom:16px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
                             </div>
@@ -231,7 +234,7 @@
                             {{-- Right sidebar ad --}}
                             <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center justify-content-center listening-ad-col" id="listening-ad-right-{{ $key }}">
                                 <div class="listening-ad-sticky">
-                                    <button type="button" onclick="dismissListeningAd('{{ $key }}', 'right')" style="display:block; margin-left:auto; margin-bottom:4px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
+                                    <button type="button" onclick="dismissListeningAd('{{ $key }}', 'right')" style="display:block; margin-left:auto; margin-bottom:16px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
                                     @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
                                 </div>
                             </div>
@@ -246,8 +249,9 @@
 
                     </div>
 
-                    {{-- Ad 10 of 10: footer banner, below Finish Test --}}
-                    <div class="row my-2">
+                    {{-- Ad 10 of 10: footer banner. Deliberately kept far below the
+                         Finish Test button so it can never be clicked by accident. --}}
+                    <div class="row" style="margin-top:160px; margin-bottom:8px;">
                         <div class="col-12">
                             @include('layouts.partials.ad-unit', ['slot' => 'banner'])
                         </div>

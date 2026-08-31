@@ -55,8 +55,8 @@
 
                 </div>
 
-                {{-- Ad: shown after test is complete, before action buttons --}}
-                <div class="row mt-4 mb-2">
+                {{-- Ad: after the result, kept well clear of the action buttons below --}}
+                <div class="row mt-4" style="margin-bottom:160px;">
                     <div class="col-12">
                         @include('layouts.partials.ad-unit', ['slot' => 'result'])
                     </div>

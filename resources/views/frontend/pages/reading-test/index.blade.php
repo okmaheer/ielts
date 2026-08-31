@@ -144,9 +144,10 @@
                         $iteration = 1;
                     @endphp
                     @foreach ($data as $key => $group)
-                        {{-- Ad between passages only (not before Passage 1) --}}
+                        {{-- Ad between passages only (not before Passage 1). Generous
+                             vertical margins keep it clear of the answer inputs. --}}
                         @if (!$loop->first)
-                        <div class="row my-2">
+                        <div class="row" style="margin-top:72px; margin-bottom:72px;">
                             <div class="col-12">
                                 @include('layouts.partials.ad-unit', ['slot' => 'banner'])
                             </div>

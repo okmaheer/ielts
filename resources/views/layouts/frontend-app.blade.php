@@ -163,16 +163,8 @@
             !Request::routeIs('show.reading.test'))
         @include('layouts.partials.frontend-footer')
     @endif
-    @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')
-    {{-- The listening test page runs its own fixed 10-unit ad layout
-         (1 header + 1 footer + 8 sidebars), so the global sticky bar and
-         interstitial are suppressed there to keep that count exact. --}}
-    @if (!Request::routeIs('listening.test'))
-        @include('layouts.partials.sticky-footer-ad')
-        @include('layouts.partials.interstitial-ad')
-    @endif
     <script>
         var queryParams = new URLSearchParams(window.location.search);
         const param = queryParams.get('success');

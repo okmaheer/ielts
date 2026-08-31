@@ -185,9 +185,13 @@
                                 <a href="#prepration-courses" class="hero-cta-primary">
                                     <i class="fas fa-book-open me-2"></i>Browse Courses
                                 </a>
-                                <a href="#ielts-mock-test" class="hero-cta-secondary"
-                                    data-bs-toggle="modal" data-bs-target="#test-type">
-                                    <i class="fas fa-play-circle me-2"></i>Free Mock Test
+                                <a href="{{ route('academic.training.test', ['type' => '1']) }}"
+                                    class="hero-cta-secondary">
+                                    <i class="fas fa-graduation-cap me-2"></i>Academic Test
+                                </a>
+                                <a href="{{ route('general.training.test', ['type' => '1']) }}"
+                                    class="hero-cta-secondary">
+                                    <i class="fas fa-book me-2"></i>General Training
                                 </a>
                             </div>
                             <div class="hero-stats-bar">
@@ -333,10 +337,16 @@
                             </ul>
                         </div>
                         <div class="course-card-footer">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#test-type"
-                                class="btn-card-outline-green" style="cursor:pointer;border:2px solid #28a745;background:transparent;width:100%;">
-                                <i class="fas fa-play-circle me-2"></i>START PRACTICING
-                            </button>
+                            <div class="d-flex gap-2">
+                                <a href="{{ route('academic.training.test', ['type' => '1']) }}"
+                                    class="btn-card-outline-green" style="flex:1;padding:13px 6px;font-size:0.8rem;">
+                                    ACADEMIC
+                                </a>
+                                <a href="{{ route('general.training.test', ['type' => '1']) }}"
+                                    class="btn-card-outline-green" style="flex:1;padding:13px 6px;font-size:0.8rem;">
+                                    GENERAL TRAINING
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
