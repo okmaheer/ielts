@@ -1,18 +1,6 @@
 @extends('layouts.frontend-app')
 @section('css')
     <style>
-        /* Sidebar ads: pinned near the middle of the viewport so they stay on
-           screen for the whole of the part the user is currently solving. */
-        .listening-ad-sticky {
-            position: sticky;
-            top: calc(50vh - 160px);
-        }
-
-        /* Bootstrap's .d-lg-flex is display:flex!important, so dismissing an ad
-           needs !important too or the column never actually hides. */
-        .listening-ad-dismissed {
-            display: none !important;
-        }
         .number-box {
             width: 13px;
             height: 13px;
@@ -173,18 +161,9 @@
                                 </div>
                             </div>
                         @endif
-                        {{-- no align-items-start: columns must stretch so the ads can stick --}}
                         <div class="row">
-                            {{-- Left sidebar ad --}}
-                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center justify-content-center listening-ad-col" id="listening-ad-left-{{ $key }}">
-                                <div class="listening-ad-sticky">
-                                    <button type="button" onclick="dismissListeningAd('{{ $key }}', 'left')" style="display:block; margin-left:auto; margin-bottom:16px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
-                                    @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
-                                </div>
-                            </div>
-
                             {{-- Question box --}}
-                            <div class="col-lg-8 col-12 mt-5"
+                            <div class="col-lg-8 offset-lg-2 col-12 mt-5"
                                 style="padding:0px; max-height:700px; overflow-y:auto; border:2px solid #BFBDBD;">
 
                                 <div class="card-body mb-5" style="padding:0px;">
@@ -231,13 +210,6 @@
                                 </div>
                             </div>
 
-                            {{-- Right sidebar ad --}}
-                            <div class="col-lg-2 d-none d-lg-flex flex-column align-items-center justify-content-center listening-ad-col" id="listening-ad-right-{{ $key }}">
-                                <div class="listening-ad-sticky">
-                                    <button type="button" onclick="dismissListeningAd('{{ $key }}', 'right')" style="display:block; margin-left:auto; margin-bottom:16px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af; line-height:1;" title="Close ad">&times;</button>
-                                    @include('layouts.partials.ad-unit', ['slot' => 'sidebar'])
-                                </div>
-                            </div>
                         </div>
                     @endforeach
 
@@ -479,25 +451,5 @@
 
         // Start the timer when the page loads
         updateTimer();
-    </script>
-    <script>
-        function dismissListeningAd(key, side) {
-            var el = document.getElementById('listening-ad-' + side + '-' + key);
-            if (el) {
-                el.classList.add('listening-ad-dismissed');
-                // Expand question box to fill the freed column
-                var row = el.closest('.row');
-                if (row) {
-                    // match the box in whichever width it currently has, so a
-                    // second dismissal still widens it
-                    var qbox = row.querySelector('.col-lg-8, .col-lg-10');
-                    if (qbox) {
-                        var otherAd = row.querySelector('.listening-ad-col:not(.listening-ad-dismissed)');
-                        qbox.classList.remove('col-lg-8', 'col-lg-10');
-                        qbox.classList.add(otherAd ? 'col-lg-10' : 'col-lg-12');
-                    }
-                }
-            }
-        }
     </script>
 @endsection
