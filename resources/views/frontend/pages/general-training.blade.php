@@ -113,10 +113,6 @@
                         The test is often required for immigration, work, or secondary education purposes.
                         It focuses on basic survival skills in broad social and workplace settings. </p>
 
-                    {{-- Ad: browsing test list, before cards --}}
-                    <div class="col-12 mb-4">
-                        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                    </div>
 
                     @foreach ($tests as $test)
                         <div class="col-lg-3 col-md-3 mb-4">
@@ -138,15 +134,9 @@
                         @include('layouts.partials.models.test-category', ['category' => 'generalTraining'])
                     @endforeach
 
-                    {{-- Ad: after test cards --}}
-                    <div class="col-12 mt-2 mb-4">
-                        @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
-                    </div>
 
                 </div>
 
-                {{-- Ad: bottom of listing page --}}
-                @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
 
                 {{-- FAQ Section --}}
                 <div class="row mt-5">

@@ -10,10 +10,6 @@
                 <div class="row">
                     <h1 class="mb-4">Reading Tests Instruction</h1>
 
-                    {{-- Ad: top of instructions page --}}
-                    <div class="mb-4">
-                        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                    </div>
 
                     @if ($test->category == 1)
                         <p>
@@ -64,10 +60,6 @@
                             </ul>
                             <b> Follow the instructions given with each question.</b>    </p>
                     @endif
-                    {{-- Ad: before start button --}}
-                    <div class="mb-4">
-                        @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
-                    </div>
 
                     <a class="btn btn-outline-primary btn-lg" href="{{ route('reading.test', ['id' => $test->id]) }}"
                         style="border-radius:30px"> Start Test </a>

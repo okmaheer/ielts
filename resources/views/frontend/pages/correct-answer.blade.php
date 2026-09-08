@@ -319,10 +319,6 @@
 @endsection
 @section('content')
     <!-- Service Start -->
-    {{-- Ad: top of correct answers page --}}
-    <div class="container pt-4">
-        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-    </div>
 
     <div class="container-xxl py-5">
         <div class="container">
@@ -490,15 +486,7 @@
     </div>
     <!-- Service End -->
 
-    {{-- Ad: mid-page after answer tables --}}
-    <div class="container py-2">
-        @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
-    </div>
 
-    {{-- Ad: after reviewing answers, before back button --}}
-    <div class="container py-3">
-        @include('layouts.partials.ad-unit', ['slot' => 'result'])
-    </div>
 
     <div class="container pb-5 text-center">
         <a class="btn btn-outline-secondary" href="{{ route('frontend.index') }}">

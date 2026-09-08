@@ -307,12 +307,6 @@
     </div>
 </div>
 
-{{-- Ad: between Preparation Courses and Computer Based Tests --}}
-<div class="section-ad" style="background:#f0f4f8; padding: 16px 0;">
-    <div class="container">
-        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-    </div>
-</div>
 
 {{-- ══ COMPUTER BASED TESTS ══ --}}
 <div class="section-white" id="ielts-mock-test">
@@ -380,12 +374,6 @@
     </div>
 </div>
 
-{{-- Ad: between Computer Based Tests and Preparation Material --}}
-<div class="section-ad" style="background:#f0f4f8; padding: 16px 0;">
-    <div class="container">
-        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-    </div>
-</div>
 
 {{-- ══ PREPARATION MATERIAL ══ --}}
 <div class="section-light" id="prepration-material">

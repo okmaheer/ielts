@@ -155,11 +155,6 @@
                              content: AdSense prohibits layouts that push content below
                              the fold. --}}
                         @if ($loop->index === 1)
-                            <div class="row" style="margin-top:72px; margin-bottom:72px;">
-                                <div class="col-12">
-                                    @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                                </div>
-                            </div>
                         @endif
                         <div class="row">
                             {{-- Question box --}}
@@ -223,11 +218,6 @@
 
                     {{-- Ad 10 of 10: footer banner. Deliberately kept far below the
                          Finish Test button so it can never be clicked by accident. --}}
-                    <div class="row" style="margin-top:160px; margin-bottom:8px;">
-                        <div class="col-12">
-                            @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                        </div>
-                    </div>
 
                 </div>
             </form>

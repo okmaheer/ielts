@@ -114,10 +114,6 @@
                         The test is recognized globally and used by universities and employers
                         to determine a candidate's ability to use English in an academic environment. </p>
 
-                    {{-- Ad: browsing test list, before cards --}}
-                    <div class="col-12 mb-4">
-                        @include('layouts.partials.ad-unit', ['slot' => 'banner'])
-                    </div>
 
                     @foreach ($tests as $test)
                         <div class="col-lg-3 col-md-3 mb-4">
@@ -139,15 +135,9 @@
                         @include('layouts.partials.models.test-category', ['category' => 'academic'])
                     @endforeach
 
-                    {{-- Ad: after test cards --}}
-                    <div class="col-12 mt-2 mb-4">
-                        @include('layouts.partials.ad-unit', ['slot' => 'in-content'])
-                    </div>
 
                 </div>
 
-                {{-- Ad: bottom of listing page --}}
-                @include('layouts.partials.ad-unit', ['slot' => 'multiplex'])
 
                 {{-- FAQ Section --}}
                 <div class="row mt-5">
