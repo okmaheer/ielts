@@ -18,7 +18,6 @@
             y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "tjzl5whmrs");
     </script>
-    <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/8da3f2cd-750e-44ee-8a3b-759028aface1.js"></script>
     @if (Route::currentRouteName() != 'frontend.index')
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ0H8BREG0"></script>
         <script>
